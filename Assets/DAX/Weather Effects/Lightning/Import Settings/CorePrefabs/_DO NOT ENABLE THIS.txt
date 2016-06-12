@@ -1,0 +1,1 @@
+Use prefabs form "assets/DAX/Weather Effects/Lightning" instead

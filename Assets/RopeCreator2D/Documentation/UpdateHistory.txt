@@ -1,0 +1,14 @@
+Rope Creator 2D
+
+Updates:
+
+1.0 - first release
+
+1.1
+	- added Line Renderer rope support
+		- segement count and width options
+	- new options in the editor window: prefab scale and breakforce 
+	- updated prefabs
+	- new test scenes
+	- updated documentation
+

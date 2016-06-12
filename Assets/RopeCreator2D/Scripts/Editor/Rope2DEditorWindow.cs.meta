@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 012c703f11812a844b45dc7515f22c0a
+labels:
+- Rope
+- RopeTool
+- RopeCreator
+- RopeScript
+- LineRendererRope
+timeCreated: 1434587742
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

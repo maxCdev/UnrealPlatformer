@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: 174e3cce318377f4a89554557944b9b1
+timeCreated: 1464557314
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tropperJump_0
+    21300002: tropperJump_1
+    21300004: tropperJump_2
+    21300006: tropperJump_3
+    21300008: tropperJump_4
+    21300010: tropperJump_5
+    21300012: tropperJump_6
+    21300014: tropperJump_7
+    21300016: tropperJump_8
+    21300018: tropperJump_9
+    21300020: tropperJump_10
+    21300022: tropperJump_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 500
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tropperJump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78.5, y: 16}
+        - {x: 75.5, y: 38}
+        - {x: 42.5, y: 116}
+        - {x: 19.5, y: 120}
+        - {x: -38.5, y: 120}
+        - {x: -54.5, y: 107}
+        - {x: -83.5, y: 2}
+        - {x: -83.5, y: -74}
+        - {x: -74.5, y: -152}
+        - {x: 33.5, y: -152}
+        - {x: 42.5, y: -145}
+        - {x: 26.5, y: -107}
+        - {x: 78.5, y: -28}
+    - name: tropperJump_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 79.66667, y: 19}
+        - {x: 45.66667, y: 94}
+        - {x: 30.666672, y: 123}
+        - {x: -30.333328, y: 123}
+        - {x: -64.33333, y: 115}
+        - {x: -82.33333, y: 25}
+        - {x: -82.33333, y: -73}
+        - {x: -72.33333, y: -140}
+        - {x: -63.33333, y: -152}
+        - {x: 48.66667, y: -152}
+        - {x: 56.66667, y: -151}
+        - {x: 15.666672, y: -88}
+        - {x: 72.66667, y: -33}
+        - {x: 79.66667, y: -14}
+    - name: tropperJump_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.833344, y: 129}
+        - {x: -55.166656, y: 129}
+        - {x: -83.16666, y: 73}
+        - {x: -83.16666, y: -41}
+        - {x: -77.16666, y: -48}
+        - {x: -67.16666, y: -49}
+        - {x: -57.166656, y: -151}
+        - {x: -52.166656, y: -152}
+        - {x: 37.833344, y: -152}
+        - {x: 58.833344, y: -145}
+        - {x: 80.83334, y: -81}
+        - {x: 80.83334, y: 64}
+    - name: tropperJump_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82.5, y: -6}
+        - {x: 82.5, y: 33}
+        - {x: 56.5, y: 135}
+        - {x: -47.5, y: 135}
+        - {x: -83.5, y: 9}
+        - {x: -83.5, y: -47}
+        - {x: -64.5, y: -152}
+        - {x: 41.5, y: -152}
+        - {x: 59.5, y: -142}
+        - {x: 31.5, y: -75}
+        - {x: 81.5, y: -10}
+    - name: tropperJump_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85.66669, y: 140}
+        - {x: -46.333313, y: 140}
+        - {x: -59.333313, y: 138}
+        - {x: -83.33331, y: 47}
+        - {x: -83.33331, y: -35}
+        - {x: -50.333313, y: -151}
+        - {x: -47.333313, y: -152}
+        - {x: 85.66669, y: -152}
+    - name: tropperJump_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85.833374, y: 50}
+        - {x: 64.833374, y: 130}
+        - {x: 30.833374, y: 145}
+        - {x: -26.166626, y: 145}
+        - {x: -39.166626, y: 125}
+        - {x: -51.166626, y: 96}
+        - {x: -83.166626, y: 5}
+        - {x: -83.166626, y: -26}
+        - {x: -70.166626, y: -30}
+        - {x: -38.166626, y: -152}
+        - {x: 40.833374, y: -152}
+        - {x: 67.833374, y: -112}
+        - {x: 28.833374, y: -71}
+        - {x: 85.833374, y: -4}
+    - name: tropperJump_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85.5, y: 61}
+        - {x: 49.5, y: 149}
+        - {x: -20.5, y: 149}
+        - {x: -48.5, y: 114}
+        - {x: -84.5, y: 12}
+        - {x: -84.5, y: -14}
+        - {x: -82.5, y: -20}
+        - {x: -49.5, y: -66}
+        - {x: -33.5, y: -152}
+        - {x: 44.5, y: -152}
+        - {x: 67.5, y: -111}
+        - {x: 45.5, y: -55}
+        - {x: 85.5, y: 5}
+    - name: tropperJump_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84.66675, y: 37}
+        - {x: 60.666748, y: 120}
+        - {x: 42.666748, y: 150}
+        - {x: 36.666748, y: 152}
+        - {x: -25.333252, y: 152}
+        - {x: -85.33325, y: 54}
+        - {x: -85.33325, y: -58}
+        - {x: -55.333252, y: -108}
+        - {x: -28.333252, y: -152}
+        - {x: 50.666748, y: -152}
+        - {x: 67.66675, y: -107}
+        - {x: 84.66675, y: -19}
+      - - {x: -85.33325, y: 15}
+        - {x: -82.33325, y: 16}
+        - {x: -82.33325, y: 21}
+        - {x: -84.33325, y: 23}
+        - {x: -85.33325, y: 23}
+    - name: tropperJump_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76.833374, y: 145}
+        - {x: 56.833374, y: 152}
+        - {x: -50.166626, y: 152}
+        - {x: -85.166626, y: 62}
+        - {x: -85.166626, y: -23}
+        - {x: -35.166626, y: -134}
+        - {x: -25.166626, y: -152}
+        - {x: 55.833374, y: -152}
+        - {x: 57.833374, y: -150}
+        - {x: 76.833374, y: -32}
+    - name: tropperJump_9
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70.5, y: -77}
+        - {x: 70.5, y: 113}
+        - {x: 64.5, y: 147}
+        - {x: 42.5, y: 152}
+        - {x: -25.5, y: 152}
+        - {x: -35.5, y: 143}
+        - {x: -85.5, y: 21}
+        - {x: -85.5, y: -34}
+        - {x: -29.5, y: -152}
+        - {x: -4.5, y: -152}
+        - {x: 11.5, y: -143}
+        - {x: 38.5, y: -152}
+        - {x: 50.5, y: -152}
+        - {x: 58.5, y: -147}
+        - {x: 65.5, y: -120}
+      - - {x: 82.5, y: 0}
+        - {x: 84.5, y: -2}
+        - {x: 85.5, y: -2}
+        - {x: 85.5, y: 9}
+        - {x: 82.5, y: 8}
+    - name: tropperJump_10
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.666748, y: -111}
+        - {x: 4.666748, y: -133}
+        - {x: 10.666748, y: -147}
+        - {x: 69.66675, y: -147}
+        - {x: 69.66675, y: 141}
+        - {x: 63.666748, y: 152}
+        - {x: -24.333252, y: 152}
+        - {x: -37.333252, y: 141}
+        - {x: -85.33325, y: 39}
+        - {x: -85.33325, y: -52}
+        - {x: -64.33325, y: -147}
+        - {x: -30.333252, y: -147}
+        - {x: -9.333252, y: -132}
+        - {x: 4.666748, y: -117}
+        - {x: 2.666748, y: -108}
+      - - {x: 83.66675, y: 0}
+        - {x: 85.66675, y: -2}
+        - {x: 86.66675, y: -2}
+        - {x: 86.66675, y: 9}
+        - {x: 83.66675, y: 8}
+    - name: tropperJump_11
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 400
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.833374, y: -135}
+        - {x: 68.833374, y: -135}
+        - {x: 68.833374, y: 122}
+        - {x: 66.833374, y: 126}
+        - {x: 43.833374, y: 152}
+        - {x: -21.166626, y: 152}
+        - {x: -42.166626, y: 145}
+        - {x: -85.166626, y: 20}
+        - {x: -85.166626, y: -127}
+        - {x: -84.166626, y: -135}
+        - {x: -30.166626, y: -135}
+        - {x: -10.166626, y: -119}
+        - {x: -9.166626, y: -113}
+        - {x: -9.166626, y: -128}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 17910d4e2c6302b479948ecdd1022b00
+timeCreated: 1464557293
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tropperIdle_0
+    21300002: tropperIdle_1
+    21300004: tropperIdle_2
+    21300006: tropperIdle_3
+    21300008: tropperIdle_4
+    21300010: tropperIdle_5
+    21300012: tropperIdle_6
+    21300014: tropperIdle_7
+    21300016: tropperIdle_8
+    21300018: tropperIdle_9
+    21300020: tropperIdle_10
+    21300022: tropperIdle_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 500
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tropperIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56.5, y: -24}
+        - {x: 97.5, y: -9}
+        - {x: 102.5, y: 5}
+        - {x: 102.5, y: 60}
+        - {x: 48.5, y: 167}
+        - {x: 34.5, y: 180}
+        - {x: -30.5, y: 180}
+        - {x: -37.5, y: 179}
+        - {x: -60.5, y: 155}
+        - {x: -84.5, y: 55}
+        - {x: -97.5, y: 4}
+        - {x: -97.5, y: -41}
+        - {x: -96.5, y: -43}
+        - {x: -52.5, y: -46}
+        - {x: -54.5, y: -137}
+        - {x: -81.5, y: -159}
+        - {x: -72.5, y: -179}
+        - {x: 87.5, y: -179}
+    - name: tropperIdle_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 103.704025, y: -2}
+        - {x: 103.704025, y: 78}
+        - {x: 57.704025, y: 180}
+        - {x: -33.295975, y: 180}
+        - {x: -43.295975, y: 175}
+        - {x: -65.295975, y: 130}
+        - {x: -62.295975, y: 83}
+        - {x: -98.295975, y: 19}
+        - {x: -98.295975, y: -49}
+        - {x: -46.295975, y: -47}
+        - {x: -66.295975, y: -135}
+        - {x: -86.295975, y: -179}
+        - {x: 72.704025, y: -179}
+        - {x: 76.704025, y: -177}
+        - {x: 56.704025, y: -76}
+        - {x: 66.704025, y: -24}
+      - - {x: -102.295975, y: 18}
+        - {x: -99.295975, y: 19}
+        - {x: -99.295975, y: 32}
+        - {x: -101.295975, y: 34}
+        - {x: -102.295975, y: 34}
+    - name: tropperIdle_2
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101.40805, y: 2}
+        - {x: 101.40805, y: 44}
+        - {x: 97.40805, y: 77}
+        - {x: 74.40805, y: 112}
+        - {x: 49.40805, y: 180}
+        - {x: -28.59195, y: 180}
+        - {x: -57.59195, y: 153}
+        - {x: -62.59195, y: 111}
+        - {x: -83.59195, y: 58}
+        - {x: -100.59195, y: -3}
+        - {x: -100.59195, y: -42}
+        - {x: -56.59195, y: -96}
+        - {x: -62.59195, y: -131}
+        - {x: -88.59195, y: -176}
+        - {x: -78.59195, y: -179}
+        - {x: 79.40805, y: -179}
+        - {x: 58.40805, y: -77}
+        - {x: 56.40805, y: -24}
+        - {x: 88.40805, y: -10}
+    - name: tropperIdle_3
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.61212, y: -7}
+        - {x: 100.61212, y: 57}
+        - {x: 50.61212, y: 180}
+        - {x: -36.38788, y: 180}
+        - {x: -56.38788, y: 161}
+        - {x: -102.38788, y: 9}
+        - {x: -102.38788, y: -33}
+        - {x: -68.38788, y: -39}
+        - {x: -84.38788, y: -156}
+        - {x: -77.38788, y: -168}
+        - {x: -75.38788, y: -170}
+        - {x: -69.38788, y: -177}
+        - {x: -66.38788, y: -179}
+        - {x: 66.61212, y: -179}
+        - {x: 71.61212, y: -176}
+        - {x: 67.61212, y: -136}
+        - {x: 60.61212, y: -26}
+    - name: tropperIdle_4
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 99.8161, y: 2}
+        - {x: 99.8161, y: 65}
+        - {x: 56.8161, y: 180}
+        - {x: -31.183899, y: 180}
+        - {x: -65.1839, y: 116}
+        - {x: -54.1839, y: 91}
+        - {x: -102.1839, y: 10}
+        - {x: -102.1839, y: -31}
+        - {x: -93.1839, y: -40}
+        - {x: -48.1839, y: -35}
+        - {x: -60.1839, y: -150}
+        - {x: -80.1839, y: -160}
+        - {x: -72.1839, y: -179}
+        - {x: 70.8161, y: -179}
+        - {x: 75.8161, y: -164}
+        - {x: 59.8161, y: -26}
+        - {x: 96.8161, y: -7}
+    - name: tropperIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1910
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.52014, y: -27}
+        - {x: 94.52014, y: -15}
+        - {x: 99.52014, y: 0}
+        - {x: 99.52014, y: 53}
+        - {x: 54.52014, y: 180}
+        - {x: -46.47986, y: 180}
+        - {x: -68.47986, y: 139}
+        - {x: -102.47986, y: 41}
+        - {x: -102.47986, y: -28}
+        - {x: -98.47986, y: -32}
+        - {x: -63.47986, y: -36}
+        - {x: -54.47986, y: -144}
+        - {x: -82.47986, y: -159}
+        - {x: -74.47986, y: -179}
+        - {x: 67.52014, y: -179}
+        - {x: 72.52014, y: -175}
+        - {x: 70.52014, y: -144}
+    - name: tropperIdle_6
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98.72424, y: -2}
+        - {x: 100.72424, y: 7}
+        - {x: 100.72424, y: 30}
+        - {x: 91.72424, y: 74}
+        - {x: 71.72424, y: 156}
+        - {x: 41.724243, y: 180}
+        - {x: -18.275757, y: 180}
+        - {x: -50.275757, y: 156}
+        - {x: -62.275757, y: 81}
+        - {x: -102.27576, y: 11}
+        - {x: -102.27576, y: -31}
+        - {x: -55.275757, y: -49}
+        - {x: -64.27576, y: -129}
+        - {x: -85.27576, y: -179}
+        - {x: 69.72424, y: -179}
+        - {x: 76.72424, y: -169}
+        - {x: 57.724243, y: -97}
+        - {x: 78.72424, y: -18}
+    - name: tropperIdle_7
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101.92822, y: 63}
+        - {x: 71.92822, y: 133}
+        - {x: 49.928223, y: 178}
+        - {x: 40.928223, y: 180}
+        - {x: -18.071777, y: 180}
+        - {x: -47.071777, y: 158}
+        - {x: -61.071777, y: 130}
+        - {x: -63.071777, y: 88}
+        - {x: -101.07178, y: -6}
+        - {x: -101.07178, y: -29}
+        - {x: -91.07178, y: -37}
+        - {x: -69.07178, y: -37}
+        - {x: -44.071777, y: -28}
+        - {x: -52.071777, y: -113}
+        - {x: -84.07178, y: -159}
+        - {x: -75.07178, y: -179}
+        - {x: 80.92822, y: -179}
+        - {x: 56.928223, y: -33}
+        - {x: 89.92822, y: -24}
+        - {x: 101.92822, y: 0}
+    - name: tropperIdle_8
+      rect:
+        serializedVersion: 2
+        x: 3056
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.6322, y: -3}
+        - {x: 103.6322, y: 2}
+        - {x: 103.6322, y: 66}
+        - {x: 61.632202, y: 174}
+        - {x: 52.632202, y: 180}
+        - {x: -23.367798, y: 180}
+        - {x: -55.367798, y: 166}
+        - {x: -86.3678, y: 49}
+        - {x: -99.3678, y: 5}
+        - {x: -99.3678, y: -47}
+        - {x: -53.367798, y: -91}
+        - {x: -83.3678, y: -155}
+        - {x: -76.3678, y: -168}
+        - {x: -74.3678, y: -170}
+        - {x: -68.3678, y: -177}
+        - {x: -65.3678, y: -179}
+        - {x: 67.6322, y: -179}
+        - {x: 72.6322, y: -176}
+        - {x: 68.6322, y: -136}
+        - {x: 57.632202, y: -28}
+    - name: tropperIdle_9
+      rect:
+        serializedVersion: 2
+        x: 3438
+        y: 669
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 103.3363, y: 53}
+        - {x: 52.336304, y: 165}
+        - {x: 35.336304, y: 180}
+        - {x: -18.663696, y: 180}
+        - {x: -36.663696, y: 170}
+        - {x: -54.663696, y: 154}
+        - {x: -61.663696, y: 109}
+        - {x: -98.6637, y: 8}
+        - {x: -98.6637, y: -62}
+        - {x: -62.663696, y: -131}
+        - {x: -80.6637, y: -160}
+        - {x: -72.6637, y: -179}
+        - {x: 74.3363, y: -179}
+        - {x: 78.3363, y: -177}
+        - {x: 62.336304, y: -43}
+        - {x: 103.3363, y: 0}
+    - name: tropperIdle_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 102.5, y: -6.5}
+        - {x: 102.5, y: 52.5}
+        - {x: 94.5, y: 92.5}
+        - {x: 68.5, y: 175.5}
+        - {x: 61.5, y: 179.5}
+        - {x: -35.5, y: 179.5}
+        - {x: -70.5, y: 169.5}
+        - {x: -97.5, y: 46.5}
+        - {x: -97.5, y: -30.5}
+        - {x: -92.5, y: -38.5}
+        - {x: -81.5, y: -43.5}
+        - {x: -49.5, y: -41.5}
+        - {x: -88.5, y: -161.5}
+        - {x: -72.5, y: -179.5}
+        - {x: 74.5, y: -179.5}
+        - {x: 81.5, y: -178.5}
+        - {x: 56.5, y: -41.5}
+      - - {x: -55.5, y: 179.5}
+        - {x: -54.5, y: 176.5}
+        - {x: -36.5, y: 176.5}
+        - {x: -34.5, y: 178.5}
+        - {x: -34.5, y: 179.5}
+    - name: tropperIdle_11
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 0
+        width: 382
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 103.704025, y: 1.5}
+        - {x: 103.704025, y: 64.5}
+        - {x: 80.704025, y: 95.5}
+        - {x: 69.704025, y: 179.5}
+        - {x: -40.295975, y: 179.5}
+        - {x: -75.295975, y: 121.5}
+        - {x: -59.295975, y: 110.5}
+        - {x: -95.295975, y: 0.5}
+        - {x: -96.295975, y: -5.5}
+        - {x: -96.295975, y: -36.5}
+        - {x: -78.295975, y: -56.5}
+        - {x: -55.295975, y: -49.5}
+        - {x: -60.295975, y: -148.5}
+        - {x: -83.295975, y: -162.5}
+        - {x: -69.295975, y: -179.5}
+        - {x: 70.704025, y: -179.5}
+        - {x: 76.704025, y: -171.5}
+        - {x: 58.704025, y: -24.5}
+        - {x: 98.704025, y: -12.5}
+      - - {x: -102.295975, y: 18.5}
+        - {x: -99.295975, y: 19.5}
+        - {x: -99.295975, y: 27.5}
+        - {x: -101.295975, y: 29.5}
+        - {x: -102.295975, y: 29.5}
+      - - {x: -54.295975, y: 179.5}
+        - {x: -53.295975, y: 176.5}
+        - {x: -35.295975, y: 176.5}
+        - {x: -33.295975, y: 178.5}
+        - {x: -33.295975, y: 179.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

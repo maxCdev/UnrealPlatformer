@@ -1,0 +1,601 @@
+fileFormatVersion: 2
+guid: 644ef9a8df7a6b84b8a65f9a65eb4101
+timeCreated: 1465561849
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Acid (1)_11x3_0
+    21300002: Acid (1)_11x3_1
+    21300004: Acid (1)_11x3_2
+    21300006: Acid (1)_11x3_3
+    21300008: Acid (1)_11x3_4
+    21300010: Acid (1)_11x3_5
+    21300012: Acid (1)_11x3_6
+    21300014: Acid (1)_11x3_7
+    21300016: Acid (1)_11x3_8
+    21300018: Acid (1)_11x3_9
+    21300020: Acid (1)_11x3_10
+    21300022: Acid (1)_11x3_11
+    21300024: Acid (1)_11x3_12
+    21300026: Acid (1)_11x3_13
+    21300028: Acid (1)_11x3_14
+    21300030: Acid (1)_11x3_15
+    21300032: Acid (1)_11x3_16
+    21300034: Acid (1)_11x3_17
+    21300036: Acid (1)_11x3_18
+    21300038: Acid (1)_11x3_19
+    21300040: Acid (1)_11x3_20
+    21300042: Acid (1)_11x3_21
+    21300044: Acid (1)_11x3_22
+    21300046: Acid (1)_11x3_23
+    21300048: Acid (1)_11x3_24
+    21300050: Acid (1)_11x3_25
+    21300052: Acid (1)_11x3_26
+    21300054: Acid (1)_11x3_27
+    21300056: Acid (1)_11x3_28
+    21300058: Acid (1)_11x3_29
+    21300060: Acid (1)_11x3_30
+    21300062: Acid (1)_11x3_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Acid (1)_11x3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90.5, y: 93.86365}
+        - {x: 89.5, y: 40.863647}
+        - {x: 18.5, y: 47.863647}
+        - {x: -34.5, y: 41.863647}
+        - {x: -65.5, y: 46.863647}
+        - {x: -93.5, y: 39.863647}
+        - {x: -93.5, y: -93.13635}
+        - {x: 93.5, y: -93.13635}
+        - {x: 93.5, y: 93.86365}
+    - name: Acid (1)_11x3_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.31818, y: 93.86365}
+        - {x: -93.31818, y: -93.13635}
+        - {x: 93.68182, y: -93.13635}
+        - {x: 93.68182, y: 93.86365}
+    - name: Acid (1)_11x3_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.13635, y: 93.86365}
+        - {x: -93.13635, y: -93.13635}
+        - {x: 93.86365, y: -93.13635}
+        - {x: 93.86365, y: 93.86365}
+    - name: Acid (1)_11x3_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.95453, y: 93.86365}
+        - {x: -92.95453, y: -93.13635}
+        - {x: 94.04547, y: -93.13635}
+        - {x: 94.04547, y: 93.86365}
+    - name: Acid (1)_11x3_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.772705, y: 93.86365}
+        - {x: -92.772705, y: -93.13635}
+        - {x: 94.227295, y: -93.13635}
+        - {x: 94.227295, y: 93.86365}
+    - name: Acid (1)_11x3_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.09088, y: 93.86365}
+        - {x: -93.09088, y: -93.13635}
+        - {x: 94.90912, y: -93.13635}
+        - {x: 94.90912, y: 93.86365}
+    - name: Acid (1)_11x3_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.40906, y: 93.86365}
+        - {x: -93.40906, y: -93.13635}
+        - {x: 93.59094, y: -93.13635}
+        - {x: 93.59094, y: 93.86365}
+    - name: Acid (1)_11x3_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.227295, y: 93.86365}
+        - {x: -93.227295, y: -93.13635}
+        - {x: 93.772705, y: -93.13635}
+        - {x: 93.772705, y: 93.86365}
+    - name: Acid (1)_11x3_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.04541, y: 93.86365}
+        - {x: -93.04541, y: -93.13635}
+        - {x: 93.95459, y: -93.13635}
+        - {x: 93.95459, y: 93.86365}
+    - name: Acid (1)_11x3_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.863525, y: 93.86365}
+        - {x: -92.863525, y: -93.13635}
+        - {x: 94.136475, y: -93.13635}
+        - {x: 94.136475, y: 27.863647}
+        - {x: -77.863525, y: 93.86365}
+    - name: Acid (1)_11x3_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.68176, y: 22.863647}
+        - {x: -92.68176, y: -93.13635}
+        - {x: 89.31824, y: -93.13635}
+        - {x: 94.31824, y: -87.13635}
+        - {x: 94.31824, y: 22.863647}
+    - name: Acid (1)_11x3_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.5, y: 22.681824}
+        - {x: -93.5, y: -88.31818}
+        - {x: -90.5, y: -93.31818}
+        - {x: 93.5, y: -93.31818}
+        - {x: 93.5, y: -83.31818}
+        - {x: -3.5, y: 22.681824}
+      - - {x: -93.5, y: 93.68182}
+        - {x: -93.5, y: 90.68182}
+        - {x: 93.5, y: 90.68182}
+        - {x: 93.5, y: 93.68182}
+    - name: Acid (1)_11x3_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.681824, y: 35.681824}
+        - {x: -2.3181763, y: 35.681824}
+        - {x: -3.3181763, y: 34.681824}
+        - {x: -28.318176, y: 15.681824}
+        - {x: -36.318176, y: 7.6818237}
+        - {x: -42.318176, y: -18.318176}
+        - {x: -61.318176, y: 19.681824}
+        - {x: -65.31818, y: 26.681824}
+        - {x: -68.31818, y: 25.681824}
+        - {x: -93.31818, y: -60.318176}
+        - {x: -93.31818, y: -93.31818}
+        - {x: 93.68182, y: -93.31818}
+        - {x: 93.68182, y: -72.31818}
+        - {x: 76.68182, y: 25.681824}
+        - {x: 67.68182, y: 27.681824}
+        - {x: 61.681824, y: 25.681824}
+      - - {x: 90.68182, y: 55.681824}
+        - {x: 92.68182, y: 53.681824}
+        - {x: 93.68182, y: 53.681824}
+        - {x: 93.68182, y: 88.68182}
+        - {x: 90.68182, y: 87.68182}
+      - - {x: -93.31818, y: 93.68182}
+        - {x: -93.31818, y: 90.68182}
+        - {x: 93.68182, y: 90.68182}
+        - {x: 93.68182, y: 93.68182}
+    - name: Acid (1)_11x3_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.13635, y: 93.68182}
+        - {x: -93.13635, y: 53.681824}
+        - {x: -85.13635, y: 45.681824}
+        - {x: -78.13635, y: 45.681824}
+        - {x: -78.13635, y: -58.318176}
+        - {x: -88.13635, y: -68.31818}
+        - {x: -90.13635, y: -88.31818}
+        - {x: -93.13635, y: -87.31818}
+        - {x: -93.13635, y: -93.31818}
+        - {x: 93.86365, y: -93.31818}
+        - {x: 93.86365, y: 93.68182}
+    - name: Acid (1)_11x3_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -89.95453, y: -4.3181763}
+        - {x: 94.04547, y: -4.3181763}
+        - {x: 94.04547, y: 93.68182}
+        - {x: -92.95453, y: 93.68182}
+        - {x: -92.95453, y: -93.31818}
+        - {x: 94.04547, y: -93.31818}
+        - {x: 94.04547, y: -90.31818}
+        - {x: -89.95453, y: -90.31818}
+    - name: Acid (1)_11x3_15
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.772705, y: -93.31818}
+        - {x: 94.227295, y: -93.31818}
+        - {x: 94.227295, y: -90.31818}
+        - {x: -92.772705, y: -90.31818}
+      - - {x: -92.772705, y: 93.68182}
+        - {x: -92.772705, y: -4.3181763}
+        - {x: 85.227295, y: -4.3181763}
+        - {x: 92.227295, y: -3.3181763}
+        - {x: 94.227295, y: 38.681824}
+        - {x: 94.227295, y: 93.68182}
+    - name: Acid (1)_11x3_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 94.90912, y: -93.31818}
+        - {x: 94.90912, y: -90.31818}
+        - {x: -85.09088, y: -90.31818}
+        - {x: -86.09088, y: -93.31818}
+      - - {x: -93.09088, y: 93.68182}
+        - {x: -93.09088, y: 15.681824}
+        - {x: -86.09088, y: -4.3181763}
+        - {x: 94.90912, y: -4.3181763}
+        - {x: 94.90912, y: 93.68182}
+    - name: Acid (1)_11x3_17
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.40906, y: 93.68182}
+        - {x: -93.40906, y: -4.3181763}
+        - {x: 93.59094, y: -4.3181763}
+        - {x: 93.59094, y: 93.68182}
+    - name: Acid (1)_11x3_18
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.227295, y: 93.68182}
+        - {x: -93.227295, y: -4.3181763}
+        - {x: 93.772705, y: -4.3181763}
+        - {x: 93.772705, y: 93.68182}
+      - - {x: 90.772705, y: 0.68182373}
+        - {x: 92.772705, y: -1.3181763}
+        - {x: 93.772705, y: -1.3181763}
+        - {x: 93.772705, y: 16.681824}
+        - {x: 90.772705, y: 15.681824}
+    - name: Acid (1)_11x3_19
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.04541, y: 93.68182}
+        - {x: -93.04541, y: -17.318176}
+        - {x: 66.95459, y: -93.31818}
+        - {x: 93.95459, y: -93.31818}
+        - {x: 93.95459, y: 93.68182}
+      - - {x: -93.04541, y: -1.3181763}
+        - {x: -90.04541, y: -0.31817627}
+        - {x: -90.04541, y: 14.681824}
+        - {x: -92.04541, y: 16.681824}
+        - {x: -93.04541, y: 16.681824}
+    - name: Acid (1)_11x3_20
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.863525, y: 93.68182}
+        - {x: -92.863525, y: -93.31818}
+        - {x: 94.136475, y: -93.31818}
+        - {x: 94.136475, y: 93.68182}
+    - name: Acid (1)_11x3_21
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82.31824, y: -59.318176}
+        - {x: 79.31824, y: -57.318176}
+        - {x: 79.31824, y: 45.681824}
+        - {x: 87.31824, y: 45.681824}
+        - {x: 94.31824, y: 52.681824}
+        - {x: 94.31824, y: 88.68182}
+        - {x: 90.31824, y: 93.68182}
+        - {x: -92.68176, y: 93.68182}
+        - {x: -92.68176, y: -93.31818}
+        - {x: 89.31824, y: -93.31818}
+        - {x: 89.31824, y: -68.31818}
+        - {x: 88.31824, y: -65.31818}
+        - {x: 83.31824, y: -61.318176}
+    - name: Acid (1)_11x3_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -88.5, y: 93.5}
+        - {x: -88.5, y: 67.5}
+        - {x: -78.5, y: -58.5}
+        - {x: -88.5, y: -68.5}
+        - {x: -88.5, y: -93.5}
+        - {x: 93.5, y: -93.5}
+        - {x: 93.5, y: 93.5}
+    - name: Acid (1)_11x3_23
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.31818, y: 93.5}
+        - {x: -93.31818, y: -93.5}
+        - {x: 93.68182, y: -93.5}
+        - {x: 93.68182, y: 93.5}
+    - name: Acid (1)_11x3_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77.86365, y: 56.5}
+        - {x: 79.86365, y: 57.5}
+        - {x: 88.86365, y: 66.5}
+        - {x: 90.86365, y: 90.5}
+        - {x: 90.86365, y: -93.5}
+        - {x: 93.86365, y: -93.5}
+        - {x: 93.86365, y: 93.5}
+        - {x: -93.13635, y: 93.5}
+        - {x: -93.13635, y: -93.5}
+        - {x: 88.86365, y: -93.5}
+        - {x: 88.86365, y: -69.5}
+        - {x: 85.86365, y: -65.5}
+        - {x: 77.86365, y: -57.5}
+    - name: Acid (1)_11x3_25
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.95453, y: 93.5}
+        - {x: -92.95453, y: -93.5}
+        - {x: 94.04547, y: -93.5}
+        - {x: 94.04547, y: 93.5}
+    - name: Acid (1)_11x3_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92.772705, y: 93.5}
+        - {x: -92.772705, y: -93.5}
+        - {x: 94.227295, y: -93.5}
+        - {x: 94.227295, y: 93.5}
+    - name: Acid (1)_11x3_27
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -90.09088, y: -93.5}
+        - {x: -90.09088, y: 93.5}
+        - {x: -93.09088, y: 93.5}
+        - {x: -93.09088, y: -93.5}
+      - - {x: -86.09088, y: 93.5}
+        - {x: -86.09088, y: -4.5}
+        - {x: 94.90912, y: -4.5}
+        - {x: 94.90912, y: 93.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,8 +14,24 @@ namespace MyPlatformer
 
         float blastWaveRadius = 6;
         float blastForce = 50;
-        public void ReactionOnFire(KillableObject objectKiller)
+        protected void VisualDamage(Vector3 position)
         {
+            if (IsOrganic)
+            {
+                GameObject blood = Resources.Load<GameObject>("Blood");
+                blood.transform.position = position;
+                Instantiate<GameObject>(blood);
+            }
+            else
+            {
+                GameObject sparkDamage = Resources.Load<GameObject>("SparksDamage");
+                sparkDamage.transform.position = position;
+                Instantiate<GameObject>(sparkDamage);
+            }
+        }
+        public override void ReactionOnFire(KillableObject objectKiller)
+        {
+            VisualDamage(objectKiller.transform.position);
             if (SetDamage(objectKiller.damage))
             {
                 Death(objectKiller.deathName);
@@ -23,6 +39,7 @@ namespace MyPlatformer
         }
         public override void ReactionOnFire(Shoot bullet)
         {
+            VisualDamage(bullet.transform.position);
             if (SetDamage(bullet.damage))
             {
                 Death(bullet.deathName);
@@ -63,17 +80,22 @@ namespace MyPlatformer
         }
         public void Death(string deathName)
         {
-            GameObject exp = transform.GetChild(0).gameObject;
-            //on death animation for this bullet(weapon)
-            exp.SetActive(true);
-            exp.transform.parent = null;           
-            Blast();
-            Destroy(exp,0.5f);
+            if (!IsOrganic)
+            {
+                GameObject exp = transform.GetChild(0).gameObject;
+                //on death animation for this bullet(weapon)
+                exp.SetActive(true);
+                exp.transform.parent = null;
+                Blast();
+                Destroy(exp, 0.5f);
+            }          
+           
             Destroy(gameObject);
         }
 
         public bool SetDamage(float damage)
         {
+          
             Hp -= damage;
             if (Hp<0)
             {

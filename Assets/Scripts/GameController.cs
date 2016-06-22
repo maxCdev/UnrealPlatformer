@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class GameController : MonoBehaviour {
-    public void Start()
+namespace MyPlatformer
+{
+    public class GameController : MonoBehaviour
     {
-        Application.targetFrameRate = 60;
-    }
-public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        public void Start()
+        {
+            Application.targetFrameRate = 60;
+        }
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

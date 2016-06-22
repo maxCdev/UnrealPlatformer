@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class KillableObject : MonoBehaviour {
-
-    public float damage;
-    public float Damage
+namespace MyPlatformer
+{
+    public class KillableObject : MonoBehaviour
     {
-        get
+
+        public float damage;
+        public float Damage
         {
-            return damage;
+            get
+            {
+                return damage;
+            }
+            set
+            {
+                damage = value;
+            }
         }
-        set
-        {
-            damage = value;
-        }
+        public string deathName;
     }
-    public string deathName;
 }

@@ -12,7 +12,7 @@ interface IFirieble
 public class FiriebleObject : MonoBehaviour,IFirieble {
 
     Rigidbody2D rBody;
-
+    public bool IsOrganic = false;
     [SerializeField]
     float reactionForce=1;
     public float ReactionForce
@@ -38,7 +38,8 @@ public class FiriebleObject : MonoBehaviour,IFirieble {
     {
         rBody.AddForceAtPosition(course * reactionForce, position);
     }
-
+    public virtual void ReactionOnFire(KillableObject objectKiller)
+    {}
 
  
 }

@@ -31,7 +31,7 @@ namespace MyPlatformer
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            renderer = GetComponent<Renderer>();
+            renderer = GetComponentInChildren<Renderer>();
         }
         // Use this for initialization
         void Start()

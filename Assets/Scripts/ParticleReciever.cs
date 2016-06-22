@@ -6,7 +6,7 @@ namespace MyPlatformer
 
     public class ParticleReciever : MonoBehaviour
     {
-
+        public string deathName = "Fire balls particle";
         // Use this for initialization
         void Start()
         {
@@ -17,7 +17,7 @@ namespace MyPlatformer
             DestroybleObject objDestr = other.GetComponent<DestroybleObject>();
             if (objDestr!=null)
             {
-                objDestr.ReactionOnFire(new KillableObject(){damage=3,deathName="Fire balls particle"});
+                objDestr.ReactionOnFire(new KillableObject() { damage = 3, deathName = deathName });
              
             }
         }

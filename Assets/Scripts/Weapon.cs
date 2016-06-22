@@ -19,8 +19,16 @@ namespace MyPlatformer
             {
                 GameObject shoot = Resources.Load<GameObject>(bulletName);
                 var script = shoot.GetComponent<Shoot>();
-                script.Course = (sight.position - emitter.position).normalized;
-                script.damage = damage;
+                var course = (sight.position - emitter.position).normalized;
+                if (script!=null)
+                {
+                    script.Course = course;
+                    script.damage = damage;
+                }
+                else//if particle
+                {
+                    shoot.transform.localRotation = Quaternion.Euler(Vector3.forward * course.x * -90);
+                }
                 shoot.transform.position = emitter.position;
                 Instantiate<GameObject>(shoot);
                 lastFireTime = Time.time;

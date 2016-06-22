@@ -14,7 +14,6 @@ namespace MyPlatformer
 
         float blastWaveRadius = 6;
         float blastForce = 50;
-        float blastDamage = 1;
         public void ReactionOnFire(KillableObject objectKiller)
         {
             if (SetDamage(objectKiller.damage))

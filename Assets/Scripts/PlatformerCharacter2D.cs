@@ -22,6 +22,7 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         private bool previusJump = false; //ITS MY VELOSIPED))
         public Weapon weapon;
+        public JetPack jetPack=null;
         private void Awake()
         {
             // Setting up references.
@@ -91,14 +92,21 @@ namespace UnityStandardAssets._2D
                     Flip();
                 }
             }
+
             RotateWeapon(weaponRot);
+            if (jetPack != null && jetPack.isBurn && ((!previusJump && jump) || m_Grounded))
+            {
+                jetPack.Off();
+            }
             if (fire)
             {
+                m_Anim.SetTrigger("Fire");
                 weapon.Fire();
             }
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
+                
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
@@ -107,10 +115,20 @@ namespace UnityStandardAssets._2D
             }
             else if (!m_Grounded && jump && !m_Anim.GetBool("Ground") && previusJump) //ITS MY VELOSIPED))
             {
+
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_SecondJumpForce));
+                if (jetPack==null)
+                {
+                    m_Rigidbody2D.AddForce(new Vector2(0f, m_SecondJumpForce));
+                  
+                }
+                else if (!jetPack.isBurn)
+                {
+                    jetPack.On();                  
+                }
                 previusJump = false;
+
             }
 
         }
@@ -140,6 +158,7 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+
         }
     }
 }

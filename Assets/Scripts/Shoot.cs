@@ -19,7 +19,6 @@ namespace MyPlatformer
         float speed;
         [SerializeField]
         Vector3 course;
-        Renderer renderer;
         public Vector3 Course
         {
             get
@@ -46,8 +45,6 @@ namespace MyPlatformer
         
         void Start()
         {
-            Debug.Log("Start shoot from x: " + Course.x + " y: " + Course.y);
-            renderer = GetComponent<Renderer>();
             thisTransform = GetComponent<Transform>();
         }
         void Update()

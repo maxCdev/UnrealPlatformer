@@ -10,12 +10,10 @@ public class SawController : MonoBehaviour {
     public int course = 1;
     private int wayIndex = 0;
     private Transform myTransform;
-    private KillableObject killableObj;
 	// Update is called once per frame
     void Start()
     {
         myTransform = transform;
-        killableObj = GetComponent<KillableObject>();
     }
 	void Update () {    
         switch(course)
@@ -46,13 +44,5 @@ public class SawController : MonoBehaviour {
         myTransform.Rotate(Vector3.forward*10);
        myTransform.position = Vector2.MoveTowards(myTransform.position, points[wayIndex].position, speed * Time.deltaTime);
 	}
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        FiriebleObject script = other.GetComponent<DestroybleObject>();
-        if (script != null)
-        {
-            script.ReactionOnFire(killableObj);
-        }
-    }
 }
 }

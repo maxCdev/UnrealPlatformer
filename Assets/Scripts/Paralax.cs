@@ -5,7 +5,6 @@ namespace MyPlatformer
 {
     public class Paralax : MonoBehaviour
     {
-
         public List<Transform> backgrounds=new List<Transform>();
         private List<float> parallaxScales= new List<float>();
         public float smouthing;
@@ -18,15 +17,15 @@ namespace MyPlatformer
             previusCameraPos = camera.transform.position;
             parallaxScales.AddRange(backgrounds.Select(a => a.transform.position.z * -1));
         }
-
-        // Update is called once per frame
         void LateUpdate()
         {
             for (int i = 0; i < backgrounds.Count; i++)
             {
                 float parallax = (previusCameraPos.x - camera.position.x) * parallaxScales[i];
                 float bgTargetPosX = backgrounds[i].position.x + parallax;
-                Vector3 bgTargetPos = new Vector3(bgTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
+                parallax = (previusCameraPos.y - camera.position.y) * parallaxScales[i];
+                float bgTargetPosY = backgrounds[i].position.y + parallax;
+                Vector3 bgTargetPos = new Vector3(bgTargetPosX, bgTargetPosY, backgrounds[i].position.z);
                 backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, bgTargetPos, smouthing * Time.deltaTime);
             }
             previusCameraPos = camera.position;

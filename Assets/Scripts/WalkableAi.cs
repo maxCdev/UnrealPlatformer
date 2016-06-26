@@ -23,10 +23,10 @@ namespace MyPlatformer
                 return renderer.isVisible;
             }
         }
-        float horizontal = 1;
+        public float horizontal = 1;
         float vertical = 0;
-        bool fire = false;
-        
+        public bool canRotateWeapon = false;
+        public Transform rightGroundCheck;
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
@@ -47,19 +47,14 @@ namespace MyPlatformer
         // Update is called once per frame
         void Update()
         {
-            if (active)
-            {
+            //if (active)
+            //{
                 currentBehavior(player);
-            }
+            //}
                
         }
-        void GetTarget()
+        Vector2? GetTarget()
         {
-
-            
-                
-                
-
                 for (int i = 0; i < 360; i+=45)
                 {
                     locator.Rotate(Vector3.forward * 45);
@@ -88,38 +83,53 @@ namespace MyPlatformer
                               {
                                   horizontal = 0;
                               }
-                              if (player.position.y > transform.position.y)
-                              {
-                                  vertical = 1;
-                              }
-                              else if (player.position.y < transform.position.y)
-                              {
-                                  vertical = -1;
-                              }
-                              else
-                              {
-                                  vertical = 0;
-                              }
-                              fire = true;
-                           //Debug.Log(string.Format("plYER: transform.right = {0}, locator.up = {1}", transform.right, locator.up));
-                           //Debug.Log(string.Format("plYER: direction{0}, locator.up = {1}", (transform.position - hits[j].transform.position).normalized, locator.up));
-                           break;
-
-                           
+                           if (canRotateWeapon)
+                           {
+                               if (player.position.y > transform.position.y)
+                               {
+                                   vertical = 1;
+                               }
+                               else if (player.position.y < transform.position.y)
+                               {
+                                   vertical = -1;
+                               }
+                               else
+                               {
+                                   vertical = 0;
+                               }     
+                           }                   
+                              return new Vector2(horizontal, vertical);                          
                        }
                     }
-                   
-                   
-                    Debug.DrawLine(ray.origin, new Vector2(locator.position.x, locator.position.y) + ray.direction, Color.red);
+                    Debug.DrawLine(ray.origin, new Vector2(locator.position.x, locator.position.y) + ray.direction, Color.red); 
                 }
+                return null;
         }
         void Patrul(Transform player)
         {
             
-            m_Character.Move(horizontal, vertical, false, false, fire);
+            
             if (player!=null)
             {
-                GetTarget();
+               if (GetTarget()!=null)
+               {
+                   m_Character.TryFlip(horizontal);
+                   m_Character.Move(0, vertical, false, false, true);
+               }
+               else
+               {
+                   if (m_Character.GroundCheck(rightGroundCheck)&&!m_Character.GroundCheck(m_Character.weapon.emitter))
+                   {
+                       Debug.Log("Im Go!" + horizontal);
+                   }
+                   else
+                   {
+                       Debug.Log("Flip[]" + horizontal);
+                       horizontal *= -1;
+                   }
+
+                   m_Character.Move(horizontal, vertical, false, false, false);
+               }
             }
             
           

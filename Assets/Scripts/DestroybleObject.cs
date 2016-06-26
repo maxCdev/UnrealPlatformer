@@ -11,9 +11,13 @@ namespace MyPlatformer
     }
     public class DestroybleObject : FiriebleObject,IDestroyble
     {
-
-        float blastWaveRadius = 6;
+        Animator animator;
+        float blastWaveRadius = 3;
         float blastForce = 50;
+        void Start()
+        {
+            animator = GetComponent<Animator>();
+        }
         protected void VisualDamage(Vector3 position)
         {
             if (IsOrganic)
@@ -66,13 +70,12 @@ namespace MyPlatformer
         void Blast()
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastWaveRadius);
-            List<FiriebleObject> fireableObjs = colliders.Select(a => a.GetComponent<FiriebleObject>()).ToList();
-            Debug.Log(" colliders : " + fireableObjs.Count);
+            List<FiriebleObject> fireableObjs = colliders.Select(a => a.GetComponent<FiriebleObject>()).ToList();    
             for (int i = 0; i < fireableObjs.Count; i++)
-            {
+            {               
                 if (fireableObjs[i] != null&&fireableObjs[i].gameObject != gameObject)
-                {
-                var course = (fireableObjs[i].transform.position - transform.position).normalized;
+                { 
+                    var course = (fireableObjs[i].transform.position - transform.position).normalized;
                     fireableObjs[i].ReactionOnFire(course, blastForce, transform.position);
                 }
                     
@@ -88,8 +91,21 @@ namespace MyPlatformer
                 exp.transform.parent = null;
                 Blast();
                 Destroy(exp, 0.5f);
+                
             }          
-           
+            else
+            {
+                if (animator != null)
+                {
+                
+                    animator.Play(deathName,0);
+                    AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+                    //fix them
+                }
+                
+                Destroy(gameObject,animator.GetCurrentAnimatorStateInfo(0).length);
+                
+            }
             Destroy(gameObject);
         }
 

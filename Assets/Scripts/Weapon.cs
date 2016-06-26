@@ -24,11 +24,12 @@ namespace MyPlatformer
                 {
                     script.Course = course;
                     script.damage = damage;
+                    script.HostTag = transform.root.tag;
                 }
                 else//if particle
                 {
                     shoot.transform.localRotation = Quaternion.Euler(Vector3.forward * course.x * -90);
-                }
+                }                
                 shoot.transform.position = emitter.position;
                 Instantiate<GameObject>(shoot);
                 lastFireTime = Time.time;

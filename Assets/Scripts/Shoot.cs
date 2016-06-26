@@ -10,6 +10,7 @@ namespace MyPlatformer
         bool ImOnPath(Collider other);
         Vector3 Course { set; get; }
         float Speed { set; get; }
+        string HostTag { set; get; }
     }
     public class Shoot : KillableObject, IShoot
     {
@@ -19,6 +20,8 @@ namespace MyPlatformer
         float speed;
         [SerializeField]
         Vector3 course;
+        [SerializeField]
+        string hostTag;
         public Vector3 Course
         {
             get
@@ -41,7 +44,17 @@ namespace MyPlatformer
                 speed = value;
             }
         }
-
+        public string HostTag
+        {
+            get
+            {
+                return hostTag;
+            }
+            set
+            {
+                hostTag=value;
+            }
+        }
         
         void Start()
         {
@@ -49,11 +62,11 @@ namespace MyPlatformer
         }
         void Update()
         {
-                Move();            
+            Move();            
         }
         void OnBecameInvisible()
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
         public void Move()
         {
@@ -78,11 +91,14 @@ namespace MyPlatformer
               return;
           }
           FiriebleObject script = other.GetComponent<FiriebleObject>();
-          if (script!=null)
+          if (script!=null&&other.tag!=hostTag)
           {
               script.ReactionOnFire(this);
               Destroy(gameObject);
           }
       }
+
+
+    
     }
 }

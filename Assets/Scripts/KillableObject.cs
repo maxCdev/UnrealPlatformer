@@ -18,5 +18,22 @@ namespace MyPlatformer
             }
         }
         public string deathName;
+        public void OnTriggerEnter2D(Collider2D other)
+        {
+            DestroybleObject otherDeath = other.gameObject.GetComponent<DestroybleObject>();
+           if (otherDeath!=null)
+           {
+               otherDeath.ReactionOnFire(this);
+           }
+        }
+        void OnParticleCollision(GameObject other)
+        {
+            DestroybleObject objDestr = other.GetComponent<DestroybleObject>();
+            if (objDestr != null)
+            {
+                objDestr.ReactionOnFire(this);
+
+            }
+        }
     }
 }

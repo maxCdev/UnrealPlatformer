@@ -8,7 +8,7 @@ interface IFirieble
     void ReactionOnFire(Shoot bullet);
     float ReactionForce { set; get; }
 }
-
+    [RequireComponent(typeof(Rigidbody2D))]
 public class FiriebleObject : MonoBehaviour,IFirieble {
 
     Rigidbody2D rBody;
@@ -26,7 +26,7 @@ public class FiriebleObject : MonoBehaviour,IFirieble {
             reactionForce = value;
         }
     }
-        void Start()
+     void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
     }

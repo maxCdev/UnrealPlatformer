@@ -15,7 +15,8 @@ namespace MyPlatformer
         {
             camera = Camera.main.transform;
             previusCameraPos = camera.transform.position;
-            parallaxScales.AddRange(backgrounds.Select(a => a.transform.position.z * -1));
+            for (int i = 1; i < backgrounds.Count+1;i++)
+                parallaxScales.Add(i * -10);
         }
         void LateUpdate()
         {

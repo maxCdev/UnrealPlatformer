@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.Events;
 namespace MyPlatformer
 {
     interface IDestroyble
@@ -14,6 +15,7 @@ namespace MyPlatformer
         Animator animator;
         float blastWaveRadius = 3;
         float blastForce = 50;
+        public event UnityAction OnChangeHp;
         void Start()
         {
             animator = GetComponent<Animator>();
@@ -23,22 +25,33 @@ namespace MyPlatformer
             if (IsOrganic)
             {
                 GameObject blood = Resources.Load<GameObject>("Blood");
-                blood.transform.position = position;
+                blood.transform.position = position + Vector3.back;           
                 Instantiate<GameObject>(blood);
             }
             else
             {
                 GameObject sparkDamage = Resources.Load<GameObject>("SparksDamage");
-                sparkDamage.transform.position = position;
+                sparkDamage.transform.position = position + Vector3.back;
                 Instantiate<GameObject>(sparkDamage);
             }
         }
-        public override void ReactionOnFire(KillableObject objectKiller)
+        public override void ReactionOnFire(KillableObject objectKiller,bool isParticle)
         {
-            VisualDamage(objectKiller.transform.position);
+            if (isParticle)
+            {
+                VisualDamage(transform.position);
+            }
+            else
+            {
+                VisualDamage(objectKiller.transform.position);
+            }
             if (SetDamage(objectKiller.damage))
             {
                 Death(objectKiller.deathName);
+            }
+            else
+            {
+                base.ReactionOnFire(objectKiller,isParticle);
             }
         }
         public override void ReactionOnFire(Shoot bullet)
@@ -55,7 +68,7 @@ namespace MyPlatformer
             
         }
         [SerializeField]
-        public float hp;
+        private float hp;
         public float Hp
         {
             get
@@ -64,7 +77,18 @@ namespace MyPlatformer
             }
             set
             {
-                hp = value;
+                if (value < 0)
+                {
+                    hp = 0;
+                }
+                else
+                {
+                    hp = value;
+                }
+                if (OnChangeHp != null)
+                {
+                    OnChangeHp();
+                }
             }
         }
         void Blast()
@@ -110,10 +134,9 @@ namespace MyPlatformer
         }
 
         public bool SetDamage(float damage)
-        {
-          
+        {        
             Hp -= damage;
-            if (Hp<0)
+            if (Hp<=0)
             {
                 return true;
             }

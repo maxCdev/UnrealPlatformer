@@ -15,6 +15,7 @@ public class FiriebleObject : MonoBehaviour,IFirieble {
     public bool IsOrganic = false;
     [SerializeField]
     float reactionForce=1;
+   
     public float ReactionForce
     {
         get
@@ -38,8 +39,11 @@ public class FiriebleObject : MonoBehaviour,IFirieble {
     {
         rBody.AddForceAtPosition(course * reactionForce, position);
     }
-    public virtual void ReactionOnFire(KillableObject objectKiller)
-    {}
+    public virtual void ReactionOnFire(KillableObject objectKiller, bool isParticle)
+    {
+        var course = (objectKiller.transform.position - transform.position).normalized;
+        rBody.AddForceAtPosition(-course * reactionForce, transform.position-course);
+    }
 
  
 }

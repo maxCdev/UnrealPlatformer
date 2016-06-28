@@ -5,15 +5,15 @@ namespace MyPlatformer
 {
     public class Weapon : MonoBehaviour{
         [SerializeField]
-        string bulletName = "bullet";
+        protected string bulletName = "bullet";
         public Transform emitter;
         public Transform sight;
         [SerializeField]
-        float refireTime = 1;
-        float lastFireTime = 0;
+        public float refireTime = 1;
+        protected float lastFireTime = 0;
         [SerializeField]
-        float damage = 2;
-        public void Fire()
+        protected float damage = 2;
+        public virtual void Fire()
         {
             if (Time.time>lastFireTime+refireTime)
             {
@@ -28,6 +28,8 @@ namespace MyPlatformer
                 }
                 else//if particle
                 {
+                    var killObj = shoot.GetComponent<KillableObject>();
+                    killObj.HostTag = transform.root.tag;
                     shoot.transform.localRotation = Quaternion.Euler(Vector3.forward * course.x * -90);
                 }                
                 shoot.transform.position = emitter.position;

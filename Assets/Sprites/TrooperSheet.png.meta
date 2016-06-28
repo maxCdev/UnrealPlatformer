@@ -879,7 +879,7 @@ TextureImporter:
         - {x: 93.94531, y: -76.145485}
         - {x: 104.94531, y: -65.145485}
     outline: []
-  spritePackingTag: PlayerSheet
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

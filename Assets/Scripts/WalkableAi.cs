@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Events;
-using UnityStandardAssets._2D;
 using System.Linq;
 namespace MyPlatformer
 {  
@@ -10,19 +9,14 @@ namespace MyPlatformer
     [RequireComponent(typeof(PlatformerCharacter2D))]
     public class WalkableAi : MonoBehaviour
     {
-        [SerializeField]
+
         private UnityAction<Transform> currentBehavior;
         private PlatformerCharacter2D m_Character;
         Transform player;
         public Transform locator;
         Renderer renderer;
-        [SerializeField]
-        bool active {
-            get
-            {
-                return renderer.isVisible;
-            }
-        }
+        public float lookDistance = 10;
+        public bool active = true;
         public float horizontal = 1;
         float vertical = 0;
         public bool canRotateWeapon = false;
@@ -47,13 +41,13 @@ namespace MyPlatformer
         // Update is called once per frame
         void Update()
         {
-            //if (active)
-            //{
+            if (active)
+            {
                 currentBehavior(player);
-            //}
+            }
                
         }
-        Vector2? GetTarget()
+        bool GetTarget()
         {
                 for (int i = 0; i < 360; i+=45)
                 {
@@ -61,7 +55,7 @@ namespace MyPlatformer
 
                     Ray2D ray = new Ray2D(locator.position, locator.up);
                     RaycastHit2D[] hits;
-                    hits = Physics2D.RaycastAll(ray.origin, ray.direction,40f);
+                    hits = Physics2D.RaycastAll(ray.origin, ray.direction,lookDistance);
                     for (int j = 0; j < hits.Length; j++)
                     {
                        if (hits[j].collider.gameObject.layer == LayerMask.NameToLayer("Level"))
@@ -70,40 +64,19 @@ namespace MyPlatformer
 
                        }
                        if (hits[j].collider.gameObject.CompareTag("Player"))
-                       {                        
-                              if (player.position.x>transform.position.x)
-                              {
-                                  horizontal = 1;
-                              }
-                              else if (player.position.x<transform.position.x)
-                              {
-                                  horizontal = -1;
-                              }
-                              else
-                              {
-                                  horizontal = 0;
-                              }
+                       {
+                          
+                           horizontal =Mathf.RoundToInt(ray.direction.normalized.x);
                            if (canRotateWeapon)
                            {
-                               if (player.position.y > transform.position.y)
-                               {
-                                   vertical = 1;
-                               }
-                               else if (player.position.y < transform.position.y)
-                               {
-                                   vertical = -1;
-                               }
-                               else
-                               {
-                                   vertical = 0;
-                               }     
+                               vertical =-Mathf.RoundToInt(ray.direction.normalized.y);  
                            }                   
-                              return new Vector2(horizontal, vertical);                          
+                              return true;                          
                        }
                     }
                     Debug.DrawLine(ray.origin, new Vector2(locator.position.x, locator.position.y) + ray.direction, Color.red); 
                 }
-                return null;
+                return false;
         }
         void Patrul(Transform player)
         {
@@ -111,23 +84,17 @@ namespace MyPlatformer
             
             if (player!=null)
             {
-               if (GetTarget()!=null)
+               if (GetTarget())
                {
                    m_Character.TryFlip(horizontal);
                    m_Character.Move(0, vertical, false, false, true);
                }
                else
                {
-                   if (m_Character.GroundCheck(rightGroundCheck)&&!m_Character.GroundCheck(m_Character.weapon.emitter))
+                   if (!m_Character.GroundCheck(rightGroundCheck)||m_Character.GroundCheck(m_Character.weapon.emitter))
                    {
-                       Debug.Log("Im Go!" + horizontal);
-                   }
-                   else
-                   {
-                       Debug.Log("Flip[]" + horizontal);
                        horizontal *= -1;
                    }
-
                    m_Character.Move(horizontal, vertical, false, false, false);
                }
             }

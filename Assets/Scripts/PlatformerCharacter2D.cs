@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
-using MyPlatformer;
-namespace UnityStandardAssets._2D
+namespace MyPlatformer
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {

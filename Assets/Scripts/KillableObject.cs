@@ -29,6 +29,7 @@ namespace MyPlatformer
                 hostTag = value;
             }
         }
+        public bool destructAfterKill = false;
         [SerializeField]
         string hostTag=string.Empty;
         public void OnTriggerEnter2D(Collider2D other)
@@ -37,6 +38,10 @@ namespace MyPlatformer
             if (otherDeath != null && other.tag!=HostTag)
            {
                otherDeath.ReactionOnFire(this,false);
+                if (destructAfterKill)
+                {
+                    GetComponent<DestroybleObject>().ReactionOnFire(this, false);
+                }
            }
         }
         void OnParticleCollision(GameObject other)

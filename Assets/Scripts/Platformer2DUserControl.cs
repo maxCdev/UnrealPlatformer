@@ -24,7 +24,7 @@ namespace UnityStandardAssets._2D
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump")||Input.GetKeyDown(KeyCode.Space);
             }
-            m_Fire = CrossPlatformInputManager.GetButtonDown("Fire1") || Input.GetKey(KeyCode.LeftControl);
+            m_Fire = CrossPlatformInputManager.GetButton("Fire1") || Input.GetKey(KeyCode.LeftControl);
         }   
         private void FixedUpdate()
         {

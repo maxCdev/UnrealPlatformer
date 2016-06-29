@@ -11,6 +11,7 @@ namespace MyPlatformer
         public Image hpImage;
         public Scrollbar jetPackSlider;
         public GameObject player;
+        public Text fps;
         void Start()
         {
             DestroybleObject playerFireObj = player.GetComponent<DestroybleObject>();
@@ -24,6 +25,16 @@ namespace MyPlatformer
                     jetPackSlider.size = jetPack.gas / 10;
             };
             Application.targetFrameRate = 60;
+            
+        }
+        IEnumerator FpsShow()
+        {
+            yield return new WaitForSeconds(2);
+            fps.text = ((int)(1f / Time.unscaledDeltaTime)).ToString();
+        }
+        void Update()
+        {
+            StartCoroutine(FpsShow());
         }
         public void Restart()
         {

@@ -21,6 +21,8 @@ namespace MyPlatformer
         float vertical = 0;
         public bool canRotateWeapon = false;
         public Transform rightGroundCheck;
+        public float updadeTargetDelay = 1f;
+        bool targetVisible = false;
         private void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
@@ -31,12 +33,8 @@ namespace MyPlatformer
         void Start()
         {
            currentBehavior = Patrul;
+           StartCoroutine(CheckTarget());
            
-        }
-        //Ai seeing a player
-        void SeeTargetBehavior(Transform player)
-        {
-
         }
         // Update is called once per frame
         void Update()
@@ -74,9 +72,23 @@ namespace MyPlatformer
                               return true;                          
                        }
                     }
-                    Debug.DrawLine(ray.origin, new Vector2(locator.position.x, locator.position.y) + ray.direction, Color.red); 
                 }
                 return false;
+        }
+        IEnumerator CheckTarget()
+        {
+             yield return new WaitForSeconds(updadeTargetDelay);
+             targetVisible = GetTarget();
+             StartCoroutine(CheckTarget());
+        }
+        void AttackTarget()
+        {
+            m_Character.TryFlip(horizontal);
+            m_Character.Move(0, vertical, false, false, true);
+        }
+        void Move()
+        {            
+            m_Character.Move(horizontal, vertical, false, false, false);
         }
         void Patrul(Transform player)
         {
@@ -84,18 +96,17 @@ namespace MyPlatformer
             
             if (player!=null)
             {
-               if (GetTarget())
+               if (targetVisible)
                {
-                   m_Character.TryFlip(horizontal);
-                   m_Character.Move(0, vertical, false, false, true);
+                   AttackTarget();
                }
                else
                {
-                   if (!m_Character.GroundCheck(rightGroundCheck)||m_Character.GroundCheck(m_Character.weapon.emitter))
+                   if (!m_Character.GroundCheck(rightGroundCheck) || m_Character.GroundCheck(m_Character.weapon.emitter))
                    {
                        horizontal *= -1;
                    }
-                   m_Character.Move(horizontal, vertical, false, false, false);
+                   Move();
                }
             }
             

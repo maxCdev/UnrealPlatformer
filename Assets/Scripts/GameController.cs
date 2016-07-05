@@ -14,8 +14,11 @@ namespace MyPlatformer
         public Text fps;
         public Text crystals;
         public GameObject GameOverPanel;
+        public Text crystalsResult;
+        bool pause = false;
         void Start()
         {
+            pause = false;
             DestroybleObject playerFireObj = player.GetComponent<DestroybleObject>();
             hpImage.fillAmount = playerFireObj.Hp / 10;
             playerFireObj.OnChangeHp += () => { hpImage.fillAmount = playerFireObj.Hp / 10; };
@@ -29,6 +32,8 @@ namespace MyPlatformer
             playerFireObj.OnChangeHp += () => 
             {
                 GameOverPanel.SetActive(playerFireObj.Hp <= 0);
+                GameOverPanel.GetComponent<Animator>().SetTrigger("Move");
+                crystalsResult.text = crystals.text;
             };
             Application.targetFrameRate = 60;
             
@@ -45,6 +50,10 @@ namespace MyPlatformer
         void Update()
         {
             StartCoroutine(FpsShow());
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ToMenu();
+            }
         }
         public void Restart()
         {
@@ -53,6 +62,23 @@ namespace MyPlatformer
         public void ToMenu()
         {
             SceneManager.LoadScene("Menu");
+        }
+        public void Pause()
+        {
+            if (!pause)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+            pause = !pause;
+            
+        }
+        public void PauseOff()
+        {
+            
         }
     }
 }

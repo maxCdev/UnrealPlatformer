@@ -17,8 +17,8 @@ namespace MyPlatformer
             {
                
                 GameObject shoot = Resources.Load<GameObject>(name);
-              
                 shoot = Instantiate<GameObject>(shoot);
+                //Debug.LogError(shoot);
                 ReturnBulletToPool(shoot);
             }
         }
@@ -60,6 +60,7 @@ namespace MyPlatformer
         script.enabled = false;
         Debug.Log(bullet.name);
         GetObjectsList(bullet.name).Enqueue(bullet);
+     
     }
         static GameObject GetBullet(string name)
         {

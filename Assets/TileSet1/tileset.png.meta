@@ -95,13 +95,15 @@ TextureImporter:
   textureType: 8
   buildTargetSettings:
   - buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 512
     textureFormat: -1
-    compressionQuality: 50
+    compressionQuality: 0
     allowsAlphaSplitting: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: tileset_0
+    - serializedVersion: 2
+      name: tileset_0
       rect:
         serializedVersion: 2
         x: 345
@@ -111,33 +113,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -41.5, y: -50.5}
-        - {x: -41.5, y: -52.5}
-        - {x: -35.5, y: -52.5}
-        - {x: -35.5, y: -50.5}
-        - {x: -37.5, y: -48.5}
-        - {x: -39.5, y: -48.5}
-      - - {x: 7.5, y: -52.5}
-        - {x: 20.5, y: -52.5}
-        - {x: 20.5, y: -50.5}
-        - {x: 19.5, y: -48.5}
-        - {x: 7.5, y: -48.5}
-      - - {x: -23.5, y: 52.5}
-        - {x: -51.5, y: 16.5}
-        - {x: -51.5, y: 0.5}
-        - {x: -23.5, y: -42.5}
-        - {x: 53.5, y: -52.5}
-        - {x: 69.5, y: -52.5}
-        - {x: 70.5, y: -49.5}
-        - {x: 70.5, y: 52.5}
-      - - {x: -70.5, y: 44.5}
-        - {x: -70.5, y: 37.5}
-        - {x: -68.5, y: 37.5}
-        - {x: -66.5, y: 39.5}
-        - {x: -66.5, y: 42.5}
-        - {x: -68.5, y: 44.5}
-    - name: tileset_1
+      outline: []
+    - serializedVersion: 2
+      name: tileset_1
       rect:
         serializedVersion: 2
         x: 507
@@ -147,12 +125,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 48.5}
-        - {x: -64, y: -48.5}
-        - {x: 64, y: -48.5}
-        - {x: 64, y: 48.5}
-    - name: tileset_2
+      outline: []
+    - serializedVersion: 2
+      name: tileset_2
       rect:
         serializedVersion: 2
         x: 653
@@ -162,28 +137,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 34, y: 52.5}
-        - {x: -60, y: 52.5}
-        - {x: -60, y: -52.5}
-        - {x: 9, y: -52.5}
-        - {x: 28, y: -49.5}
-        - {x: 60, y: -8.5}
-        - {x: 60, y: 10.5}
-        - {x: 39, y: 48.5}
-      - - {x: -8, y: -48.5}
-        - {x: -10, y: -49.5}
-        - {x: -10, y: -52.5}
-        - {x: 3, y: -52.5}
-        - {x: 3, y: -50.5}
-        - {x: 2, y: -48.5}
-      - - {x: 46, y: -50.5}
-        - {x: 46, y: -52.5}
-        - {x: 52, y: -52.5}
-        - {x: 52, y: -50.5}
-        - {x: 50, y: -48.5}
-        - {x: 48, y: -48.5}
-    - name: tileset_3
+      outline: []
+    - serializedVersion: 2
+      name: tileset_3
       rect:
         serializedVersion: 2
         x: 794
@@ -193,18 +149,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -55.5, y: 64}
-        - {x: -55.5, y: -64}
-        - {x: 68.5, y: -64}
-        - {x: 68.5, y: 64}
-      - - {x: -68.5, y: 39}
-        - {x: -68.5, y: 32}
-        - {x: -66.5, y: 32}
-        - {x: -64.5, y: 34}
-        - {x: -64.5, y: 37}
-        - {x: -66.5, y: 39}
-    - name: tileset_4
+      outline: []
+    - serializedVersion: 2
+      name: tileset_4
       rect:
         serializedVersion: 2
         x: 947
@@ -214,12 +161,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_5
+      outline: []
+    - serializedVersion: 2
+      name: tileset_5
       rect:
         serializedVersion: 2
         x: 1091
@@ -229,12 +173,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -61, y: 64}
-        - {x: -61, y: -64}
-        - {x: 61, y: -64}
-        - {x: 61, y: 64}
-    - name: tileset_6
+      outline: []
+    - serializedVersion: 2
+      name: tileset_6
       rect:
         serializedVersion: 2
         x: 81
@@ -244,14 +185,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -60.5, y: 64}
-        - {x: -63.5, y: 31}
-        - {x: -63.5, y: -53}
-        - {x: -49.5, y: -64}
-        - {x: 63.5, y: -64}
-        - {x: 63.5, y: 64}
-    - name: tileset_7
+      outline: []
+    - serializedVersion: 2
+      name: tileset_7
       rect:
         serializedVersion: 2
         x: 218
@@ -261,14 +197,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -54.5, y: 64}
-        - {x: -60.5, y: 53}
-        - {x: -63.5, y: 49}
-        - {x: -63.5, y: -64}
-        - {x: 63.5, y: -64}
-        - {x: 63.5, y: 64}
-    - name: tileset_8
+      outline: []
+    - serializedVersion: 2
+      name: tileset_8
       rect:
         serializedVersion: 2
         x: 368
@@ -278,14 +209,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -54.5, y: 64}
-        - {x: -60.5, y: 53}
-        - {x: -63.5, y: 49}
-        - {x: -63.5, y: -64}
-        - {x: 63.5, y: -64}
-        - {x: 63.5, y: 64}
-    - name: tileset_9
+      outline: []
+    - serializedVersion: 2
+      name: tileset_9
       rect:
         serializedVersion: 2
         x: 508
@@ -295,14 +221,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -46, y: 64}
-        - {x: -64, y: 53}
-        - {x: -64, y: -29}
-        - {x: -60, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_10
+      outline: []
+    - serializedVersion: 2
+      name: tileset_10
       rect:
         serializedVersion: 2
         x: 661
@@ -312,12 +233,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_11
+      outline: []
+    - serializedVersion: 2
+      name: tileset_11
       rect:
         serializedVersion: 2
         x: 807
@@ -327,12 +245,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_12
+      outline: []
+    - serializedVersion: 2
+      name: tileset_12
       rect:
         serializedVersion: 2
         x: 955
@@ -342,12 +257,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_13
+      outline: []
+    - serializedVersion: 2
+      name: tileset_13
       rect:
         serializedVersion: 2
         x: 1107
@@ -357,14 +269,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63.5, y: 64}
-        - {x: -63.5, y: -64}
-        - {x: 60.5, y: -64}
-        - {x: 63.5, y: -31}
-        - {x: 63.5, y: 53}
-        - {x: 49.5, y: 64}
-    - name: tileset_14
+      outline: []
+    - serializedVersion: 2
+      name: tileset_14
       rect:
         serializedVersion: 2
         x: 1251
@@ -374,14 +281,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63.5, y: 64}
-        - {x: -63.5, y: -64}
-        - {x: 60.5, y: -64}
-        - {x: 63.5, y: -31}
-        - {x: 63.5, y: 53}
-        - {x: 49.5, y: 64}
-    - name: tileset_15
+      outline: []
+    - serializedVersion: 2
+      name: tileset_15
       rect:
         serializedVersion: 2
         x: 1384
@@ -391,16 +293,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63, y: 64}
-        - {x: -66, y: 56}
-        - {x: -66, y: 28}
-        - {x: -63, y: -64}
-        - {x: 63, y: -64}
-        - {x: 66, y: -33}
-        - {x: 66, y: 54}
-        - {x: 52, y: 64}
-    - name: tileset_16
+      outline: []
+    - serializedVersion: 2
+      name: tileset_16
       rect:
         serializedVersion: 2
         x: 81
@@ -410,15 +305,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 19, y: 65.5}
-        - {x: 18, y: 64.5}
-        - {x: -64, y: 64.5}
-        - {x: -64, y: -65.5}
-        - {x: 64, y: -65.5}
-        - {x: 64, y: 64.5}
-        - {x: 39, y: 65.5}
-    - name: tileset_17
+      outline: []
+    - serializedVersion: 2
+      name: tileset_17
       rect:
         serializedVersion: 2
         x: 224
@@ -428,15 +317,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 57, y: 65.5}
-        - {x: 56, y: 64.5}
-        - {x: -64, y: 64.5}
-        - {x: -64, y: -65.5}
-        - {x: 64, y: -65.5}
-        - {x: 64, y: 64.5}
-        - {x: 63, y: 65.5}
-    - name: tileset_18
+      outline: []
+    - serializedVersion: 2
+      name: tileset_18
       rect:
         serializedVersion: 2
         x: 367
@@ -446,12 +329,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_19
+      outline: []
+    - serializedVersion: 2
+      name: tileset_19
       rect:
         serializedVersion: 2
         x: 515
@@ -461,12 +341,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_20
+      outline: []
+    - serializedVersion: 2
+      name: tileset_20
       rect:
         serializedVersion: 2
         x: 656
@@ -476,15 +353,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63.5, y: 64}
-        - {x: -66.5, y: 56}
-        - {x: -66.5, y: 40}
-        - {x: -63.5, y: 40}
-        - {x: -63.5, y: -64}
-        - {x: 66.5, y: -64}
-        - {x: 66.5, y: 64}
-    - name: tileset_21
+      outline: []
+    - serializedVersion: 2
+      name: tileset_21
       rect:
         serializedVersion: 2
         x: 807
@@ -494,12 +365,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_22
+      outline: []
+    - serializedVersion: 2
+      name: tileset_22
       rect:
         serializedVersion: 2
         x: 950
@@ -509,15 +377,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 65.5}
-        - {x: -67, y: 52.5}
-        - {x: -67, y: 3.5}
-        - {x: -64, y: -62.5}
-        - {x: -63, y: -65.5}
-        - {x: 67, y: -65.5}
-        - {x: 67, y: 65.5}
-    - name: tileset_23
+      outline: []
+    - serializedVersion: 2
+      name: tileset_23
       rect:
         serializedVersion: 2
         x: 1107
@@ -527,12 +389,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -61, y: 64}
-        - {x: -61, y: -64}
-        - {x: 61, y: -64}
-        - {x: 61, y: 64}
-    - name: tileset_24
+      outline: []
+    - serializedVersion: 2
+      name: tileset_24
       rect:
         serializedVersion: 2
         x: 1246
@@ -542,12 +401,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_25
+      outline: []
+    - serializedVersion: 2
+      name: tileset_25
       rect:
         serializedVersion: 2
         x: 1389
@@ -557,12 +413,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -61, y: 64}
-        - {x: -61, y: -64}
-        - {x: 61, y: -64}
-        - {x: 61, y: 64}
-    - name: tileset_26
+      outline: []
+    - serializedVersion: 2
+      name: tileset_26
       rect:
         serializedVersion: 2
         x: 81
@@ -572,12 +425,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_27
+      outline: []
+    - serializedVersion: 2
+      name: tileset_27
       rect:
         serializedVersion: 2
         x: 224
@@ -587,12 +437,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_28
+      outline: []
+    - serializedVersion: 2
+      name: tileset_28
       rect:
         serializedVersion: 2
         x: 368
@@ -602,12 +449,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_29
+      outline: []
+    - serializedVersion: 2
+      name: tileset_29
       rect:
         serializedVersion: 2
         x: 515
@@ -617,12 +461,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_30
+      outline: []
+    - serializedVersion: 2
+      name: tileset_30
       rect:
         serializedVersion: 2
         x: 656
@@ -632,15 +473,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63.5, y: 64}
-        - {x: -65.5, y: -42}
-        - {x: -66.5, y: -43}
-        - {x: -66.5, y: -51}
-        - {x: -63.5, y: -64}
-        - {x: 66.5, y: -64}
-        - {x: 66.5, y: 64}
-    - name: tileset_31
+      outline: []
+    - serializedVersion: 2
+      name: tileset_31
       rect:
         serializedVersion: 2
         x: 807
@@ -650,12 +485,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_32
+      outline: []
+    - serializedVersion: 2
+      name: tileset_32
       rect:
         serializedVersion: 2
         x: 950
@@ -665,15 +497,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63, y: 65.5}
-        - {x: -64, y: 62.5}
-        - {x: -67, y: -20.5}
-        - {x: -67, y: -52.5}
-        - {x: -64, y: -65.5}
-        - {x: 67, y: -65.5}
-        - {x: 67, y: 65.5}
-    - name: tileset_33
+      outline: []
+    - serializedVersion: 2
+      name: tileset_33
       rect:
         serializedVersion: 2
         x: 1107
@@ -683,12 +509,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -61, y: 64}
-        - {x: -61, y: -64}
-        - {x: 61, y: -64}
-        - {x: 61, y: 64}
-    - name: tileset_34
+      outline: []
+    - serializedVersion: 2
+      name: tileset_34
       rect:
         serializedVersion: 2
         x: 1245
@@ -698,12 +521,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_35
+      outline: []
+    - serializedVersion: 2
+      name: tileset_35
       rect:
         serializedVersion: 2
         x: 1389
@@ -713,12 +533,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -61, y: 64}
-        - {x: -61, y: -64}
-        - {x: 61, y: -64}
-        - {x: 61, y: 64}
-    - name: tileset_36
+      outline: []
+    - serializedVersion: 2
+      name: tileset_36
       rect:
         serializedVersion: 2
         x: 81
@@ -728,12 +545,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_37
+      outline: []
+    - serializedVersion: 2
+      name: tileset_37
       rect:
         serializedVersion: 2
         x: 224
@@ -743,12 +557,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_38
+      outline: []
+    - serializedVersion: 2
+      name: tileset_38
       rect:
         serializedVersion: 2
         x: 369
@@ -758,25 +569,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: -63}
-        - {x: -64, y: -67}
-        - {x: -53, y: -67}
-        - {x: -53, y: -65}
-        - {x: -54, y: -63}
-      - - {x: -10, y: -65}
-        - {x: -10, y: -67}
-        - {x: -4, y: -67}
-        - {x: -4, y: -65}
-        - {x: -6, y: -63}
-        - {x: -8, y: -63}
-      - - {x: -62, y: 67}
-        - {x: -64, y: 50}
-        - {x: -64, y: -47}
-        - {x: -56, y: -63}
-        - {x: 64, y: -63}
-        - {x: 64, y: 67}
-    - name: tileset_39
+      outline: []
+    - serializedVersion: 2
+      name: tileset_39
       rect:
         serializedVersion: 2
         x: 510
@@ -786,14 +581,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -60, y: 64}
-        - {x: -64, y: 32}
-        - {x: -64, y: -53}
-        - {x: -59, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_40
+      outline: []
+    - serializedVersion: 2
+      name: tileset_40
       rect:
         serializedVersion: 2
         x: 663
@@ -803,12 +593,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_41
+      outline: []
+    - serializedVersion: 2
+      name: tileset_41
       rect:
         serializedVersion: 2
         x: 809
@@ -818,12 +605,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_42
+      outline: []
+    - serializedVersion: 2
+      name: tileset_42
       rect:
         serializedVersion: 2
         x: 957
@@ -833,12 +617,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 64}
-        - {x: -64, y: -64}
-        - {x: 64, y: -64}
-        - {x: 64, y: 64}
-    - name: tileset_43
+      outline: []
+    - serializedVersion: 2
+      name: tileset_43
       rect:
         serializedVersion: 2
         x: 1109
@@ -848,14 +629,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 63.5, y: 64}
-        - {x: -63.5, y: 64}
-        - {x: -63.5, y: -64}
-        - {x: 54.5, y: -64}
-        - {x: 60.5, y: -53}
-        - {x: 63.5, y: -49}
-    - name: tileset_44
+      outline: []
+    - serializedVersion: 2
+      name: tileset_44
       rect:
         serializedVersion: 2
         x: 1253
@@ -865,14 +641,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 63.5, y: 64}
-        - {x: -63.5, y: 64}
-        - {x: -63.5, y: -64}
-        - {x: 54.5, y: -64}
-        - {x: 60.5, y: -53}
-        - {x: 63.5, y: -49}
-    - name: tileset_45
+      outline: []
+    - serializedVersion: 2
+      name: tileset_45
       rect:
         serializedVersion: 2
         x: 1386
@@ -882,14 +653,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -63, y: 64}
-        - {x: -66, y: -25}
-        - {x: -66, y: -51}
-        - {x: -63, y: -64}
-        - {x: 53, y: -64}
-        - {x: 66, y: -56}
-        - {x: 66, y: 64}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

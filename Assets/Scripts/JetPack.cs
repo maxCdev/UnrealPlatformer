@@ -29,17 +29,18 @@ namespace MyPlatformer
         IEnumerator burningCoroutine;
         public Rigidbody2D playerRBody;
         public event UnityAction OnUseJetPack;
+        float standartGravityScale;
         void Awake()
         {
             fire = transform.GetChild(0).GetComponent<ParticleSystem>();
             burningCoroutine = Burning();
+            standartGravityScale = playerRBody.gravityScale;
         }
 
         public void On()
-        {
+        {          
             if (gas>0)
             {
-                playerRBody.gravityScale = 0.2f;
                 StartCoroutine(burningCoroutine);
                 isBurn = true;
                 fire.Play(true);
@@ -48,7 +49,7 @@ namespace MyPlatformer
         }
         public void Off()
         {
-            playerRBody.gravityScale = 3f;
+            playerRBody.gravityScale = standartGravityScale;
             StopCoroutine(burningCoroutine);
             isBurn = false;
             fire.Stop(true);
@@ -56,7 +57,21 @@ namespace MyPlatformer
         IEnumerator Burning()
         {
             for (;; --Gas)
-            {               
+            {
+                if (playerRBody.velocity.y > 0)
+                {
+                    playerRBody.gravityScale = 0.2f;
+                }
+                else if (playerRBody.velocity.y <-7f&&Mathf.Abs(playerRBody.velocity.x)>1f) 
+                {
+                    playerRBody.gravityScale = Mathf.Clamp(-0.15f * Mathf.Abs(playerRBody.velocity.y *playerRBody.velocity.x),-0.15f,5f);
+
+                }
+                else
+                {
+                    playerRBody.gravityScale = -0.2f;
+
+                }
                 yield return new WaitForSeconds(1);
             }
             

@@ -6,18 +6,13 @@ namespace MyPlatformer
     public class FireGun : Weapon
     {
         ParticleSystem fire;
-        public override void Fire()
+        protected override void FireMethod()
         {
-            if (Time.time > lastFireTime + refireTime)
-            {
-                var course = (sight.position - emitter.position).normalized;
-                fire.transform.localRotation = Quaternion.Euler(Vector3.forward * course.x * -90);
-                fire.Play();
-                lastFireTime = Time.time;
-            }
-            
-
-        }
+            var course = (sight.position - emitter.position).normalized;
+            fire.transform.localRotation = Quaternion.Euler(Vector3.forward * course.x * -90);
+            fire.Play();
+           
+        }   
         // Use this for initialization
         void Start()
         {

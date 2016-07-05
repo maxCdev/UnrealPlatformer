@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Linq;
 namespace MyPlatformer
 {
     public class PlatformerCharacter2D : MonoBehaviour
@@ -22,6 +23,8 @@ namespace MyPlatformer
         private bool previusJump = false; //ITS MY VELOSIPED))
         public Weapon weapon;
         public JetPack jetPack=null;
+        public WeaponSwitcher weaponSwitcher = null;
+        public AudioSource audioSource;
         private void Awake()
         {
             // Setting up references.
@@ -30,7 +33,11 @@ namespace MyPlatformer
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
+        public void PickupBonusSound()
+        {
+            audioSource.Play();
 
+        }
         public bool GroundCheck(Transform groundChek)
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundChek.position, k_GroundedRadius, m_WhatIsGround);
@@ -99,10 +106,10 @@ namespace MyPlatformer
             {
                 jetPack.Off();
             }
-            if (fire)
+            if (fire && weapon.Fire())
             {
                 m_Anim.SetTrigger("Fire");
-                weapon.Fire();
+               
             }
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
@@ -119,7 +126,7 @@ namespace MyPlatformer
 
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
-                if (jetPack==null)
+                if (jetPack!=null&&jetPack.Gas==0)
                 {
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_SecondJumpForce));
                   

@@ -2,19 +2,26 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using MyPlatformer;
-namespace UnityStandardAssets._2D
+namespace MyPlatformer
 {
-    [RequireComponent(typeof (PlatformerCharacter2D))]
-    public class Platformer2DUserControl : MonoBehaviour
+    [RequireComponent(typeof(PlatformerCharacter2D))]
+    public class Character2DController : MonoBehaviour
     {
-        private PlatformerCharacter2D m_Character;
-        private bool m_Jump;
-        private bool m_Fire;
-        private void Awake()
+        protected PlatformerCharacter2D m_Character;
+        protected void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
-            
+
         }
+    }
+    public class Platformer2DUserControl : Character2DController
+    {
+        private bool m_Jump;
+        private bool m_Fire;
+        //private void Awake()
+        //{
+        //    base.Awake();
+        //}
 
 
         private void Update()
@@ -48,3 +55,4 @@ namespace UnityStandardAssets._2D
         }
     }
 }
+

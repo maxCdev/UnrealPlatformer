@@ -60,11 +60,13 @@ TextureImporter:
   - buildTarget: Android
     maxTextureSize: 1024
     textureFormat: -1
-    compressionQuality: 50
+    compressionQuality: 0
     allowsAlphaSplitting: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: BarrelRed
+    - serializedVersion: 2
+      name: BarrelRed
       rect:
         serializedVersion: 2
         x: 89
@@ -74,12 +76,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -57.270462, y: 77.38998}
-        - {x: -57.270462, y: -76.61002}
-        - {x: 58.729538, y: -76.61002}
-        - {x: 58.729538, y: 77.38998}
-    - name: BarrelGreen
+      outline: []
+    - serializedVersion: 2
+      name: BarrelGreen
       rect:
         serializedVersion: 2
         x: 446
@@ -89,12 +88,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -57.214905, y: 77.38998}
-        - {x: -57.214905, y: -76.61002}
-        - {x: 57.785095, y: -76.61002}
-        - {x: 57.785095, y: 77.38998}
-    - name: Box
+      outline: []
+    - serializedVersion: 2
+      name: Box
       rect:
         serializedVersion: 2
         x: 763
@@ -104,18 +100,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 61.84424, y: 83.65328}
-        - {x: -61.15576, y: 83.65328}
-        - {x: -65.15576, y: 81.65328}
-        - {x: -82.15576, y: 62.653282}
-        - {x: -82.15576, y: -63.346718}
-        - {x: -61.15576, y: -82.34672}
-        - {x: 60.84424, y: -82.34672}
-        - {x: 66.84424, y: -78.34672}
-        - {x: 82.84424, y: -61.346718}
-        - {x: 82.84424, y: 65.65328}
-    - name: DoorClose
+      outline: []
+    - serializedVersion: 2
+      name: DoorClose
       rect:
         serializedVersion: 2
         x: 1108
@@ -125,17 +112,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -76.249146, y: 148}
-        - {x: -79.249146, y: 146}
-        - {x: -90.249146, y: 135}
-        - {x: -90.249146, y: -137}
-        - {x: -79.249146, y: -148}
-        - {x: 79.750854, y: -148}
-        - {x: 90.750854, y: -137}
-        - {x: 90.750854, y: 134}
-        - {x: 76.750854, y: 148}
-    - name: DoorOpen
+      outline: []
+    - serializedVersion: 2
+      name: DoorOpen
       rect:
         serializedVersion: 2
         x: 1465
@@ -145,21 +124,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 87.3064, y: 138}
-        - {x: 81.3064, y: 145}
-        - {x: 80.3064, y: 145}
-        - {x: 77.3064, y: 148}
-        - {x: -75.6936, y: 148}
-        - {x: -78.6936, y: 146}
-        - {x: -89.6936, y: 135}
-        - {x: -89.6936, y: -137}
-        - {x: -78.6936, y: -148}
-        - {x: 80.3064, y: -148}
-        - {x: 91.3064, y: -137}
-        - {x: 91.3064, y: 135}
-        - {x: 88.3064, y: 138}
-    - name: DoorCloseYellow
+      outline: []
+    - serializedVersion: 2
+      name: DoorCloseYellow
       rect:
         serializedVersion: 2
         x: 1822
@@ -169,24 +136,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 88.86194, y: 138}
-        - {x: 79.86194, y: 146}
-        - {x: 78.86194, y: 146}
-        - {x: 76.86194, y: 148}
-        - {x: -76.13806, y: 148}
-        - {x: -79.13806, y: 145}
-        - {x: -80.13806, y: 145}
-        - {x: -86.13806, y: 139}
-        - {x: -88.13806, y: 138}
-        - {x: -90.13806, y: 135}
-        - {x: -90.13806, y: -137}
-        - {x: -79.13806, y: -148}
-        - {x: 79.86194, y: -148}
-        - {x: 90.86194, y: -137}
-        - {x: 90.86194, y: 135}
-        - {x: 89.86194, y: 136}
-    - name: Saw
+      outline: []
+    - serializedVersion: 2
+      name: Saw
       rect:
         serializedVersion: 2
         x: 2141
@@ -196,22 +148,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 59.695923, y: -75.992065}
-        - {x: 67.69592, y: -88.992065}
-        - {x: 74.69592, y: -93.992065}
-        - {x: 115.69592, y: -57.992065}
-        - {x: 115.69592, y: 63.007935}
-        - {x: 61.695923, y: 117.007935}
-        - {x: -56.304077, y: 117.007935}
-        - {x: -114.30408, y: 60.007935}
-        - {x: -114.30408, y: -75.992065}
-        - {x: -76.30408, y: -115.992065}
-        - {x: 52.695923, y: -115.992065}
-        - {x: 58.695923, y: -86.992065}
-        - {x: 59.695923, y: -74.992065}
-        - {x: 59.695923, y: -73.992065}
-    - name: On
+      outline: []
+    - serializedVersion: 2
+      name: On
       rect:
         serializedVersion: 2
         x: 2640
@@ -221,16 +160,9 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 25.263794, y: 84.15328}
-        - {x: -23.736206, y: 84.15328}
-        - {x: -23.736206, y: -12.846718}
-        - {x: -12.736206, y: -82.84672}
-        - {x: 8.263794, y: -82.84672}
-        - {x: 10.263794, y: -80.84672}
-        - {x: 20.263794, y: -44.846718}
-        - {x: 25.263794, y: 8.153282}
-    - name: Off
+      outline: []
+    - serializedVersion: 2
+      name: Off
       rect:
         serializedVersion: 2
         x: 2997
@@ -240,14 +172,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23.680664, y: 84.15328}
-        - {x: -23.680664, y: -23.846718}
-        - {x: -15.680664, y: -82.84672}
-        - {x: 11.319336, y: -82.84672}
-        - {x: 20.319336, y: -16.846718}
-        - {x: 24.319336, y: 19.153282}
-        - {x: 24.319336, y: 84.15328}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

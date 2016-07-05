@@ -10,7 +10,10 @@ namespace UnityStandardAssets._2D
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
-        public float maxDownCameraY = -10f;
+        public Transform maxDownPosition;
+        public Transform maxTopPosition;
+        public Transform maxLeftPosition;
+        public Transform maxRightPosition;
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
         private Vector3 m_CurrentVelocity;
@@ -47,10 +50,10 @@ namespace UnityStandardAssets._2D
             }
 
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
-            if (aheadTargetPos.y<maxDownCameraY)
-            {
-                aheadTargetPos = new Vector3(aheadTargetPos.x, transform.position.y, aheadTargetPos.z);
-            }
+
+                aheadTargetPos = new Vector3(Mathf.Clamp(aheadTargetPos.x, maxLeftPosition.position.x, maxRightPosition.position.x), 
+                                            Mathf.Clamp(aheadTargetPos.y, maxDownPosition.position.y, maxTopPosition.position.y)
+                                             , aheadTargetPos.z);            
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
             transform.position = newPos;

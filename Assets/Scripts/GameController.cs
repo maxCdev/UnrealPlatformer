@@ -12,6 +12,8 @@ namespace MyPlatformer
         public Scrollbar jetPackSlider;
         public GameObject player;
         public Text fps;
+        public Text crystals;
+        public GameObject GameOverPanel;
         void Start()
         {
             DestroybleObject playerFireObj = player.GetComponent<DestroybleObject>();
@@ -24,6 +26,10 @@ namespace MyPlatformer
                     jetPackSlider.handleRect.gameObject.SetActive(jetPack.gas!=0);
                     jetPackSlider.size = jetPack.gas / 10;
             };
+            playerFireObj.OnChangeHp += () => 
+            {
+                GameOverPanel.SetActive(playerFireObj.Hp <= 0);
+            };
             Application.targetFrameRate = 60;
             
         }
@@ -32,6 +38,10 @@ namespace MyPlatformer
             yield return new WaitForSeconds(2);
             fps.text = ((int)(1f / Time.unscaledDeltaTime)).ToString();
         }
+        void AddCrystal(int addCount)
+        {
+           crystals.text = (int.Parse(crystals.text) + addCount).ToString();
+        }
         void Update()
         {
             StartCoroutine(FpsShow());
@@ -39,6 +49,10 @@ namespace MyPlatformer
         public void Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        public void ToMenu()
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 }

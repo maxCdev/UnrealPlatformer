@@ -49,11 +49,12 @@ TextureImporter:
   textureType: 8
   buildTargetSettings:
   - buildTarget: Android
-    maxTextureSize: 128
+    maxTextureSize: 64
     textureFormat: -1
-    compressionQuality: 50
+    compressionQuality: 0
     allowsAlphaSplitting: 0
   spriteSheet:
+    serializedVersion: 2
     sprites: []
     outline: []
   spritePackingTag: 

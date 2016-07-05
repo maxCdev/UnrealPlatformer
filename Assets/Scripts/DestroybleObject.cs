@@ -12,12 +12,14 @@ namespace MyPlatformer
     }
     public class DestroybleObject : FiriebleObject,IDestroyble
     {
+        AudioSource audioSource;
         Animator animator;
         float blastWaveRadius = 3;
         float blastForce = 50;
         public event UnityAction OnChangeHp;
         void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             animator = GetComponent<Animator>();
         }
         protected void VisualDamage(Vector3 position)
@@ -26,7 +28,7 @@ namespace MyPlatformer
             {
                 GameObject blood = Resources.Load<GameObject>("Blood");
                 blood.transform.position = position + Vector3.back;           
-                Instantiate<GameObject>(blood);
+                Instantiate<GameObject>(blood);              
             }
             else
             {
@@ -34,6 +36,11 @@ namespace MyPlatformer
                 sparkDamage.transform.position = position + Vector3.back;
                 Instantiate<GameObject>(sparkDamage);
             }
+            if (audioSource!=null)
+            {
+                audioSource.Play();
+            }
+         
         }
         public override void ReactionOnFire(KillableObject objectKiller,bool isParticle)
         {
@@ -43,7 +50,7 @@ namespace MyPlatformer
             }
             else
             {
-                VisualDamage(objectKiller.transform.position);
+                VisualDamage(transform.position);
             }
             if (SetDamage(objectKiller.damage))
             {
@@ -107,6 +114,7 @@ namespace MyPlatformer
         }
         public void Death(string deathName)
         {
+            OnChangeHp = null;
             if (!IsOrganic)
             {
                 GameObject exp = transform.GetChild(0).gameObject;
@@ -121,13 +129,27 @@ namespace MyPlatformer
             {
                 if (animator != null)
                 {
-                
+                    foreach (var collider in GetComponents<Collider2D>())
+                    {
+                        collider.isTrigger = true;
+
+                    }
+                    PlatformerCharacter2D controller = GetComponent<PlatformerCharacter2D>();
+                    GetComponent<Character2DController>().enabled = false; ;
+
+                    if (controller.jetPack != null)
+                    {
+                        controller.jetPack.Off();
+                    }
+                    controller.enabled = false;
+
+                    animator.StopPlayback();
+                    animator.SetBool("Ground", true);
                     animator.Play(deathName,0);
                     AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
-                    //fix them
+                    return;
                 }
                 
-                Destroy(gameObject,animator.GetCurrentAnimatorStateInfo(0).length);
                 
             }
             Destroy(gameObject);

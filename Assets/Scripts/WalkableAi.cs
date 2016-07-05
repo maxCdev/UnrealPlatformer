@@ -4,14 +4,11 @@ using System.Collections;
 using UnityEngine.Events;
 using System.Linq;
 namespace MyPlatformer
-{  
-
-    [RequireComponent(typeof(PlatformerCharacter2D))]
-    public class WalkableAi : MonoBehaviour
+{
+    public class WalkableAi : Character2DController
     {
 
         private UnityAction<Transform> currentBehavior;
-        private PlatformerCharacter2D m_Character;
         Transform player;
         public Transform locator;
         Renderer renderer;
@@ -25,7 +22,7 @@ namespace MyPlatformer
         bool targetVisible = false;
         private void Awake()
         {
-            m_Character = GetComponent<PlatformerCharacter2D>();
+            base.Awake();
             player = GameObject.FindGameObjectWithTag("Player").transform;
             renderer = GetComponentInChildren<Renderer>();
         }
@@ -90,6 +87,10 @@ namespace MyPlatformer
         {            
             m_Character.Move(horizontal, vertical, false, false, false);
         }
+        bool CantMoveForward()
+        {
+            return !m_Character.GroundCheck(rightGroundCheck) || m_Character.GroundCheck(m_Character.weapon.emitter);
+        }
         void Patrul(Transform player)
         {
             
@@ -102,7 +103,7 @@ namespace MyPlatformer
                }
                else
                {
-                   if (!m_Character.GroundCheck(rightGroundCheck) || m_Character.GroundCheck(m_Character.weapon.emitter))
+                   if (CantMoveForward())
                    {
                        horizontal *= -1;
                    }

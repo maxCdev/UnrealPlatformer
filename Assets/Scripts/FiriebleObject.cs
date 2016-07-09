@@ -37,7 +37,7 @@ public class FiriebleObject : MonoBehaviour,IFirieble {
     }
     public virtual void ReactionOnFire(Vector2 course, float speed, Vector2 position)
     {
-        rBody.AddForceAtPosition(course * reactionForce, position);
+        rBody.AddForceAtPosition(course * reactionForce * (speed/10), position);
     }
     public virtual void ReactionOnFire(KillableObject objectKiller, bool isParticle)
     {

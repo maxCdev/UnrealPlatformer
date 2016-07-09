@@ -13,28 +13,17 @@ namespace MyPlatformer
                 enemies = GameObject.FindGameObjectsWithTag("Enemie");
             if (enemies != null)
             {
-                Debug.Log(enemies.Length);
-                foreach (var enemie in enemies)
-                {
-                    WalkableAi ai = enemie.GetComponent<WalkableAi>();
-                    if (ai!=null)
-                    {
-                        ai.active = false;
-                    }
-                    
-                    
-                }
-                //gameObject.SetActive(false);
+                OnOffAi(false);
+                GetComponent<Collider2D>().enabled = false;
+                GetComponent<Renderer>().enabled = false;
                 StartCoroutine("OnAllAfterTime");
                 return false;
             }
             return true;
           
         }
-        IEnumerator OnAllAfterTime()
+        void OnOffAi(bool active)
         {
-            yield return new WaitForSeconds(5);        
-            enemies = GameObject.FindGameObjectsWithTag("Enemie");
             if (enemies != null)
             {
                 foreach (var enemie in enemies)
@@ -42,12 +31,27 @@ namespace MyPlatformer
                     WalkableAi ai = enemie.GetComponent<WalkableAi>();
                     if (ai != null)
                     {
-                        ai.active = true;
+                        ai.active = active;
+                    }
+                    else
+                    {
+                        FlyebleAi aiFly = enemie.GetComponent<FlyebleAi>();
+                        if (aiFly != null)
+                        {
+                            aiFly.active = active;
+                        }
                     }
 
                 }
             }
-            //Destroy(gameObject);
+        }
+        IEnumerator OnAllAfterTime()
+        {
+            yield return new WaitForSeconds(5);        
+            enemies = GameObject.FindGameObjectsWithTag("Enemie");
+            OnOffAi(true);
+            Destroy(gameObject);
+            
         }
     }
 }

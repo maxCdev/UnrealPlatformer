@@ -31,7 +31,7 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 		
 
 		CGPROGRAM
-		#pragma surface surf Lambert alpha vertex:vert addshadow alphatest:_Cutoff 
+		#pragma surface surf Lambert alpha vertex:vert addshadow alphatest:_Cutoff exclude_path:prepass 
 		#pragma multi_compile DUMMY PIXELSNAP_ON 
 
 		sampler2D _MainTex;
@@ -40,8 +40,7 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 
 		struct Input
 		{
-			float2 uv_MainTex;
-			float2 uv_BumpMap;
+			half2 uv_MainTex;
 			fixed4 color;
 		};
 		
@@ -50,8 +49,8 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 			#if defined(PIXELSNAP_ON) && !defined(SHADER_API_FLASH)
 			v.vertex = UnityPixelSnap (v.vertex);
 			#endif
-			v.normal = float3(0,0,-1);
-			v.tangent =  float4(1, 0, 0, 1);
+			v.normal = fixed3(0,0,-1);
+			v.tangent =  fixed4(1, 0, 0, 1);
 			
 			UNITY_INITIALIZE_OUTPUT(Input, o);
 			o.color = _Color;
@@ -62,7 +61,7 @@ Shader "Sprites/Bumped Diffuse with Shadows"
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * IN.color;
 			o.Albedo = c.rgb;
 			o.Alpha = c.a;
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_MainTex));
 		}
 		ENDCG
 	}

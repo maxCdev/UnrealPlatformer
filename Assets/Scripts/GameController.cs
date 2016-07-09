@@ -15,27 +15,46 @@ namespace MyPlatformer
         public Text crystals;
         public GameObject GameOverPanel;
         public Text crystalsResult;
+        public Transform Enemies;
+        public GameObject WinPanel;
         bool pause = false;
         void Start()
         {
             pause = false;
             DestroybleObject playerFireObj = player.GetComponent<DestroybleObject>();
-            hpImage.fillAmount = playerFireObj.Hp / 10;
-            playerFireObj.OnChangeHp += () => { hpImage.fillAmount = playerFireObj.Hp / 10; };
+            hpImage.fillAmount = playerFireObj.Hp / Constants.playerLifeMax;
+            playerFireObj.OnChangeHp += () => { hpImage.fillAmount = playerFireObj.Hp / Constants.playerLifeMax; };
             JetPack jetPack = player.GetComponent<PlatformerCharacter2D>().jetPack;
-            jetPackSlider.size = jetPack.gas / 10;
+            jetPackSlider.size = jetPack.gas / Constants.jetPackMax;
             jetPack.OnUseJetPack+=()=>
             {
                     jetPackSlider.handleRect.gameObject.SetActive(jetPack.gas!=0);
-                    jetPackSlider.size = jetPack.gas / 10;
+                    jetPackSlider.size = jetPack.gas / Constants.jetPackMax;
             };
             playerFireObj.OnChangeHp += () => 
             {
-                GameOverPanel.SetActive(playerFireObj.Hp <= 0);
-                GameOverPanel.GetComponent<Animator>().SetTrigger("Move");
+                if (playerFireObj.Hp<= 0)
+                {                   
+                    GameOverPanel.GetComponent<Animator>().SetTrigger("Move");
+                }
+               
                 crystalsResult.text = crystals.text;
             };
             Application.targetFrameRate = 60;
+            StartCoroutine(UpdateEnemiesCount());
+            
+        }
+        IEnumerator UpdateEnemiesCount()
+        {
+            yield return new WaitForSeconds(2);
+            if (Enemies.childCount==0)
+            {
+                WinPanel.GetComponent<Animator>().SetTrigger("Move");
+            }
+            else
+            {
+                StartCoroutine(UpdateEnemiesCount());
+            }
             
         }
         IEnumerator FpsShow()
@@ -58,6 +77,19 @@ namespace MyPlatformer
         public void Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+          public void NextLevel()
+        {
+              int levelIndex = SceneManager.GetActiveScene().buildIndex+1;
+              if (levelIndex<=Constants.levelCount)
+              {
+                  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+              }
+              else
+              {
+                  ToMenu();
+              }
+            
         }
         public void ToMenu()
         {

@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: ad5e3d4fd1ea49d46b1a3a9a698b7e31
-timeCreated: 1466613925
+timeCreated: 1467928631
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: hamdUp
+    21300002: Body
+    21300004: footUp
+    21300006: footUp1
+    21300008: DownHandRight
+    21300010: Ass
+    21300012: middlefoot
+    21300014: middlefoot1
+    21300016: leftHand
+    21300018: rightHand
+    21300020: downFoot1
+    21300022: downFoot
+    21300024: downHandleft
+    21300026: HandUp
+    21300028: neck
+    21300030: Head
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,13 +54,13 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1300
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:
@@ -55,7 +71,199 @@ TextureImporter:
     allowsAlphaSplitting: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hamdUp
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1746
+        width: 552
+        height: 815
+      alignment: 9
+      pivot: {x: 0.7183364, y: 0.8004025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1383
+        width: 925
+        height: 1209
+      alignment: 9
+      pivot: {x: 0.4895884, y: 0.09152229}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: footUp
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 1750
+        width: 499
+        height: 859
+      alignment: 9
+      pivot: {x: 0.6729535, y: 0.8237371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: footUp1
+      rect:
+        serializedVersion: 2
+        x: 2754
+        y: 1743
+        width: 475
+        height: 904
+      alignment: 9
+      pivot: {x: 0.671238, y: 0.8663691}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: DownHandRight
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1109
+        width: 720
+        height: 559
+      alignment: 9
+      pivot: {x: 0.7934152, y: 0.2594086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Ass
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 663
+        width: 743
+        height: 492
+      alignment: 9
+      pivot: {x: 0.435469, y: 0.8529807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: middlefoot
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 993
+        width: 406
+        height: 677
+      alignment: 9
+      pivot: {x: 0.2992385, y: 0.7978927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: middlefoot1
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 1043
+        width: 522
+        height: 651
+      alignment: 9
+      pivot: {x: 0.3340313, y: 0.7820387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftHand
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 447
+        height: 281
+      alignment: 9
+      pivot: {x: 0.8762622, y: 0.4140747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rightHand
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 673
+        width: 449
+        height: 283
+      alignment: 9
+      pivot: {x: 0.8440114, y: 0.4143816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: downFoot1
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 732
+        width: 590
+        height: 235
+      alignment: 9
+      pivot: {x: 0.6793923, y: 0.7066658}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: downFoot
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 725
+        width: 590
+        height: 235
+      alignment: 9
+      pivot: {x: 0.7038545, y: 0.7057794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: downHandleft
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 91
+        width: 802
+        height: 367
+      alignment: 9
+      pivot: {x: 0.8646811, y: 0.3679159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: HandUp
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 58
+        width: 875
+        height: 429
+      alignment: 9
+      pivot: {x: 0.8075613, y: 0.6115035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: neck
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 127
+        width: 434
+        height: 317
+      alignment: 9
+      pivot: {x: 0.5885854, y: 0.2869044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Head
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 0
+        width: 677
+        height: 666
+      alignment: 9
+      pivot: {x: 0.6489466, y: 0.2563254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

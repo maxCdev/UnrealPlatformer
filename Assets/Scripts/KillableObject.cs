@@ -34,7 +34,7 @@ namespace MyPlatformer
         string hostTag=string.Empty;
         public void OnTriggerEnter2D(Collider2D other)
         {
-            DestroybleObject otherDeath = other.gameObject.GetComponent<DestroybleObject>();
+            FiriebleObject otherDeath = other.gameObject.GetComponent<FiriebleObject>();
             if (otherDeath != null && other.tag!=HostTag)
            {
                otherDeath.ReactionOnFire(this,false);

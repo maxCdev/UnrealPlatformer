@@ -22,24 +22,14 @@ namespace MyPlatformer
         }
         protected virtual void FireMethod()
         {
-            GameObject shoot = Resources.Load<GameObject>(bulletName);
+            GameObject shoot = ObjectPool.instance.GetBullet(bulletName + "(Clone)");//Resources.Load<GameObject>(bulletName);
             var script = shoot.GetComponent<Shoot>();
             var course = (sight.position - emitter.position).normalized;
-            if (script != null)
-            {
                 script.Course = course;
                 script.damage = damage;
                 script.HostTag = transform.root.tag;
-            }
-            else//if particle
-            {
-                var killObj = shoot.GetComponent<KillableObject>();
-                killObj.HostTag = transform.root.tag;
-                shoot.transform.localRotation = Quaternion.Euler(Vector3.forward * course.x * -90);
-            }
-            shoot.transform.position = emitter.position;       
-            Instantiate<GameObject>(shoot);
-            
+            shoot.transform.position = emitter.position;
+            shoot.SetActive(true);           
         }
         public bool Fire()
         {

@@ -10,7 +10,7 @@ namespace MyPlatformer
         public float Gas { 
             set 
             {
-                if (value <= 10)
+                if (value <= Constants.jetPackMax)
                 {
                     gas = value;
                 }

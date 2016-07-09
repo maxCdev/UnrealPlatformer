@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: 59b08f2d02dff474986f8b626407b986
-timeCreated: 1466613921
+timeCreated: 1467929062
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: rightHandMiddle
+    21300002: Body
+    21300004: leftUpFoot
+    21300006: rightFootUp
+    21300008: rightHandDown
+    21300010: Ass
+    21300012: leftFootMiddle
+    21300014: rightFootMiddle
+    21300016: rightHandUp
+    21300018: leftFootDown
+    21300020: rightFootDown
+    21300022: leftHandDown
+    21300024: neck
+    21300026: head
+    21300028: leftHandMiddle
+    21300030: leftHandUp
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,24 +54,216 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1300
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:
   - buildTarget: Android
     maxTextureSize: 1024
     textureFormat: -1
-    compressionQuality: 50
+    compressionQuality: 0
     allowsAlphaSplitting: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rightHandMiddle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1515
+        width: 717
+        height: 560
+      alignment: 9
+      pivot: {x: 0.7934152, y: 0.2594086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1436
+        width: 924
+        height: 1210
+      alignment: 9
+      pivot: {x: 0.4895884, y: 0.09152229}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftUpFoot
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 1841
+        width: 501
+        height: 863
+      alignment: 9
+      pivot: {x: 0.6729535, y: 0.8237371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rightFootUp
+      rect:
+        serializedVersion: 2
+        x: 2647
+        y: 1816
+        width: 474
+        height: 902
+      alignment: 9
+      pivot: {x: 0.671238, y: 0.8663691}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rightHandDown
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1091
+        width: 448
+        height: 279
+      alignment: 9
+      pivot: {x: 0.8440114, y: 0.4143816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Ass
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 848
+        width: 746
+        height: 490
+      alignment: 9
+      pivot: {x: 0.435469, y: 0.8529807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftFootMiddle
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1117
+        width: 407
+        height: 676
+      alignment: 9
+      pivot: {x: 0.2992385, y: 0.7978927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rightFootMiddle
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 1127
+        width: 519
+        height: 650
+      alignment: 9
+      pivot: {x: 0.3340313, y: 0.7820387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rightHandUp
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 149
+        width: 552
+        height: 814
+      alignment: 9
+      pivot: {x: 0.7183364, y: 0.8004025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftFootDown
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 781
+        width: 589
+        height: 236
+      alignment: 9
+      pivot: {x: 0.6793923, y: 0.7066658}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rightFootDown
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 803
+        width: 590
+        height: 234
+      alignment: 9
+      pivot: {x: 0.7038545, y: 0.7057794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftHandDown
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 473
+        width: 449
+        height: 279
+      alignment: 9
+      pivot: {x: 0.8762622, y: 0.4140747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: neck
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 450
+        width: 433
+        height: 314
+      alignment: 9
+      pivot: {x: 0.5885854, y: 0.2869044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: head
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 117
+        width: 675
+        height: 670
+      alignment: 9
+      pivot: {x: 0.6489466, y: 0.2563254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftHandMiddle
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 27
+        width: 805
+        height: 366
+      alignment: 9
+      pivot: {x: 0.8646811, y: 0.3679159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: leftHandUp
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 0
+        width: 872
+        height: 428
+      alignment: 9
+      pivot: {x: 0.8075613, y: 0.6115035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

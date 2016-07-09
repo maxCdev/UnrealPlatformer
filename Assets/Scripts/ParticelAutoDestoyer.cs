@@ -17,7 +17,7 @@ namespace MyPlatformer
         {
             if (ps)
             {
-                if (!ps.IsAlive())
+                if (!ps.IsAlive()||ps.time==ps.duration)
                 {
                     Destroy(gameObject);
                 }

@@ -40,6 +40,10 @@ namespace MyPlatformer
             {
                 currentBehavior(player);
             }
+            else
+            {
+                m_Character.Move(0, 0, false, false, false);
+            }
                
         }
         bool GetTarget()

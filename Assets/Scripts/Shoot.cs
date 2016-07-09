@@ -86,7 +86,8 @@ namespace MyPlatformer
           }
           if (other.gameObject.layer != LayerMask.NameToLayer("IgnoreParticle"))
           {
-              Destroy(gameObject);
+              ObjectPool.instance.ReturnBulletToPool(gameObject);
+              //Destroy(gameObject);
           }
       }
 

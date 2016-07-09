@@ -8,8 +8,21 @@ namespace MyPlatformer
         public int automatBulletsCount = 100;
         public int plazmaBulletsCount = 50;
         // Use this for initialization
-        static Queue<GameObject> automatBullets = new Queue<GameObject>();
-        static Queue<GameObject> plazmaBullets = new Queue<GameObject>();
+         Queue<GameObject> automatBullets = new Queue<GameObject>();
+         Queue<GameObject> plazmaBullets = new Queue<GameObject>();
+        public static ObjectPool instance;
+        void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
         void CreteBulletInPool(string name,int count)
         {
@@ -30,7 +43,7 @@ namespace MyPlatformer
             CreteBulletInPool("bullet", plazmaBulletsCount);
            
         }
-        static Queue<GameObject> GetObjectsList(string nameObj)
+        Queue<GameObject> GetObjectsList(string nameObj)
         {
             switch (nameObj)
             {
@@ -51,8 +64,9 @@ namespace MyPlatformer
                 default: return null;
             }
         }
-        void ReturnBulletToPool(GameObject bullet)
+       public void ReturnBulletToPool(GameObject bullet)
     {
+        bullet.SetActive(false);
         bullet.transform.position = myTransform.position; 
         bullet.transform.parent = myTransform;
         Shoot script = bullet.GetComponent<Shoot>();
@@ -62,7 +76,7 @@ namespace MyPlatformer
         GetObjectsList(bullet.name).Enqueue(bullet);
      
     }
-        static GameObject GetBullet(string name)
+       public GameObject GetBullet(string name)
         {
             Queue<GameObject> listObj = GetObjectsList(name);
             if (listObj.Count>0)

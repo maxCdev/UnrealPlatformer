@@ -14,8 +14,8 @@ namespace MyPlatformer
     {
         AudioSource audioSource;
         Animator animator;
-        float blastWaveRadius = 3;
-        float blastForce = 50;
+        public float blastWaveRadius = 3;
+        public float blastForce = 50;
         public event UnityAction OnChangeHp;
         void Start()
         {
@@ -108,6 +108,7 @@ namespace MyPlatformer
                 { 
                     var course = (fireableObjs[i].transform.position - transform.position).normalized;
                     fireableObjs[i].ReactionOnFire(course, blastForce, transform.position);
+                    //Debug.Log("cource" + course + ". force" + blastForce + ". reactor pos:" + transform.position + "reactor name" + transform.name + ". blast to " + fireableObjs[i].name + " name:" + fireableObjs[i].transform.position);
                 }
                     
             }

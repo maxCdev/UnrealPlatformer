@@ -30,13 +30,31 @@ namespace MyPlatformer
         public Rigidbody2D playerRBody;
         public event UnityAction OnUseJetPack;
         float standartGravityScale;
+        public float lookDistance=1;
+
         void Awake()
         {
             fire = transform.GetChild(0).GetComponent<ParticleSystem>();
             burningCoroutine = Burning();
             standartGravityScale = playerRBody.gravityScale;
         }
+        float? GetGround()
+        {
 
+                Ray2D ray = new Ray2D(playerRBody.position, -playerRBody.transform.up);
+                RaycastHit2D[] hits;
+                hits = Physics2D.RaycastAll(ray.origin, ray.direction, lookDistance);
+                for (int j = 0; j < hits.Length; j++)
+                {
+                    if (hits[j].collider.gameObject.layer == LayerMask.NameToLayer("Level"))
+                    {
+
+                        return hits[j].distance;
+                    }
+                  
+                }            
+            return null;
+        }
         public void On()
         {          
             if (gas>0)
@@ -47,6 +65,7 @@ namespace MyPlatformer
             }
            
         }
+
         public void Off()
         {
             playerRBody.gravityScale = standartGravityScale;
@@ -58,20 +77,6 @@ namespace MyPlatformer
         {
             for (;; --Gas)
             {
-                if (playerRBody.velocity.y > 0)
-                {
-                    playerRBody.gravityScale = 0.2f;
-                }
-                else if (playerRBody.velocity.y <-7f&&Mathf.Abs(playerRBody.velocity.x)>1f) 
-                {
-                    playerRBody.gravityScale = Mathf.Clamp(-0.15f * Mathf.Abs(playerRBody.velocity.y *playerRBody.velocity.x),-0.15f,5f);
-
-                }
-                else
-                {
-                    playerRBody.gravityScale = -0.2f;
-
-                }
                 yield return new WaitForSeconds(1);
             }
             
@@ -80,6 +85,21 @@ namespace MyPlatformer
         {
             if (isBurn)
             {
+
+                if (playerRBody.velocity.y > 0)
+                {
+                    playerRBody.gravityScale = 0.2f;
+                }
+                else if (playerRBody.velocity.y < -7f)// && Mathf.Abs(playerRBody.velocity.x) > 1f)
+                {
+                    playerRBody.gravityScale = Mathf.Lerp(playerRBody.gravityScale, -8f, Time.deltaTime * Mathf.Abs(playerRBody.velocity.y)); //Mathf.Clamp(-0.2f * Mathf.Abs(playerRBody.velocity.y * playerRBody.velocity.x), -8f, 0f);
+                    Debug.Log(playerRBody.gravityScale);
+                }
+                else
+                {
+                    playerRBody.gravityScale = -0.2f;
+
+                }
                 if (gas<=0)
                 {
                     Off();

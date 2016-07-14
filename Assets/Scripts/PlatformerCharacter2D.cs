@@ -21,6 +21,7 @@ namespace MyPlatformer
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         private bool previusJump = false; //ITS MY VELOSIPED))
+        private bool canBurn=true;
         public Weapon weapon;
         public JetPack jetPack=null;
         public WeaponSwitcher weaponSwitcher = null;
@@ -85,7 +86,7 @@ namespace MyPlatformer
 
             // Set whether or not the character is crouching in the animator
             //m_Anim.SetBool("Crouch", crouch);
-
+            canBurn = true;
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)
             {
@@ -102,9 +103,12 @@ namespace MyPlatformer
             }
 
             RotateWeapon(weaponRot);
-            if (jetPack != null && jetPack.isBurn && ((!previusJump && jump) || m_Grounded))
+
+            if (jetPack != null && jetPack.isBurn && ((previusJump && jump) || m_Grounded))
             {
+                canBurn = false;
                 jetPack.Off();
+                Debug.Log("jetPack.Off();" + jetPack.isBurn);
             }
             if (fire && weapon.Fire())
             {
@@ -120,6 +124,7 @@ namespace MyPlatformer
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 previusJump = true;
+                Debug.Log("jetPack.jump();");
             }
             else if (!m_Grounded && jump && !m_Anim.GetBool("Ground") && previusJump) //ITS MY VELOSIPED))
             {
@@ -129,13 +134,16 @@ namespace MyPlatformer
                 if (jetPack!=null&&jetPack.Gas==0)
                 {
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_SecondJumpForce));
+                    previusJump = false;
                   
                 }
-                else if (!jetPack.isBurn)
+                else if (!jetPack.isBurn&&canBurn)
                 {
-                    jetPack.On();                  
+                    jetPack.On();
+                    Debug.Log("jetPack.On();");
+                    previusJump = true;
                 }
-                previusJump = false;
+               
 
             }
 

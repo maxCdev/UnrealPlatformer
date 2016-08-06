@@ -84,7 +84,7 @@ namespace MyPlatformer
               script.ReactionOnFire(this);
               
           }
-          if (other.gameObject.layer != LayerMask.NameToLayer("IgnoreParticle"))
+          if (other.gameObject.layer != LayerMask.NameToLayer("IgnoreParticle") && other.gameObject.layer != LayerMask.NameToLayer("Bonus"))
           {
               ObjectPool.instance.ReturnBulletToPool(gameObject);
               //Destroy(gameObject);

@@ -29,6 +29,7 @@ namespace MyPlatformer
                 hostTag = value;
             }
         }
+        public bool killGodMode = false;
         public bool destructAfterKill = false;
         [SerializeField]
         string hostTag=string.Empty;

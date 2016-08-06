@@ -7,12 +7,18 @@ namespace MyPlatformer
         public List<Transform> points;
         public float speed = 1;
         public int course = 1;
+        public bool isOneWay = false;
         protected int wayIndex = 0;
         protected Transform myTransform;
+
         // Use this for initialization
         void Start()
         {
             myTransform = transform;
+        }
+        private void ChangeCourse()
+        {
+            course = -course;
         }
         public void Move()
         {
@@ -27,7 +33,7 @@ namespace MyPlatformer
                         else if (myTransform.position == points[wayIndex].position && wayIndex == points.Count - 1)
                         {
                             --wayIndex;
-                            course = -1;
+                            ChangeCourse();
                         }
                     } break;
                 case -1:
@@ -39,7 +45,7 @@ namespace MyPlatformer
                         else if (myTransform.position == points[wayIndex].position && wayIndex == 0)
                         {
                             ++wayIndex;
-                            course = 1;
+                            ChangeCourse();
                         }
                     } break;
             }

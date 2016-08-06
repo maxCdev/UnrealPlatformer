@@ -17,6 +17,7 @@ namespace MyPlatformer
         public float blastWaveRadius = 3;
         public float blastForce = 50;
         public event UnityAction OnChangeHp;
+        public bool godMode = false;
         void Start()
         {
             audioSource = GetComponent<AudioSource>();
@@ -44,6 +45,10 @@ namespace MyPlatformer
         }
         public override void ReactionOnFire(KillableObject objectKiller,bool isParticle)
         {
+            if (godMode&&!objectKiller.killGodMode)
+            {
+                return;
+            }
             if (isParticle)
             {
                 VisualDamage(transform.position);
@@ -63,6 +68,10 @@ namespace MyPlatformer
         }
         public override void ReactionOnFire(Shoot bullet)
         {
+            if (godMode)
+            {
+                return;
+            }
             VisualDamage(bullet.transform.position);
             if (SetDamage(bullet.damage))
             {
@@ -158,6 +167,7 @@ namespace MyPlatformer
 
         public bool SetDamage(float damage)
         {        
+
             Hp -= damage;
             if (Hp<=0)
             {

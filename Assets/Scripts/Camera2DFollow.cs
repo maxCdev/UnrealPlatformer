@@ -3,6 +3,19 @@ using UnityEngine;
 
 namespace UnityStandardAssets._2D
 {
+    public static class CameraExtensions
+    {
+        public static Bounds OrthographicBounds(this Camera camera)
+        {
+            float screenAspect = (float)Screen.width / (float)Screen.height;
+            float cameraHeight = camera.orthographicSize * 2;
+            Bounds bounds = new Bounds(
+                camera.transform.position,
+                new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
+            return bounds;
+        }
+    }
+
     public class Camera2DFollow : MonoBehaviour
     {
         public Transform target;
@@ -18,13 +31,14 @@ namespace UnityStandardAssets._2D
         private Vector3 m_LastTargetPosition;
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
-
+        private Bounds cameraBounds;
         // Use this for initialization
         private void Start()
         {
             m_LastTargetPosition = target.position;
             m_OffsetZ = (transform.position - target.position).z;
             transform.parent = null;
+            cameraBounds = GetComponent<Camera>().OrthographicBounds();
         }
 
 
@@ -48,12 +62,11 @@ namespace UnityStandardAssets._2D
             {
                 m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
             }
-
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
 
-                aheadTargetPos = new Vector3(Mathf.Clamp(aheadTargetPos.x, maxLeftPosition.position.x, maxRightPosition.position.x), 
-                                            Mathf.Clamp(aheadTargetPos.y, maxDownPosition.position.y, maxTopPosition.position.y)
-                                             , aheadTargetPos.z);            
+                aheadTargetPos =
+                    new Vector3(Mathf.Clamp(aheadTargetPos.x, maxLeftPosition.position.x + cameraBounds.size.x / 2, maxRightPosition.position.x - cameraBounds.size.x / 2),
+                                Mathf.Clamp(aheadTargetPos.y, maxDownPosition.position.y + cameraBounds.size.y / 2, maxTopPosition.position.y - cameraBounds.size.y / 2), aheadTargetPos.z);            
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
             transform.position = newPos;

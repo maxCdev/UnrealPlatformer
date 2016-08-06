@@ -15,8 +15,11 @@ namespace MyPlatformer
         public Text crystals;
         public GameObject GameOverPanel;
         public Text crystalsResult;
+        public Text crystalsResultWin;
         public Transform Enemies;
         public GameObject WinPanel;
+        public GameObject boss;
+        bool missionComplete = false;
         bool pause = false;
         void Start()
         {
@@ -33,13 +36,23 @@ namespace MyPlatformer
             };
             playerFireObj.OnChangeHp += () => 
             {
-                if (playerFireObj.Hp<= 0)
-                {                   
+                if (playerFireObj.Hp <= 0 && !missionComplete)
+                {
                     GameOverPanel.GetComponent<Animator>().SetTrigger("Move");
                 }
                
                 crystalsResult.text = crystals.text;
             };
+            DestroybleObject bossDestr =boss.GetComponent<DestroybleObject>();
+            bossDestr.OnChangeHp += () =>
+                {
+                    if (playerFireObj.Hp != 0 && bossDestr.Hp <= 0)
+                    {
+                        missionComplete = true;
+                        WinPanel.GetComponent<Animator>().SetTrigger("Move");
+                        crystalsResultWin.text = crystals.text;
+                    }
+                };
             Application.targetFrameRate = 60;
             StartCoroutine(UpdateEnemiesCount());
             
@@ -81,9 +94,9 @@ namespace MyPlatformer
           public void NextLevel()
         {
               int levelIndex = SceneManager.GetActiveScene().buildIndex+1;
-              if (levelIndex<=Constants.levelCount)
+              if (levelIndex<Constants.levelCount)
               {
-                  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                  SceneManager.LoadScene(levelIndex);
               }
               else
               {

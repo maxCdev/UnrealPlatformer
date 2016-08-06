@@ -18,9 +18,9 @@ namespace MyPlatformer
         public float updateDelay = 2f;
         public float nextWayPontDistance = 1f;
         public int currentWayPoint;
-        public float maxTargetDistance = 25f;
+        public float loockDistance = 25f;
         public bool active = true;
-        void Start()
+       protected virtual void Start()
         {            
             seeker = GetComponent<Seeker>();
             rBody = GetComponent<Rigidbody2D>();
@@ -56,9 +56,9 @@ namespace MyPlatformer
             myTransform.localScale = theScale;
         }
         // Update is called once per frame
-        void Update()
+      protected virtual void Update()
         {
-            if (target == null || path == null || !active|| Vector3.Distance(myTransform.position, target.position) > maxTargetDistance)
+            if (target == null || path == null || !active|| Vector3.Distance(myTransform.position, target.position) > loockDistance)
             {
                 return;
             }

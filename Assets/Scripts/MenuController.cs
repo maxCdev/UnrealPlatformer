@@ -23,7 +23,11 @@ namespace MyPlatformer
         }
         public void StartGame()
         {
-            SceneManager.LoadScene("Game");
+            int levelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (levelIndex < Constants.levelCount)
+            {
+                SceneManager.LoadScene(levelIndex);
+            }
             
         }
         public void CloseOpenSettingsPanel()

@@ -13,7 +13,11 @@ public class SawController : MoveOnPathObj {
     }
 	void Update () {    
         myTransform.Rotate(Vector3.forward*rotateSpeed);
-        Move();
+        if (points[0]!=null)
+        {
+            Move();
+        }
+        
 	}
 }
 }

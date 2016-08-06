@@ -9,21 +9,21 @@ namespace MyPlatformer
         GameObject[] enemies;
         public override bool Pickup(GameObject player)
         {
-
-                enemies = GameObject.FindGameObjectsWithTag("Enemie");
-            if (enemies != null)
-            {
-                OnOffAi(false);
+            Debug.Log("GETTET");
+                Action(false);
                 GetComponent<Collider2D>().enabled = false;
                 GetComponent<Renderer>().enabled = false;
                 StartCoroutine("OnAllAfterTime");
                 return false;
-            }
-            return true;
           
+        }
+        protected virtual void Action(bool flag)
+        {
+            OnOffAi(flag);
         }
         void OnOffAi(bool active)
         {
+            enemies = GameObject.FindGameObjectsWithTag("Enemie");
             if (enemies != null)
             {
                 foreach (var enemie in enemies)
@@ -47,9 +47,8 @@ namespace MyPlatformer
         }
         IEnumerator OnAllAfterTime()
         {
-            yield return new WaitForSeconds(5);        
-            enemies = GameObject.FindGameObjectsWithTag("Enemie");
-            OnOffAi(true);
+            yield return new WaitForSeconds(stopTime);        
+            Action(true);
             Destroy(gameObject);
             
         }

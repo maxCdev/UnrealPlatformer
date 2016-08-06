@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 298919e0698983f40a739f294d13c32a
+timeCreated: 1468743544
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RoboBoss_0
+    21300002: RoboBoss_1
+    21300004: RightHandMiddleUp
+    21300006: LeftHandMiddle
+    21300008: Body
+    21300010: LeftFootDown
+    21300012: RoboBoss_6
+    21300014: RightFootMiddle
+    21300016: RoboBoss_8
+    21300018: RightHandUp
+    21300020: LeftFootMiddle
+    21300022: RightFootDown
+    21300024: RightHandMiddle
+    21300026: RoboBoss_13
+    21300028: LeftHandUp
+    21300030: Ass
+    21300032: LeftFootUp
+    21300034: RightFootUp
+    21300036: RoboBoss_18
+    21300038: RoboBoss_19
+    21300040: RightHandUpDown
+    21300042: RightHandDown
+    21300044: LeftHandMiddleUp
+    21300046: LeftHandUpDown
+    21300048: LeftHandDown
+    21300050: RoboBoss_25
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1300
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoboBoss_0
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 3038
+        width: 738
+        height: 810
+      alignment: 9
+      pivot: {x: 0.5787883, y: 0.6363911}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_1
+      rect:
+        serializedVersion: 2
+        x: 3115
+        y: 3038
+        width: 742
+        height: 814
+      alignment: 9
+      pivot: {x: 0.625382, y: 0.6428642}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightHandMiddleUp
+      rect:
+        serializedVersion: 2
+        x: 4407
+        y: 2869
+        width: 750
+        height: 859
+      alignment: 9
+      pivot: {x: 0.39921418, y: 0.7369153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftHandMiddle
+      rect:
+        serializedVersion: 2
+        x: 5326
+        y: 2737
+        width: 300
+        height: 1111
+      alignment: 9
+      pivot: {x: 0.44185385, y: 0.89252317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 5739
+        y: 1971
+        width: 2343
+        height: 1881
+      alignment: 9
+      pivot: {x: 0.50248164, y: 0.06104697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftFootDown
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 2268
+        width: 971
+        height: 409
+      alignment: 9
+      pivot: {x: 0.17064701, y: 0.45735002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_6
+      rect:
+        serializedVersion: 2
+        x: 2541
+        y: 2468
+        width: 502
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightFootMiddle
+      rect:
+        serializedVersion: 2
+        x: 3219
+        y: 2254
+        width: 570
+        height: 714
+      alignment: 9
+      pivot: {x: 0.89783955, y: 0.8990396}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_8
+      rect:
+        serializedVersion: 2
+        x: 4026
+        y: 2332
+        width: 517
+        height: 517
+      alignment: 9
+      pivot: {x: 0.522494, y: 0.49999952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightHandUp
+      rect:
+        serializedVersion: 2
+        x: 4816
+        y: 1811
+        width: 794
+        height: 794
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftFootMiddle
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 1650
+        width: 566
+        height: 714
+      alignment: 9
+      pivot: {x: 0.88010496, y: 0.9071831}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightFootDown
+      rect:
+        serializedVersion: 2
+        x: 3063
+        y: 1710
+        width: 971
+        height: 409
+      alignment: 9
+      pivot: {x: 0.14669406, y: 0.4147}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightHandMiddle
+      rect:
+        serializedVersion: 2
+        x: 4094
+        y: 1325
+        width: 638
+        height: 979
+      alignment: 9
+      pivot: {x: 0.16279052, y: 0.90387243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_13
+      rect:
+        serializedVersion: 2
+        x: 5069
+        y: 1197
+        width: 521
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftHandUp
+      rect:
+        serializedVersion: 2
+        x: 5857
+        y: 1035
+        width: 794
+        height: 794
+      alignment: 9
+      pivot: {x: 0.36086014, y: 0.48535326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Ass
+      rect:
+        serializedVersion: 2
+        x: 6752
+        y: 664
+        width: 1340
+        height: 1267
+      alignment: 9
+      pivot: {x: 0.5086783, y: 0.91303235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftFootUp
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 1559
+        height: 1380
+      alignment: 9
+      pivot: {x: 0.18670648, y: 0.820223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightFootUp
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 22
+        width: 1360
+        height: 1556
+      alignment: 9
+      pivot: {x: 0.32043207, y: 0.84005564}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_18
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 948
+        width: 505
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_19
+      rect:
+        serializedVersion: 2
+        x: 4423
+        y: 920
+        width: 289
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightHandUpDown
+      rect:
+        serializedVersion: 2
+        x: 3256
+        y: 70
+        width: 850
+        height: 822
+      alignment: 9
+      pivot: {x: 0.17164752, y: 0.80416864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RightHandDown
+      rect:
+        serializedVersion: 2
+        x: 4258
+        y: 82
+        width: 606
+        height: 574
+      alignment: 9
+      pivot: {x: 0.3752643, y: 0.74311805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftHandMiddleUp
+      rect:
+        serializedVersion: 2
+        x: 5001
+        y: 28
+        width: 637
+        height: 890
+      alignment: 9
+      pivot: {x: 0.49087214, y: 0.79399526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftHandUpDown
+      rect:
+        serializedVersion: 2
+        x: 5759
+        y: 82
+        width: 850
+        height: 822
+      alignment: 9
+      pivot: {x: 0.8488746, y: 0.8112424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: LeftHandDown
+      rect:
+        serializedVersion: 2
+        x: 6653
+        y: 48
+        width: 638
+        height: 505
+      alignment: 9
+      pivot: {x: 0.4544314, y: 0.86844796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: RoboBoss_25
+      rect:
+        serializedVersion: 2
+        x: 7644
+        y: 174
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

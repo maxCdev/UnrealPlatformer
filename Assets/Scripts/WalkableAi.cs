@@ -9,7 +9,7 @@ namespace MyPlatformer
     {
 
         private UnityAction<Transform> currentBehavior;
-        Transform player;
+        Transform target;
         public Transform locator;
         Renderer renderer;
         public float lookDistance = 10;
@@ -20,10 +20,11 @@ namespace MyPlatformer
         public Transform rightGroundCheck;
         public float updadeTargetDelay = 1f;
         bool targetVisible = false;
+        
         private void Awake()
         {
             base.Awake();
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("Player").transform;
             renderer = GetComponentInChildren<Renderer>();
         }
         // Use this for initialization
@@ -38,7 +39,7 @@ namespace MyPlatformer
         {
             if (active)
             {
-                currentBehavior(player);
+                currentBehavior(target);
             }
             else
             {
@@ -93,7 +94,7 @@ namespace MyPlatformer
         }
         bool CantMoveForward()
         {
-            return !m_Character.GroundCheck(rightGroundCheck) || m_Character.GroundCheck(m_Character.weapon.emitter);
+            return !m_Character.GroundCheck(rightGroundCheck, m_Character.m_WhatIsGround) || m_Character.GroundCheck(m_Character.weapon.emitter, m_Character.m_WhatIsGround);
         }
         void Patrul(Transform player)
         {

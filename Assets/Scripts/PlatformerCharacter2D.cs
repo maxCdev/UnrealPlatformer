@@ -10,7 +10,7 @@ namespace MyPlatformer
         [SerializeField] private float m_SecondJumpForce = 400f;                  //ITS MY VELOSIPED))
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
-        [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+        public LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -39,9 +39,9 @@ namespace MyPlatformer
             audioSource.Play();
 
         }
-        public bool GroundCheck(Transform groundChek)
+        public bool GroundCheck(Transform groundChek, LayerMask groundLayer)
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundChek.position, k_GroundedRadius, m_WhatIsGround);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundChek.position, k_GroundedRadius, groundLayer);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -51,7 +51,7 @@ namespace MyPlatformer
         }
         private void FixedUpdate()
         {
-            m_Grounded = GroundCheck(m_GroundCheck);
+            m_Grounded = GroundCheck(m_GroundCheck, m_WhatIsGround);
             m_Anim.SetBool("Ground", m_Grounded);
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
         }
@@ -74,18 +74,7 @@ namespace MyPlatformer
         }
         public void Move(float move,float weaponRot, bool crouch, bool jump,bool fire)
         {
-            // If crouching, check to see if the character can stand up
-            //if (!crouch && m_Anim.GetBool("Crouch"))
-            //{
-            //    // If the character has a ceiling preventing them from standing up, keep them crouching
-            //    if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-            //    {
-            //        crouch = true;
-            //    }
-            //}
 
-            // Set whether or not the character is crouching in the animator
-            //m_Anim.SetBool("Crouch", crouch);
             canBurn = true;
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)

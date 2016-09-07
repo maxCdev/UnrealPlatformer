@@ -121,9 +121,5 @@ namespace MyPlatformer
             pause = !pause;
             
         }
-        public void PauseOff()
-        {
-            
-        }
     }
 }

@@ -5,6 +5,32 @@ using UnityEngine.Events;
 using System.Linq;
 namespace MyPlatformer
 {
+    class Ticker
+    {
+       public int tick;
+       public int start;
+       public float secondsWait;
+       public Ticker(int start,float secondsWait)
+       {
+           tick = this.start=start;
+           this.secondsWait = secondsWait;
+       }
+       public bool IsStop { get { return tick <= 0; } }
+       public bool Tick()
+        {          
+            if (tick >= 0)
+            {
+                --tick;
+                
+                return true;
+            }
+            return false;
+        }
+       public void Restart()
+       {
+           tick = start;
+       }
+    }
     public class WalkableAi : Character2DController
     {
 
@@ -20,12 +46,13 @@ namespace MyPlatformer
         public Transform rightGroundCheck;
         public float updadeTargetDelay = 1f;
         bool targetVisible = false;
-        
+        Ticker flipTicker;
         private void Awake()
         {
             base.Awake();
             target = GameObject.FindGameObjectWithTag("Player").transform;
             renderer = GetComponentInChildren<Renderer>();
+            flipTicker = new Ticker(2,3f);
         }
         // Use this for initialization
         void Start()
@@ -96,6 +123,11 @@ namespace MyPlatformer
         {
             return !m_Character.GroundCheck(rightGroundCheck, m_Character.m_WhatIsGround) || m_Character.GroundCheck(m_Character.weapon.emitter, m_Character.m_WhatIsGround);
         }
+        public IEnumerator RestartPatrul(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            active = true;
+        }     
         void Patrul(Transform player)
         {
             
@@ -110,9 +142,26 @@ namespace MyPlatformer
                {
                    if (CantMoveForward())
                    {
+                       flipTicker.Tick();
+                       Debug.Log(flipTicker.tick);
                        horizontal *= -1;
                    }
-                   Move();
+                   else
+                   {
+                       flipTicker.Restart();
+                   }
+                   if (flipTicker.IsStop)
+                   {
+                       active = false;
+                       StartCoroutine(RestartPatrul(0.5f));
+                       AttackTarget();
+                       flipTicker.Restart();
+
+                   }
+                   
+                       Move();
+                   
+                   
                }
             }
             

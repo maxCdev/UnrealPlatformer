@@ -146,7 +146,7 @@ namespace MyPlatformer
                     }
                     PlatformerCharacter2D controller = GetComponent<PlatformerCharacter2D>();
                     GetComponent<Character2DController>().enabled = false; ;
-
+                    GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                     if (controller.jetPack != null)
                     {
                         controller.jetPack.Off();

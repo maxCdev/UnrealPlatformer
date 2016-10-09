@@ -38,23 +38,23 @@ namespace MyPlatformer
             burningCoroutine = Burning();
             standartGravityScale = playerRBody.gravityScale;
         }
-        float? GetGround()
-        {
+        //float? GetGround()
+        //{
 
-                Ray2D ray = new Ray2D(playerRBody.position, -playerRBody.transform.up);
-                RaycastHit2D[] hits;
-                hits = Physics2D.RaycastAll(ray.origin, ray.direction, lookDistance);
-                for (int j = 0; j < hits.Length; j++)
-                {
-                    if (hits[j].collider.gameObject.layer == LayerMask.NameToLayer("Level"))
-                    {
+        //        Ray2D ray = new Ray2D(playerRBody.position, -playerRBody.transform.up);
+        //        RaycastHit2D[] hits;
+        //        hits = Physics2D.RaycastAll(ray.origin, ray.direction, lookDistance);
+        //        for (int j = 0; j < hits.Length; j++)
+        //        {
+        //            if (hits[j].collider.gameObject.layer == LayerMask.NameToLayer("Level"))
+        //            {
 
-                        return hits[j].distance;
-                    }
+        //                return hits[j].distance;
+        //            }
                   
-                }            
-            return null;
-        }
+        //        }            
+        //    return null;
+        //}
         public void On()
         {          
             if (gas>0)
@@ -97,8 +97,9 @@ namespace MyPlatformer
                 }
                 else
                 {
-                    playerRBody.gravityScale = -0.2f;
-
+                    //Random.RandomRange(1, 2);
+                   // playerRBody.gravityScale = -0.2f;
+                    playerRBody.gravityScale = Mathf.Lerp(playerRBody.gravityScale, playerRBody.gravityScale > -7 ? -1f : -7f, Time.deltaTime * Mathf.Abs(playerRBody.gravityScale*0.1f));
                 }
                 if (gas<=0)
                 {

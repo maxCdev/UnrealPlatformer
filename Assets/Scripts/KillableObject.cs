@@ -45,6 +45,25 @@ namespace MyPlatformer
                 }
            }
         }
+
+        //public void OnCollisionEnter2D(Collision2D other)
+        //{
+        //    if (this as Shoot !=null)
+        //    {
+        //        DestroybleObject otherDeath = other.gameObject.GetComponent<DestroybleObject>();
+        //        if (otherDeath != null && other.gameObject.tag != HostTag)
+        //        {
+        //            Debug.Log("Collision" + other.contacts[0].point);
+        //            otherDeath.ReactionOnFire((this as Shoot), other);
+        //            if (destructAfterKill)
+        //            {
+        //                GetComponent<DestroybleObject>().ReactionOnFire(this, false);
+        //            }
+        //        }
+        //    }
+           
+        //}
+
         void OnParticleCollision(GameObject other)
         {
             FiriebleObject objDestr = other.GetComponent<FiriebleObject>();

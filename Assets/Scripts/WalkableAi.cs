@@ -37,7 +37,6 @@ namespace MyPlatformer
         private UnityAction<Transform> currentBehavior;
         Transform target;
         public Transform locator;
-        Renderer renderer;
         public float lookDistance = 10;
         public bool active = true;
         public float horizontal = 1;
@@ -51,7 +50,6 @@ namespace MyPlatformer
         {
             base.Awake();
             target = GameObject.FindGameObjectWithTag("Player").transform;
-            renderer = GetComponentInChildren<Renderer>();
             flipTicker = new Ticker(2,3f);
         }
         // Use this for initialization
@@ -93,7 +91,7 @@ namespace MyPlatformer
                        if (hits[j].collider.gameObject.CompareTag("Player"))
                        {
                           
-                           horizontal =Mathf.RoundToInt(ray.direction.normalized.x);
+                           horizontal = Mathf.RoundToInt(ray.direction.normalized.x);
                            if (canRotateWeapon)
                            {
                                vertical =-Mathf.RoundToInt(ray.direction.normalized.y);  

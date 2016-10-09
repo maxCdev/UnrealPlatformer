@@ -28,7 +28,7 @@ namespace MyPlatformer
             if (IsOrganic)
             {
                 GameObject blood = Resources.Load<GameObject>("Blood");
-                blood.transform.position = position + Vector3.back;           
+                blood.transform.position = position; //+ Vector3.back;           
                 Instantiate<GameObject>(blood);              
             }
             else
@@ -66,6 +66,23 @@ namespace MyPlatformer
                 base.ReactionOnFire(objectKiller,isParticle);
             }
         }
+        //public void ReactionOnFire(Shoot bullet, Collision2D collision)
+        //{
+        //    if (godMode)
+        //    {
+        //        return;
+        //    }
+        //    VisualDamage(collision.contacts.First().point);
+        //    if (SetDamage(bullet.damage))
+        //    {
+        //        Death(bullet.deathName);
+        //    }
+        //    else
+        //    {
+        //        base.ReactionOnFire(bullet);
+        //    }
+
+        //}
         public override void ReactionOnFire(Shoot bullet)
         {
             if (godMode)
@@ -156,7 +173,6 @@ namespace MyPlatformer
                     animator.StopPlayback();
                     animator.SetBool("Ground", true);
                     animator.Play(deathName,0);
-                    AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
                     return;
                 }
                 

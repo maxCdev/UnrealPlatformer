@@ -60,17 +60,17 @@ namespace MyPlatformer
         {
 
             // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !m_FacingRight)
+            if ((move > 0 && transform.localScale.x == -1) || (move < 0 && transform.localScale.x == 1))//!m_FacingRight)
             {
                 // ... flip the player.
                 Flip();
             }
             // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
+            //else if (move < 0 && transform.localScale.x==1)// m_FacingRight)
+            //{
+            //    // ... flip the player.
+            //    Flip();
+            //}
         }
         public void Move(float move,float weaponRot, bool crouch, bool jump,bool fire)
         {

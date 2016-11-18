@@ -10,32 +10,52 @@ namespace MyPlatformer
         void Death(string deathName);
         bool SetDamage(float damage);
     }
+    /// <summary>
+    /// This object can be destroyed
+    /// </summary>
     public class DestroybleObject : FiriebleObject,IDestroyble
     {
-        AudioSource audioSource;
-        Animator animator;
+        private AudioSource audioSource;
+        private Animator animator;
         public float blastWaveRadius = 3;
-        public float blastForce = 50;
-        public event UnityAction OnChangeHp;
-        public bool godMode = false;
+        public float blastForce = 50;//power of blast wave
+        public event UnityAction OnChangeHp;//hp change event
+        public bool godMode = false;//no destroyble mode
         void Start()
         {
             audioSource = GetComponent<AudioSource>();
             animator = GetComponent<Animator>();
-        }
+        }        
+        /// <summary>
+        /// Visual effects as response on damage
+        /// </summary>
+        /// <param name="position">effects position</param>
         protected void VisualDamage(Vector3 position)
         {
+            Debug.Log(gameObject.name + " " + Time.time);
             if (IsOrganic)
             {
-                GameObject blood = Resources.Load<GameObject>("Blood");
-                blood.transform.position = position; //+ Vector3.back;           
-                Instantiate<GameObject>(blood);              
+                GameObject blood = ObjectPool.instance.GetEffect("Blood(Clone)");
+                #if UNITY_EDITOR
+                if (blood == null)
+                {
+                    throw new UnityException("pool return null!!!");
+                }
+                #endif
+                blood.transform.position = position;   
+                blood.SetActive(true);          
             }
             else
-            {
-                GameObject sparkDamage = Resources.Load<GameObject>("SparksDamage");
-                sparkDamage.transform.position = position + Vector3.back;
-                Instantiate<GameObject>(sparkDamage);
+            {               
+                GameObject sparkDamage = ObjectPool.instance.GetEffect("SparksDamage(Clone)");
+                #if UNITY_EDITOR
+                if (sparkDamage==null)
+                {
+                    throw new UnityException("pool return null!!!");
+                }
+                #endif
+                sparkDamage.transform.position = position;
+                sparkDamage.SetActive(true);
             }
             if (audioSource!=null)
             {
@@ -43,9 +63,15 @@ namespace MyPlatformer
             }
          
         }
-        public override void ReactionOnFire(KillableObject objectKiller,bool isParticle)
+        /// <summary>
+        /// The response on damage
+        /// </summary>
+        /// <param name="objectKiller">Object who make damage</param>
+        /// <param name="isParticle"> Flag if is particle</param>
+        public override void ReactionOnFire(KillingObject objectKiller,bool isParticle)
         {
-            if (godMode&&!objectKiller.killGodMode)
+            //undo reaction(response) if godmode or rewind on
+            if ((godMode&&!objectKiller.killGodMode)||Rewinder.instance.isRewindOn)
             {
                 return;
             }
@@ -57,6 +83,7 @@ namespace MyPlatformer
             {
                 VisualDamage(transform.position);
             }
+            //set damage and if is deadly this object dead
             if (SetDamage(objectKiller.damage))
             {
                 Death(objectKiller.deathName);
@@ -85,7 +112,7 @@ namespace MyPlatformer
         //}
         public override void ReactionOnFire(Shoot bullet)
         {
-            if (godMode)
+            if (godMode || Rewinder.instance.isRewindOn)
             {
                 return;
             }
@@ -124,17 +151,22 @@ namespace MyPlatformer
                 }
             }
         }
+        /// <summary>
+        /// Blast wave reaction
+        /// </summary>
         void Blast()
         {
+            //get all colliders in blast radius
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastWaveRadius);
-            List<FiriebleObject> fireableObjs = colliders.Select(a => a.GetComponent<FiriebleObject>()).ToList();    
+            List<FiriebleObject> fireableObjs = colliders.Select(a => a.GetComponent<FiriebleObject>()).ToList();   
+ 
+            //send to all fireable objects reaction
             for (int i = 0; i < fireableObjs.Count; i++)
             {               
                 if (fireableObjs[i] != null&&fireableObjs[i].gameObject != gameObject)
                 { 
                     var course = (fireableObjs[i].transform.position - transform.position).normalized;
-                    fireableObjs[i].ReactionOnFire(course, blastForce, transform.position);
-                    //Debug.Log("cource" + course + ". force" + blastForce + ". reactor pos:" + transform.position + "reactor name" + transform.name + ". blast to " + fireableObjs[i].name + " name:" + fireableObjs[i].transform.position);
+                    fireableObjs[i].ReactionOnFire(course, blastForce, transform.position);                    
                 }
                     
             }
@@ -142,43 +174,58 @@ namespace MyPlatformer
         public void Death(string deathName)
         {
             OnChangeHp = null;
+
+            //if this object inanimate
             if (!IsOrganic)
             {
-                GameObject exp = transform.GetChild(0).gameObject;
-                //on death animation for this bullet(weapon)
+                GameObject exp = ObjectPool.instance.GetEffect("ExplosionMobile(Clone)");
+                #if UNITY_EDITOR
+                if (exp == null)
+                {
+                    throw new UnityException("pool return null!!!");
+                }
+                #endif              
+                exp.transform.position = transform.position;               
                 exp.SetActive(true);
-                exp.transform.parent = null;
                 Blast();
-                Destroy(exp, 0.5f);
-                
             }          
+            //if organic object
             else
             {
                 if (animator != null)
                 {
+                    //disable colliders to collise
                     foreach (var collider in GetComponents<Collider2D>())
                     {
                         collider.isTrigger = true;
-
-                    }
-                    PlatformerCharacter2D controller = GetComponent<PlatformerCharacter2D>();
-                    GetComponent<Character2DController>().enabled = false; ;
+                    }             
+     
+                    //undo constrains
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+
+                    //disable controllers
+                    GetComponent<CharacterController>().enabled = false;
+                    PlatformerCharacter2D controller = GetComponent<PlatformerCharacter2D>();
+
+                    // off jetpack
                     if (controller.jetPack != null)
                     {
                         controller.jetPack.Off();
                     }
                     controller.enabled = false;
 
+                    //stop current animation
                     animator.StopPlayback();
+
+                    //set grounded
                     animator.SetBool("Ground", true);
+
+                    //play death animation
                     animator.Play(deathName,0);
                     return;
-                }
-                
-                
+                }  
             }
-            Destroy(gameObject);
+            ObjectPool.instance.ReturnCharacterToPool(gameObject);
         }
 
         public bool SetDamage(float damage)

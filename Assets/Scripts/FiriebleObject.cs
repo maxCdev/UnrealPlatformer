@@ -8,7 +8,11 @@ interface IFirieble
     void ReactionOnFire(Shoot bullet);
     float ReactionForce { set; get; }
 }
-    [RequireComponent(typeof(Rigidbody2D))]
+
+/// <summary>
+/// This object response reaction on fire, but cant have damage
+/// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
 public class FiriebleObject : MonoBehaviour,IFirieble {
 
     Rigidbody2D rBody;
@@ -39,7 +43,7 @@ public class FiriebleObject : MonoBehaviour,IFirieble {
     {
         rBody.AddForceAtPosition(course * reactionForce * (speed/10), position);
     }
-    public virtual void ReactionOnFire(KillableObject objectKiller, bool isParticle)
+    public virtual void ReactionOnFire(KillingObject objectKiller, bool isParticle)
     {
         var course = (objectKiller.transform.position - transform.position).normalized;
         rBody.AddForceAtPosition(-course * reactionForce, transform.position-course);

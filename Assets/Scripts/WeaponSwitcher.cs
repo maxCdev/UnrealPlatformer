@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 namespace MyPlatformer
 {
-
+    /// <summary>
+    /// Swith weapons
+    /// </summary>
     public class WeaponSwitcher : MonoBehaviour
     {
         private PlatformerCharacter2D controller;
@@ -12,10 +14,15 @@ namespace MyPlatformer
         public Weapon CurrentWeapon { 
             set 
             { 
+                //check if its not same weapon
                 if (value.type!=currentWeapon.type)
                 {
+                    //hide previus weapon
                     currentWeapon.gameObject.SetActive(false);
+
+                    //show new weapon
                     value.gameObject.SetActive(true);
+
                     currentWeapon = value;
                     controller.weapon = currentWeapon;
                     
@@ -31,11 +38,8 @@ namespace MyPlatformer
         void Start()
         {
             controller = transform.root.GetComponent<PlatformerCharacter2D>();
-            currentWeapon = controller.weapon;
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                weapons.Add(transform.GetChild(i).GetComponent<Weapon>());
-            }
+            currentWeapon = controller.weapon;           
+            weapons.AddRange(transform.GetComponentsInChildren<Weapon>(true));
         }
     }
 }

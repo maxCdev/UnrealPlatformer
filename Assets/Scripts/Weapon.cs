@@ -3,48 +3,76 @@ using System.Collections;
 
 namespace MyPlatformer
 {
-    public enum WeaponType {PlazmaGun,ShutGun,AutomaticGun,FureGun };
+    /// <summary>
+    /// the type(name) of weapon
+    /// </summary>
+    public enum WeaponType { PlazmaGun, ShutGun, AutomaticGun, FureGun };
     public class Weapon : MonoBehaviour{
         public WeaponType type;
-        public AudioSource source;
+        public AudioSource audioSource;      
+        public Transform emitter;
+        public Transform sight;        
+        protected float lastFireTime = 0;
+
         [SerializeField]
         protected string bulletName = "bullet";
-        public Transform emitter;
-        public Transform sight;
+
         [SerializeField]
-        public float refireTime = 1;
-        protected float lastFireTime = 0;
+        protected float refireTime = 1;//delay between shots
+
         [SerializeField]
         protected float damage = 2;
+
         void Awake()
         {
-            source = GetComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>();
         }
         protected virtual void FireMethod()
         {
-            GameObject shoot = ObjectPool.instance.GetBullet(bulletName + "(Clone)");//Resources.Load<GameObject>(bulletName);
+            //get bullet from pool
+            GameObject shoot = ObjectPool.instance.GetBullet(bulletName.GetCloneName());
+            
+            //get shoot comonent
             var script = shoot.GetComponent<Shoot>();
+
+            //calculate course(direction)
             var course = (sight.position - emitter.position).normalized;
-                script.Course = course;
-                script.damage = damage;
-                script.HostTag = transform.root.tag;
+            
+            //set course
+            script.Course = course;
+
+            //set damage power
+            script.damage = damage;
+
+            //set a parent tag
+            script.HostTag = transform.root.tag;
+
+            //set bullet to emitter position
             shoot.transform.position = emitter.position;
+
+            //enamable bullet (shooting)
             shoot.SetActive(true);           
         }
         public bool Fire()
         {
-            if (Time.time>lastFireTime+refireTime)
+            //check if refire delay ended
+            if (Time.time > lastFireTime + refireTime)
             {
-                if (source != null)
+                //play shoot sound
+                if (audioSource != null)
                 {
-                    source.Play();
+                    audioSource.Play();
                 }
-            
-              FireMethod();
-              lastFireTime = Time.time;
+
+                //Execute fire method
+                FireMethod();
+
+                //get fire time
+                lastFireTime = Time.time;
                 return true;
             }
-            return false;
+
+          return false;
             
         }
     }

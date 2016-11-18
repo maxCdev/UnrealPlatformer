@@ -2,24 +2,24 @@
 using System.Collections;
 namespace MyPlatformer
 {
+    /// <summary>
+    /// return to pool all objects when they hits on bounce
+    /// </summary>
     public class BounceKiller : MonoBehaviour
     {
-
-
-        // Use this for initialization
         void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Level"))
         {
-            if (other.gameObject.tag=="Player")
+            if (other.gameObject.layer != LayerMask.NameToLayer("Level"))
             {
-                other.gameObject.GetComponent<DestroybleObject>().Hp = 0;
+                if (other.gameObject.tag=="Player")
+                {
+                    other.gameObject.GetComponent<DestroybleObject>().Hp = 0;
 
+                }
+                ObjectPool.instance.ReturnCharacterToPool(other.gameObject);
             }
-            Destroy(other.transform.gameObject);
-        }
         
-    }
+        }
     }
 }
 

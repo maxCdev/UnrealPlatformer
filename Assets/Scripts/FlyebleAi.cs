@@ -27,17 +27,19 @@ namespace MyPlatformer
             myTransform = transform;
             target = GameObject.FindGameObjectWithTag("Player").transform;
             if (target != null)
-            {
-                //seeker.StartPath(myTransform.position, target.position, OnEndPath);
+            {            
                 StartCoroutine(UpdatePath());
             }
 
         }
+        /// <summary>
+        /// Update path to target
+        /// </summary>
+        /// <returns></returns>
         IEnumerator UpdatePath()
         {
             if (target != null)
             {
-
                 seeker.StartPath(myTransform.position, target.position, OnEndPath);
                 yield return new WaitForSeconds(1f / updateDelay);
                 StartCoroutine(UpdatePath());
@@ -55,8 +57,7 @@ namespace MyPlatformer
             theScale.x = side;
             myTransform.localScale = theScale;
         }
-        // Update is called once per frame
-      protected virtual void Update()
+         protected virtual void Update()
         {
             if (target == null || path == null || !active|| Vector3.Distance(myTransform.position, target.position) > loockDistance)
             {

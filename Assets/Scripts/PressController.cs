@@ -21,10 +21,10 @@ namespace MyPlatformer
             startPosition = downPad.position;
             endPosition = endPoint.position;
         }
-        IEnumerator Wait()
-        {
-           yield return new WaitForSeconds(interval);
-        }
+        //IEnumerator Wait()
+        //{
+        //   yield return new WaitForSeconds(interval);
+        //}
         // Update is called once per frame
         void Update()
         {

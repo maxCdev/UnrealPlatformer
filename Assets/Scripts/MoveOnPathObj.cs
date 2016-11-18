@@ -4,11 +4,10 @@ namespace MyPlatformer
 {
     public class MoveOnPathObj : MonoBehaviour
     {
-        public List<Transform> points;
+        public List<Transform> points; // way points
         public float speed = 1;
-        public int course = 1;
-        public bool isOneWay = false;
-        protected int wayIndex = 0;
+        public int course = 1; //direction
+        protected int wayIndex = 0; //curent way statement
         protected Transform myTransform;
 
         // Use this for initialization
@@ -49,9 +48,8 @@ namespace MyPlatformer
                         }
                     } break;
             }
-                        myTransform.position = Vector2.MoveTowards(myTransform.position, points[wayIndex].position, speed * Time.deltaTime);
-            
-            
+
+            myTransform.position = Vector2.MoveTowards(myTransform.position, points[wayIndex].position, speed * Time.deltaTime); 
         }
         void Update()
         {

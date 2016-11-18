@@ -2,10 +2,9 @@
 using System.Collections;
 namespace MyPlatformer
 {
-public class BaseAi : FlyebleAi
+//todo: make base class ai for all ai
+public class FlyebleShootableAi : FlyebleAi
 {
-
-
     public bool canRotateWeapon = false;
     protected Vector2? targetDirection;
     public float updateTarget;
@@ -26,12 +25,13 @@ public class BaseAi : FlyebleAi
     void Update()
     {
         base.Update();
-        if (targetDirection!=null&&fire)
+        if (targetDirection!=null && fire)
         {
             RotateWeapon(Mathf.RoundToInt(targetDirection.Value.normalized.y));
             weapon.Fire();
         }
     }
+    //todo: move this method and locator verible to separate class
     protected void GetTarget()
     {
         for (int i = 0; i < 360; i += 45)
@@ -45,7 +45,6 @@ public class BaseAi : FlyebleAi
                 if (hits[j].collider.gameObject.layer == LayerMask.NameToLayer("Level"))
                 {
                     break;
-
                 }
                 if (hits[j].collider.gameObject.CompareTag("Player"))
                 {
@@ -53,8 +52,6 @@ public class BaseAi : FlyebleAi
                     fire = true;
                     return;
                 }
-              
-
             }
         }
         fire = false;

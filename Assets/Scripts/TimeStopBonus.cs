@@ -9,12 +9,11 @@ namespace MyPlatformer
         GameObject[] enemies;
         public override bool Pickup(GameObject player)
         {
-            Debug.Log("GETTET");
-                Action(false);
-                GetComponent<Collider2D>().enabled = false;
-                GetComponent<Renderer>().enabled = false;
-                StartCoroutine("OnAllAfterTime");
-                return false;
+            Action(false);
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Renderer>().enabled = false;
+            StartCoroutine("OnAllAfterTime");
+            return false;
           
         }
         protected virtual void Action(bool flag)

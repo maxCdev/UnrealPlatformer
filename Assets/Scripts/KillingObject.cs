@@ -2,10 +2,14 @@
 using System.Collections;
 namespace MyPlatformer
 {
-    public class KillableObject : MonoBehaviour
+    public class KillingObject : MonoBehaviour
     {
-
+        [SerializeField]
+        protected string hostTag = string.Empty;//parent tag
+        public bool killGodMode = false;//can kill in godmode
+        public bool destructAfterHit = false;// are need destruct after hit
         public float damage;
+        public string deathName;
         public float Damage
         {
             get
@@ -16,8 +20,7 @@ namespace MyPlatformer
             {
                 damage = value;
             }
-        }
-        public string deathName;
+        }        
         public string HostTag
         {
             get
@@ -29,46 +32,26 @@ namespace MyPlatformer
                 hostTag = value;
             }
         }
-        public bool killGodMode = false;
-        public bool destructAfterKill = false;
-        [SerializeField]
-        string hostTag=string.Empty;
         public void OnTriggerEnter2D(Collider2D other)
         {
             FiriebleObject otherDeath = other.gameObject.GetComponent<FiriebleObject>();
             if (otherDeath != null && other.tag!=HostTag)
-           {
-               otherDeath.ReactionOnFire(this,false);
-                if (destructAfterKill)
+            {
+                //send damage
+                otherDeath.ReactionOnFire(this,false);
+                if (destructAfterHit)
                 {
                     GetComponent<DestroybleObject>().ReactionOnFire(this, false);
                 }
-           }
+            }
         }
-
-        //public void OnCollisionEnter2D(Collision2D other)
-        //{
-        //    if (this as Shoot !=null)
-        //    {
-        //        DestroybleObject otherDeath = other.gameObject.GetComponent<DestroybleObject>();
-        //        if (otherDeath != null && other.gameObject.tag != HostTag)
-        //        {
-        //            Debug.Log("Collision" + other.contacts[0].point);
-        //            otherDeath.ReactionOnFire((this as Shoot), other);
-        //            if (destructAfterKill)
-        //            {
-        //                GetComponent<DestroybleObject>().ReactionOnFire(this, false);
-        //            }
-        //        }
-        //    }
-           
-        //}
 
         void OnParticleCollision(GameObject other)
         {
             FiriebleObject objDestr = other.GetComponent<FiriebleObject>();
             if (objDestr != null && other.tag != HostTag)
             {
+                //send damage
                 objDestr.ReactionOnFire(this,true);
 
             }

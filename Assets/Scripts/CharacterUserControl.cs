@@ -5,42 +5,45 @@ using MyPlatformer;
 namespace MyPlatformer
 {
     [RequireComponent(typeof(PlatformerCharacter2D))]
-    public class Character2DController : MonoBehaviour
+    public class CharacterController : MonoBehaviour
     {
         protected PlatformerCharacter2D m_Character;
         protected void Awake()
         {
             m_Character = GetComponent<PlatformerCharacter2D>();
-
         }
     }
-    public class Platformer2DUserControl : Character2DController
+    public class CharacterUserControl : CharacterController
     {
         private bool m_Jump;
         private bool m_Fire;
-        //private void Awake()
-        //{
-        //    base.Awake();
-        //}
-
 
         private void Update()
         {
+            //get input
             if (!m_Jump)
             {
-                
-                // Read the jump input in Update so button presses aren't missed.
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space);
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
-            m_Fire = CrossPlatformInputManager.GetButton("Fire1") || Input.GetKey(KeyCode.LeftControl);
+            m_Fire = CrossPlatformInputManager.GetButton("Fire1");
+
+            //debug 
+            #if UNITY_STANDALONE||UNITY_EDITOR
+            if (!m_Jump)
+            {
+                m_Jump = Input.GetKeyDown(KeyCode.Space);
+            }
+            m_Fire = Input.GetKey(KeyCode.LeftControl);
+            #endif
         }   
         private void FixedUpdate()
         {
-            // Read the inputs.
-            //bool crouch = Input.GetKey(KeyCode.LeftControl);
+            //get input
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");
-            //debug version
+
+            //debug 
+            #if UNITY_STANDALONE||UNITY_EDITOR
             if (Input.GetKey(KeyCode.A))
             {
                 h = -1;
@@ -49,8 +52,9 @@ namespace MyPlatformer
             {
                 h = 1;
             }
-            //
-            // Pass all parameters to the character control script.
+            #endif
+
+            // pass all parameters to the character control script.
             m_Character.Move(h,v, false, m_Jump,m_Fire);
             m_Jump = false;
         }

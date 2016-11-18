@@ -6,7 +6,7 @@ public class NotDestroySceneObj : MonoBehaviour {
     public static NotDestroySceneObj instance;
     void Awake()
     {
-        if (instance==null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);

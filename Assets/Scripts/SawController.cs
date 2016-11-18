@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 namespace MyPlatformer
 {
-    [RequireComponent(typeof(KillableObject))]
-public class SawController : MoveOnPathObj {
-
-
-       public float rotateSpeed = 10;
-    void Start()
+    [RequireComponent(typeof(KillingObject))]
+    public class SawController : MoveOnPathObj 
     {
-        myTransform = transform;
-    }
-	void Update () {    
-        myTransform.Rotate(Vector3.forward*rotateSpeed);
-        if (points[0]!=null)
+        public float rotateSpeed = 10;//the speed of saw rotation
+        void Start()
         {
-            Move();
+            myTransform = transform;
         }
+	    void Update () {    
+
+            //rotate the saw
+            myTransform.Rotate(Vector3.forward * rotateSpeed);
+
+            //if first point exist
+            if (points[0]!=null)
+            {
+                Move();
+            }
         
-	}
-}
+	    }
+    }
 }

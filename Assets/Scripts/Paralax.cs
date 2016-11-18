@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 namespace MyPlatformer
 {
+    /// <summary>
+    /// Move background and create paralax effect
+    /// </summary>
     public class Paralax : MonoBehaviour
     {
         public List<Transform> backgrounds=new List<Transform>();
@@ -15,8 +18,10 @@ namespace MyPlatformer
         {
             camera = Camera.main.transform;
             previusCameraPos = camera.transform.position;
-            for (int i = 1; i < backgrounds.Count+1;i++)
+            for (int i = 1; i < backgrounds.Count + 1; i++)
+            {
                 parallaxScales.Add(i * -10);
+            }               
         }
         void LateUpdate()
         {

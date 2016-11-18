@@ -6,31 +6,32 @@ namespace MyPlatformer
 {
     public class JetPack : MonoBehaviour
     {
-        public float gas = 10;
+       
+        public bool isBurn = false;
+        public Rigidbody2D playerRBody;
+        public event UnityAction OnUseJetPack;
+        private IEnumerator burningCoroutine;
+        private float _gas = 10;
+        private ParticleSystem fire;
+        private float standartGravityScale;
+        //public float lookDistance = 1;
         public float Gas { 
             set 
             {
                 if (value <= Constants.jetPackMax)
                 {
-                    gas = value;
+                    _gas = value;
                 }
                 else
                 {
-                    gas = 10;
+                    _gas = 10;
                 }
                 if (OnUseJetPack != null)
                 {
                     OnUseJetPack();
                 }
             } 
-            get { return gas; } }
-        ParticleSystem fire;
-        public bool isBurn = false;
-        IEnumerator burningCoroutine;
-        public Rigidbody2D playerRBody;
-        public event UnityAction OnUseJetPack;
-        float standartGravityScale;
-        public float lookDistance=1;
+            get { return _gas; } }
 
         void Awake()
         {
@@ -57,7 +58,7 @@ namespace MyPlatformer
         //}
         public void On()
         {          
-            if (gas>0)
+            if (_gas>0)
             {
                 StartCoroutine(burningCoroutine);
                 isBurn = true;
@@ -85,6 +86,7 @@ namespace MyPlatformer
         {
             if (isBurn)
             {
+                transform.GetChild(0).localScale = playerRBody.transform.localScale;
 
                 if (playerRBody.velocity.y > 0)
                 {
@@ -97,11 +99,11 @@ namespace MyPlatformer
                 }
                 else
                 {
-                    //Random.RandomRange(1, 2);
+                    //float range = Random.RandomRange(1, 2);
                    // playerRBody.gravityScale = -0.2f;
                     playerRBody.gravityScale = Mathf.Lerp(playerRBody.gravityScale, playerRBody.gravityScale > -7 ? -1f : -7f, Time.deltaTime * Mathf.Abs(playerRBody.gravityScale*0.1f));
                 }
-                if (gas<=0)
+                if (_gas<=0)
                 {
                     Off();
                 }

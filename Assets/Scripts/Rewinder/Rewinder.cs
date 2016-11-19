@@ -141,25 +141,25 @@ public class ShootItem : MovingMomentItem
 }
 public class EnemieItem : CharacteItem
 {
-    public WalkableAi walkableAi;
+    public TargetLocator locator;
     public float horizontal;
 
     public EnemieItem(GameObject gameObject)
         : base(gameObject)
     {
-        walkableAi = gameObject.GetComponent<WalkableAi>();
-        if (walkableAi != null)
+        locator = gameObject.GetComponent<TargetLocator>();
+        if (locator != null)
         {
-            horizontal = walkableAi.horizontal;
+            horizontal = locator.targetDirection.x;
         }
     }
     public override void SetFields()
     {
         base.SetFields();
 
-        if (walkableAi != null)
+        if (locator != null)
         {
-            walkableAi.horizontal = horizontal;
+            locator.targetDirection.x = horizontal;
         }
     }
 

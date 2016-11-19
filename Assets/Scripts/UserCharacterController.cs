@@ -4,16 +4,10 @@ using UnityStandardAssets.CrossPlatformInput;
 using MyPlatformer;
 namespace MyPlatformer
 {
-    [RequireComponent(typeof(PlatformerCharacter2D))]
-    public class CharacterController : MonoBehaviour
-    {
-        protected PlatformerCharacter2D m_Character;
-        protected void Awake()
-        {
-            m_Character = GetComponent<PlatformerCharacter2D>();
-        }
-    }
-    public class CharacterUserControl : CharacterController
+    /// <summary>
+    /// Read User Input
+    /// </summary>
+    public class UserCharacterController : BaseCharacterController
     {
         private bool m_Jump;
         private bool m_Fire;

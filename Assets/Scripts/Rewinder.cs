@@ -254,7 +254,7 @@ public class MovingMomentItem
     public static MovingMomentItem GetItem(GameObject gameObject)
     {
 
-        if (gameObject.GetComponent<PlatformerCharacter2D>()!=null)
+        if (gameObject.GetComponent<CharacterMotor>()!=null)
         {
             return new CharacteItem(gameObject);
         }

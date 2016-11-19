@@ -37,7 +37,7 @@ namespace MyPlatformer
             };
 
             //get player jetpack
-            JetPack jetPack = player.GetComponent<PlatformerCharacter2D>().jetPack;
+            JetPack jetPack = player.GetComponent<CharacterMotor>().jetPack;
 
             //clculate jetpack slider size
             jetPackSlider.size = jetPack.Gas / Constants.jetPackMax;

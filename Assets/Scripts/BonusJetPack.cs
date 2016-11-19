@@ -8,7 +8,7 @@ namespace MyPlatformer
         float addGass = 3;
         public override bool Pickup(GameObject player)
         {
-            player.GetComponent<PlatformerCharacter2D>().jetPack.Gas += addGass;
+            player.GetComponent<CharacterMotor>().jetPack.Gas += addGass;
             return true;
         }
         

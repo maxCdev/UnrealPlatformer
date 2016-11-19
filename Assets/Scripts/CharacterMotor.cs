@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Linq;
 namespace MyPlatformer
 {
-    public class PlatformerCharacter2D : MonoBehaviour
+    public class CharacterMotor : MonoBehaviour
     {
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
@@ -29,14 +29,13 @@ namespace MyPlatformer
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
-            m_CeilingCheck = transform.Find("CeilingCheck");
+            //m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
         public void PickupBonusSound()
         {
             audioSource.Play();
-
         }
         /// <summary>
         /// Checking if character on ground
@@ -89,8 +88,7 @@ namespace MyPlatformer
                 //check if need flip
                 TryFlip(move);         
             }
-            
-            RotateWeapon(weaponRot);
+            weapon.RotateWeapon(weaponRot);
 
             // if jetpack is burned and jump already pressed and player or character stay on ground
             if (jetPack != null && jetPack.isBurn && ((jumpPressed && jump) || m_Grounded))
@@ -139,21 +137,6 @@ namespace MyPlatformer
                     jetPack.On();
                     jumpPressed = true;
                 }
-            }
-        }
-        private void RotateWeapon(float rotate)
-        {
-            if (rotate < 0)
-            {
-                weapon.transform.rotation = Quaternion.Euler(Vector3.back * 45f);
-            }
-            else if (rotate > 0)
-            {
-                weapon.transform.rotation = Quaternion.Euler(Vector3.forward * 45f);
-            }
-            else
-            {
-                weapon.transform.rotation = Quaternion.identity;
             }
         }
         private void Flip()

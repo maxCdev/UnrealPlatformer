@@ -15,15 +15,38 @@ namespace MyPlatformer
     /// </summary>
     public class DestroybleObject : FiriebleObject,IDestroyble
     {
-        private AudioSource audioSource;
         private Animator animator;
         public float blastWaveRadius = 3;
         public float blastForce = 50;//power of blast wave
         public event UnityAction OnChangeHp;//hp change event
         public bool godMode = false;//no destroyble mode
+
+        [SerializeField]
+        private float hp;
+        public float Hp
+        {
+            get
+            {
+                return hp;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    hp = 0;
+                }
+                else
+                {
+                    hp = value;
+                }
+                if (OnChangeHp != null)
+                {
+                    OnChangeHp();
+                }
+            }
+        }
         void Start()
         {
-            audioSource = GetComponent<AudioSource>();
             animator = GetComponent<Animator>();
         }        
         /// <summary>
@@ -32,7 +55,6 @@ namespace MyPlatformer
         /// <param name="position">effects position</param>
         protected void VisualDamage(Vector3 position)
         {
-            Debug.Log(gameObject.name + " " + Time.time);
             if (IsOrganic)
             {
                 GameObject blood = ObjectPool.instance.GetEffect("Blood(Clone)");
@@ -57,11 +79,6 @@ namespace MyPlatformer
                 sparkDamage.transform.position = position;
                 sparkDamage.SetActive(true);
             }
-            if (audioSource!=null)
-            {
-                audioSource.Play();
-            }
-         
         }
         /// <summary>
         /// The response on damage
@@ -127,30 +144,6 @@ namespace MyPlatformer
             }
             
         }
-        [SerializeField]
-        private float hp;
-        public float Hp
-        {
-            get
-            {
-                return hp;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    hp = 0;
-                }
-                else
-                {
-                    hp = value;
-                }
-                if (OnChangeHp != null)
-                {
-                    OnChangeHp();
-                }
-            }
-        }
         /// <summary>
         /// Blast wave reaction
         /// </summary>
@@ -204,8 +197,8 @@ namespace MyPlatformer
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
                     //disable controllers
-                    GetComponent<CharacterController>().enabled = false;
-                    PlatformerCharacter2D controller = GetComponent<PlatformerCharacter2D>();
+                    GetComponent<BaseCharacterController>().enabled = false;
+                    CharacterMotor controller = GetComponent<CharacterMotor>();
 
                     // off jetpack
                     if (controller.jetPack != null)

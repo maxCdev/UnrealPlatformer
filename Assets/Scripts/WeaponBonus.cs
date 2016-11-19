@@ -8,7 +8,7 @@ namespace MyPlatformer
         public WeaponType weaponType;
         public override bool Pickup(GameObject player)
         {
-           player.GetComponent<PlatformerCharacter2D>().weaponSwitcher.SwitchWeapon(weaponType);
+           player.GetComponent<CharacterMotor>().weaponSwitcher.SwitchWeapon(weaponType);
            return true;
         }
     }

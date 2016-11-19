@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using System.Linq;
 namespace MyPlatformer
 {
-    public class WalkableAi : CharacterController
+    public class WalkableAi : BaseCharacterController
     {
 
         private UnityAction<Transform> currentBehavior;
@@ -131,7 +131,6 @@ namespace MyPlatformer
                    if (CantMoveForward())
                    {
                        flipTicker.Tick();
-                       Debug.Log(flipTicker.tick);
                        horizontal *= -1;
                    }
                    else
@@ -158,11 +157,9 @@ namespace MyPlatformer
     {
         public int tick;
         public int start;
-        public float secondsWait;
         public Ticker(int start, float secondsWait)
         {
             tick = this.start = start;
-            this.secondsWait = secondsWait;
         }
         public bool IsStop { get { return tick <= 0; } }
         public bool Tick()
@@ -180,5 +177,4 @@ namespace MyPlatformer
             tick = start;
         }
     }
-
 }

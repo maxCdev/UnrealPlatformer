@@ -27,7 +27,7 @@ public class FlyebleShootableAi : FlyebleAi
         base.Update();
         if (targetDirection!=null && fire)
         {
-            RotateWeapon(Mathf.RoundToInt(targetDirection.Value.normalized.y));
+           weapon.RotateWeapon(Mathf.RoundToInt(targetDirection.Value.normalized.y));
             weapon.Fire();
         }
     }
@@ -55,22 +55,6 @@ public class FlyebleShootableAi : FlyebleAi
             }
         }
         fire = false;
-    }
-    private void RotateWeapon(float rotate)
-    {
-        if (rotate < 0)
-        {
-            weapon.transform.rotation = Quaternion.Euler(Vector3.back * 45f);
-        }
-        else if (rotate > 0)
-        {
-            weapon.transform.rotation = Quaternion.Euler(Vector3.forward * 45f);
-        }
-        else
-        {
-            weapon.transform.rotation = Quaternion.identity;
-        }
-
     }
 }
 }

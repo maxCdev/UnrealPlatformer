@@ -8,7 +8,7 @@ namespace MyPlatformer
     /// </summary>
     public class WeaponSwitcher : MonoBehaviour
     {
-        private PlatformerCharacter2D controller;
+        private CharacterMotor controller;
         [SerializeField]
         private Weapon currentWeapon;
         public Weapon CurrentWeapon { 
@@ -37,7 +37,7 @@ namespace MyPlatformer
         // Use this for initialization
         void Start()
         {
-            controller = transform.root.GetComponent<PlatformerCharacter2D>();
+            controller = transform.root.GetComponent<CharacterMotor>();
             currentWeapon = controller.weapon;           
             weapons.AddRange(transform.GetComponentsInChildren<Weapon>(true));
         }

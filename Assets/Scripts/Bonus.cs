@@ -20,7 +20,7 @@ namespace MyPlatformer
 
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<PlatformerCharacter2D>().PickupBonusSound();
+                other.GetComponent<CharacterMotor>().PickupBonusSound();
               
                 if (Pickup(other.gameObject))
                 {

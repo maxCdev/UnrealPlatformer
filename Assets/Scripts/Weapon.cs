@@ -75,6 +75,10 @@ namespace MyPlatformer
           return false;
             
         }
+        public void RotateWeapon(float rotate)
+        {            
+            transform.rotation = Quaternion.Euler(Vector3.forward * rotate * 45f);
+        }
     }
 }
 

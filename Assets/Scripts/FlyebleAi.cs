@@ -8,7 +8,6 @@ namespace MyPlatformer
     public class FlyebleAi : MonoBehaviour
     {
         private Transform myTransform;
-        private Rigidbody2D rBody;
         private Seeker seeker;
         public Path path;
         public float speed;
@@ -23,7 +22,6 @@ namespace MyPlatformer
        protected virtual void Start()
         {            
             seeker = GetComponent<Seeker>();
-            rBody = GetComponent<Rigidbody2D>();
             myTransform = transform;
             target = GameObject.FindGameObjectWithTag("Player").transform;
             if (target != null)
@@ -73,7 +71,6 @@ namespace MyPlatformer
                 return;
             }
             pathIsEnded = false;
-            Vector3 direction = (path.vectorPath[currentWayPoint] - myTransform.position).normalized * speed * Time.deltaTime;
             int pathCount = path.vectorPath.Count - 1;
             if (myTransform.position.x < path.vectorPath[pathCount].x)
             {

@@ -7,6 +7,30 @@ namespace MyPlatformer
 {
 #region MomentItems
     //todo: try serialize all fields to json
+
+    public class CrystalBonusItem : MovingMomentItem
+    {
+        public bool pickuped;
+        public CrystalBonus crystalBonus;
+        public CrystalBonusItem(GameObject gameObject)
+            : base(gameObject)
+        {
+            crystalBonus = gameObject.GetComponent<CrystalBonus>();
+            if (crystalBonus!=null)
+            {
+                pickuped = crystalBonus.pickuped;
+            }
+        }
+        public override void SetFields()
+        {
+            base.SetFields();
+
+            if (crystalBonus!=null)
+            {
+                crystalBonus.pickuped = pickuped;
+            }
+        }
+    }
     public class ParticleItem : MovingMomentItem
 {
     public ParticleSystem particle;
@@ -278,6 +302,10 @@ public class MovingMomentItem
         {
             return new ParticleItem(gameObject);
         }
+        else if (gameObject.GetComponent<CrystalBonus>() != null)
+        {
+            return new CrystalBonusItem(gameObject);
+        }
         else if (gameObject.GetComponent<Transform>() != null)
         {
             return new MovingMomentItem(gameObject);
@@ -344,7 +372,9 @@ public class Rewinder : MonoBehaviour
     public Stack<Moment> moments = new Stack<Moment>();//All saved moments
     public bool isRewindOn = false;
     public static Rewinder instance;
-
+    public float rewindSpeed = 0.05f;
+    public float lastRewindUpdate = 0f;
+    public System.Action lastMoment = null;
     void Awake()
     {
         if (instance == null)
@@ -365,6 +395,8 @@ public class Rewinder : MonoBehaviour
         gameObjects.AddRange(items.GetChilds().Select(a=>a.gameObject));
         Transform pool = GameObject.Find("ObjectPool").transform;
         gameObjects.AddRange(pool.GetChilds().Select(a => a.gameObject));
+        Transform bonuses = GameObject.Find("Bonuses").transform;
+        gameObjects.AddRange(bonuses.GetChilds().Select(a => a.gameObject));
         #endregion
 
         if (tags!=null)
@@ -375,12 +407,14 @@ public class Rewinder : MonoBehaviour
             }
         }
         StartCoroutine(RewindUpdate());
-        StartCoroutine(RewindExecute());
+        //StartCoroutine(RewindExecute());
 
 	}
     void FixedUpdate()
     {
-       // isRewindOn = Input.GetKey(KeyCode.R);
+#if UNITY_EDITOR
+        isRewindOn = Input.GetKey(KeyCode.R);
+#endif
     }
     public void ButtonDown()
     {
@@ -401,7 +435,7 @@ public class Rewinder : MonoBehaviour
             //Debug.Log(" moments - " + moments.Count + "; gameObj - " + gameObjects.Count + " time: " + Time.time);
             if (!isRewindOn)
             {
-                Time.timeScale = 1f;
+              //  Time.timeScale = 1f;
                 List<MovingMomentItem> momentItems = new List<MovingMomentItem>();
                 Moment currentMoment = new Moment();
                 for (int i = 0; i < gameObjects.Count; i++)
@@ -435,13 +469,26 @@ public class Rewinder : MonoBehaviour
         yield return new WaitForSeconds(0.005f);
         StartCoroutine(RewindExecute());
     }
+    void Update()
+    {
+        if (isRewindOn)
+        {
+            if (Time.time > lastRewindUpdate + 0.08f)//(rewindSpeed * Time.deltaTime))
+            {
+                Rewind();
+                lastRewindUpdate = Time.time;
+            }
+            lastMoment();
+            
+        }
+    }
     private void Rewind()
     {
         if (moments.Count>0)
         {
-            Time.timeScale = 0.1f;
+           // Time.timeScale = 0.1f;
             Camera.main.GetComponent<MotionBlur>().enabled = true;
-            moments.Pop().Play();
+            lastMoment = moments.Pop().Play;
 
         }
     }

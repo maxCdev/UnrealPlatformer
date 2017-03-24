@@ -60,6 +60,8 @@ namespace MyPlatformer
         {          
             if (_gas>0)
             {
+                playerRBody.velocity = Vector2.zero;
+                playerRBody.AddForce(Vector2.up*1000f);
                 StartCoroutine(burningCoroutine);
                 isBurn = true;
                 fire.Play(true);
@@ -86,22 +88,10 @@ namespace MyPlatformer
         {
             if (isBurn)
             {
-                transform.GetChild(0).localScale = playerRBody.transform.localScale;
-
-                if (playerRBody.velocity.y > 0)
+                fire.transform.localScale = playerRBody.transform.localScale;
+                if (playerRBody.velocity.y < 0)
                 {
                     playerRBody.gravityScale = 0.2f;
-                }
-                else if (playerRBody.velocity.y < -7f)// && Mathf.Abs(playerRBody.velocity.x) > 1f)
-                {
-                    playerRBody.gravityScale = Mathf.Lerp(playerRBody.gravityScale, -8f, Time.deltaTime * Mathf.Abs(playerRBody.velocity.y)); //Mathf.Clamp(-0.2f * Mathf.Abs(playerRBody.velocity.y * playerRBody.velocity.x), -8f, 0f);
-                    Debug.Log(playerRBody.gravityScale);
-                }
-                else
-                {
-                    //float range = Random.RandomRange(1, 2);
-                   // playerRBody.gravityScale = -0.2f;
-                    playerRBody.gravityScale = Mathf.Lerp(playerRBody.gravityScale, playerRBody.gravityScale > -7 ? -1f : -7f, Time.deltaTime * Mathf.Abs(playerRBody.gravityScale*0.1f));
                 }
                 if (_gas<=0)
                 {

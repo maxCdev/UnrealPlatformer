@@ -24,7 +24,8 @@ namespace MyPlatformer
               
                 if (Pickup(other.gameObject))
                 {
-                    Destroy(gameObject);
+                    ObjectPool.instance.ReturnBonusToPool(gameObject);
+                    //Destroy(gameObject);
                 }
                 
             }

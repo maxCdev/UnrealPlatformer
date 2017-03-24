@@ -16,6 +16,7 @@ namespace MyPlatformer
         Queue<GameObject> exploeds = new Queue<GameObject>();
         Queue<GameObject> sparks = new Queue<GameObject>();
         Queue<GameObject> characters = new Queue<GameObject>();
+        Queue<GameObject> bonuses = new Queue<GameObject>();
         public static ObjectPool instance;
         void Awake()
         {
@@ -128,6 +129,13 @@ namespace MyPlatformer
             }
             GetObjectsList(effect.name).Enqueue(effect);
         }
+        public void ReturnBonusToPool(GameObject bonus)
+        {
+            bonus.SetActive(false);
+            bonus.transform.position = myTransform.position;
+            bonus.transform.parent = myTransform;
+            bonuses.Enqueue(bonus);
+        }
         /// <summary>
         /// puts any object who have DestroybleObject to pool
         /// </summary>
@@ -188,17 +196,17 @@ namespace MyPlatformer
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-       public GameObject GetCharacter(string name)
-       {
-           Queue<GameObject> listObj = GetObjectsList(name);
-           if (listObj.Count > 0)
-           {
-               GameObject character = listObj.Dequeue();
-               character.transform.parent = null;
-               return character;
-           }
-           return null;
-       }
+       //public GameObject GetCharacter(string name)
+       //{
+       //    Queue<GameObject> listObj = GetObjectsList(name);
+       //    if (listObj.Count > 0)
+       //    {
+       //        GameObject character = listObj.Dequeue();
+       //        character.transform.parent = null;
+       //        return character;
+       //    }
+       //    return null;
+       //}
         /// <summary>
         /// return bullet from pool
         /// </summary>

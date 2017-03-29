@@ -25,7 +25,7 @@ namespace MyPlatformer
         {
             base.SetFields();
 
-            if (crystalBonus!=null)
+            if (crystalBonus != null && transform.gameObject.activeInHierarchy)
             {
                 crystalBonus.pickuped = pickuped;
             }
@@ -68,14 +68,6 @@ namespace MyPlatformer
          base.SetFields();
          
         #region Particles
-        //if (particle!=null)
-        //{
-        //    particle.Clear();
-        //    particle.Simulate(particleTime, true, true);
-        //    particle.Play(true);
-        //}
-        //else
-        //{
             if (particles != null && particles.Count > 0)
             {
                 
@@ -86,21 +78,21 @@ namespace MyPlatformer
                 
                 for (int i = 0; i < particles.Count; i++)
                 {
-                    if (particles[i]==null)
+                    if (particles[i]==null||!particles[i].gameObject.activeInHierarchy)
                     {
                         continue;
                     }
-                    particles[i].randomSeed = particleSeedChilds[i];
-                    particles[i].Clear(true);
-                    particles[i].Simulate(particleTimeChilds[i], true, true);
-                    
-                    //particles[i].Play(true);
-                    
-                    //particles[i].Stop(); //
+                    //optimize this ... check if distance to this particle less then 10f
+                    if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, particles[i].transform.position)<10f)
+                    {
+                        particles[i].randomSeed = particleSeedChilds[i];
+                        particles[i].Simulate(particleTimeChilds[i], false, true);
+
+                        particles[i].Play(false);
+                    }
                 }
 
             }
-      //  }
         #endregion
  	
 }
@@ -122,7 +114,7 @@ public class FireableItem : MovingMomentItem
     {
         base.SetFields();
 
-        if (rBody != null)
+        if (rBody != null && transform.gameObject.activeInHierarchy)
         {
             rBody.velocity = velocity;
         }
@@ -153,7 +145,7 @@ public class DestroybleItem : FireableItem
 
         transform.parent = parent;
 
-        if (destroybleObject != null)
+        if (destroybleObject != null&&transform.gameObject.activeInHierarchy)
         {
             destroybleObject.enabled = destroyObj;
             destroybleObject.Hp = hp;
@@ -187,7 +179,7 @@ public class ShootItem : MovingMomentItem
         base.SetFields();
         shoot.Course = course;
         shoot.enabled = enabled;
-        transform.parent = parent;
+        //transform.parent = parent;
     }
 }
 public class EnemieItem : CharacteItem
@@ -208,7 +200,7 @@ public class EnemieItem : CharacteItem
     {
         base.SetFields();
 
-        if (locator != null)
+        if (locator != null&&transform.gameObject.activeInHierarchy)
         {
             locator.targetDirection.x = horizontal;
         }
@@ -260,7 +252,7 @@ public class CharacteItem : DestroybleItem
         base.SetFields();
 
         //particleItem.SetFields();
-        if (animator != null)
+        if (animator != null&&animator.gameObject.activeInHierarchy)
         {
             animator.Play(state, 0, animTime);
         }
@@ -522,7 +514,7 @@ public class Rewinder : MonoBehaviour
         }
         if (isRewindOn)
         {
-            if (Time.time > lastRewindUpdate + 0.01f)//(rewindSpeed * Time.deltaTime))
+           // if (Time.time > lastRewindUpdate + 0.01f)//(rewindSpeed * Time.deltaTime))
             {
                 Rewind();
                 lastRewindUpdate = Time.time;

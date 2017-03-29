@@ -36,16 +36,31 @@ namespace MyPlatformer
     public ParticleSystem particle;
     public List<ParticleSystem> particles;
     public List<float> particleTimeChilds;
+    public List<uint> particleSeedChilds;
     public float particleTime;
+    public bool destroyerActive;
+    public ParticelAutoDestoyer destroyer;
     public ParticleItem(GameObject gameObject)
         : base(gameObject)
     {
-       
-        particle = gameObject.GetComponent<ParticleSystem>();
-        if (particle != null)
+        //particle = gameObject.GetComponent<ParticleSystem>();
+        //if (particle != null)
+        //{
+        //    particleTime = particle.time;
+        //}
+        destroyer = gameObject.GetComponentInChildren<ParticelAutoDestoyer>(true);
+        if (destroyer!=null)
         {
-            particleTime = particle.time;
+            destroyerActive = destroyer.enabled;
         }
+        
+        particles = gameObject.GetComponentsInChildren<ParticleSystem>(true).ToList();
+        if (particles.Count>0)
+        {          
+            particleTimeChilds = particles.Select(a => a.time).ToList();
+            particleSeedChilds = particles.Select(a => a.randomSeed).ToList();
+        }
+        
     }
     public override void SetFields()
     {
@@ -53,30 +68,39 @@ namespace MyPlatformer
          base.SetFields();
          
         #region Particles
-        if (particle!=null)
-        {
-            particle.Clear();
-            particle.Simulate(particleTime, true, true);
-            particle.Play(true);
-        }
-        else
-        {
+        //if (particle!=null)
+        //{
+        //    particle.Clear();
+        //    particle.Simulate(particleTime, true, true);
+        //    particle.Play(true);
+        //}
+        //else
+        //{
             if (particles != null && particles.Count > 0)
             {
-
+                
+                if (destroyer!=null)
+                {
+                    destroyer.enabled = destroyerActive;
+                }
+                
                 for (int i = 0; i < particles.Count; i++)
                 {
                     if (particles[i]==null)
                     {
                         continue;
                     }
-                    particles[i].Clear();
+                    particles[i].randomSeed = particleSeedChilds[i];
+                    particles[i].Clear(true);
                     particles[i].Simulate(particleTimeChilds[i], true, true);
-                    particles[i].Play(true);
+                    
+                    //particles[i].Play(true);
+                    
+                    //particles[i].Stop(); //
                 }
 
             }
-        }
+      //  }
         #endregion
  	
 }
@@ -149,17 +173,20 @@ public class ShootItem : MovingMomentItem
     Shoot shoot;
     Vector2 course;
     Transform parent;
+    bool enabled;
     public ShootItem(GameObject gameObject)
         : base(gameObject)
     {
         shoot = gameObject.GetComponent<Shoot>();
         course = shoot.Course;
         parent = gameObject.transform.parent;
+        enabled = shoot.enabled;
     }
     public override void SetFields()
     {
         base.SetFields();
         shoot.Course = course;
+        shoot.enabled = enabled;
         transform.parent = parent;
     }
 }
@@ -195,7 +222,9 @@ public class CharacteItem : DestroybleItem
     public float animTime;
   
     public int state;
-    
+
+    public ParticleItem particleItem;
+
     public CharacteItem(GameObject gameObject)
         : base(gameObject)
     {
@@ -207,7 +236,7 @@ public class CharacteItem : DestroybleItem
             animTime = animationState.normalizedTime;
             state = animationState.fullPathHash;
         }
-
+        //particleItem = new ParticleItem(gameObject);
         //collider = gameObject.GetComponent<Collider2D>();
         //if (collider!=null)
         //{
@@ -230,7 +259,7 @@ public class CharacteItem : DestroybleItem
     {
         base.SetFields();
 
-       
+        //particleItem.SetFields();
         if (animator != null)
         {
             animator.Play(state, 0, animTime);
@@ -257,6 +286,7 @@ public class MovingMomentItem
     //public Collider2D collider;
     //public bool colliderValue;
     public bool active;
+    public Transform parent;
     public MovingMomentItem(GameObject gameObject)
     {
         transform = gameObject.transform;
@@ -264,6 +294,7 @@ public class MovingMomentItem
         position = transform.position;
         rotation = transform.rotation;  
         active = gameObject.activeInHierarchy;
+        parent = gameObject.transform.parent;
     }
     public virtual void SetFields()
     {     
@@ -273,6 +304,7 @@ public class MovingMomentItem
             transform.rotation = rotation;
             transform.localScale = scale;
             transform.gameObject.SetActive(active);
+            transform.parent = parent;
         }
     }
     public static MovingMomentItem GetItem(GameObject gameObject)
@@ -298,7 +330,7 @@ public class MovingMomentItem
         {
             return new FireableItem(gameObject);//add this
         }       
-        else if (gameObject.GetComponent<ParticleSystem>() != null)
+        else if (gameObject.GetComponentInChildren<ParticleSystem>() != null)
         {
             return new ParticleItem(gameObject);
         }
@@ -406,7 +438,7 @@ public class Rewinder : MonoBehaviour
                 gameObjects.AddRange(GameObject.FindGameObjectsWithTag(tag));
             }
         }
-        StartCoroutine(RewindUpdate());
+       // StartCoroutine(RewindUpdate());
         //StartCoroutine(RewindExecute());
 
 	}
@@ -432,24 +464,24 @@ public class Rewinder : MonoBehaviour
     {
         if (tags != null)
         {
-            //Debug.Log(" moments - " + moments.Count + "; gameObj - " + gameObjects.Count + " time: " + Time.time);
-            if (!isRewindOn)
-            {
-              //  Time.timeScale = 1f;
-                List<MovingMomentItem> momentItems = new List<MovingMomentItem>();
-                Moment currentMoment = new Moment();
-                for (int i = 0; i < gameObjects.Count; i++)
-                {
-                    if (gameObjects[i] != null)
-                    {
-                        momentItems.Add(MovingMomentItem.GetItem(gameObjects[i]));
-                    }
-                }
-                currentMoment.items = momentItems;
-                moments.Push(currentMoment);
+            ////Debug.Log(" moments - " + moments.Count + "; gameObj - " + gameObjects.Count + " time: " + Time.time);
+            //if (!isRewindOn)
+            //{
+            //  //  Time.timeScale = 1f;
+            //    List<MovingMomentItem> momentItems = new List<MovingMomentItem>();
+            //    Moment currentMoment = new Moment();
+            //    for (int i = 0; i < gameObjects.Count; i++)
+            //    {
+            //        if (gameObjects[i] != null)
+            //        {
+            //            momentItems.Add(MovingMomentItem.GetItem(gameObjects[i]));
+            //        }
+            //    }
+            //    currentMoment.items = momentItems;
+            //    moments.Push(currentMoment);
 
-                Camera.main.GetComponent<MotionBlur>().enabled = false;
-            }
+            //    Camera.main.GetComponent<MotionBlur>().enabled = false;
+            //}
            
         }
         yield return new WaitForSeconds(0.1f);
@@ -471,9 +503,26 @@ public class Rewinder : MonoBehaviour
     }
     void Update()
     {
+        if (!isRewindOn)
+        {
+            //  Time.timeScale = 1f;
+            List<MovingMomentItem> momentItems = new List<MovingMomentItem>();
+            Moment currentMoment = new Moment();
+            for (int i = 0; i < gameObjects.Count; i++)
+            {
+                if (gameObjects[i] != null)
+                {
+                    momentItems.Add(MovingMomentItem.GetItem(gameObjects[i]));
+                }
+            }
+            currentMoment.items = momentItems;
+            moments.Push(currentMoment);
+
+            Camera.main.GetComponent<MotionBlur>().enabled = false;
+        }
         if (isRewindOn)
         {
-            if (Time.time > lastRewindUpdate + 0.08f)//(rewindSpeed * Time.deltaTime))
+            if (Time.time > lastRewindUpdate + 0.01f)//(rewindSpeed * Time.deltaTime))
             {
                 Rewind();
                 lastRewindUpdate = Time.time;

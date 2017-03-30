@@ -7,6 +7,14 @@ namespace MyPlatformer
 {
 #region MomentItems
     //todo: try serialize all fields to json
+    //public class ObjetPoolItem : MovingMomentItem
+    //{
+    //    public ObjetPoolItem(GameObject gameObject)
+    //        : base(gameObject)
+    //    {
+                
+    //    }
+    //}
 
     public class CrystalBonusItem : MovingMomentItem
     {
@@ -339,49 +347,18 @@ public class MovingMomentItem
   
 }
     #endregion
-#region notRealized
-public enum RewindActionType
-{
-    Add, Remove
-}
-/// <summary>
-/// not realized
-/// </summary>
-public class RewindAction
-{
-    public GameObject obj;
-    public RewindActionType type;
-
-    public void Execute()
-    {
-        if (type == RewindActionType.Add)
-        {
-            GameObject.Destroy(obj);
-        }
-        else if (type == RewindActionType.Remove)
-        {
-            GameObject.Instantiate<GameObject>(obj);
-        }
-    }
-}
-#endregion
 /// <summary>
 /// A moment of time
 /// </summary>
 public class Moment
 {
     public List<MovingMomentItem> items = new List<MovingMomentItem>();
-    public List<RewindAction> actions = new List<RewindAction>();
 
     public void Play()
     {
         foreach (var item in items)
         {
             item.SetFields();
-        }
-        foreach (var action in actions)
-        {
-            action.Execute();
         }
     }
 

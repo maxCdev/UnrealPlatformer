@@ -127,7 +127,16 @@ namespace MyPlatformer
             {
                 script.Stop();
             }
-            GetObjectsList(effect.name).Enqueue(effect);
+            //var storage = GetObjectsList(effect.name);
+            //if (!storage.Contains(effect))
+            //{               
+            //    storage.Enqueue(effect);
+            //}
+            //else
+            //{
+            //    Debug.Log(effect.name + "already exist in pool");
+            //}
+            
         }
         public void ReturnBonusToPool(GameObject bonus)
         {
@@ -175,10 +184,10 @@ namespace MyPlatformer
         /// <returns></returns>
        public GameObject GetEffect(string name)
        {
-           Queue<GameObject> listObj = GetObjectsList(name);
-           if (listObj.Count > 0)
+          // Queue<GameObject> listObj = GetObjectsList(name);
+         //  if (listObj.Count > 0)
            {
-               GameObject effect = listObj.Dequeue();
+               GameObject effect = transform.FindChild(name).gameObject; //listObj.Dequeue();
                effect.transform.parent = null;               
            
                var particleDestr = effect.GetComponent<ParticelAutoDestoyer>();
